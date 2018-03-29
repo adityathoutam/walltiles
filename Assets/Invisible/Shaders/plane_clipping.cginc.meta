@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: f6d0d5e103fe92d429b025804a880d43
-timeCreated: 1522317435
+guid: 573bf84291ba0c249bac2db8808fb5f1
+timeCreated: 1522343011
 licenseType: Free
-TextScriptImporter:
+ShaderImporter:
   externalObjects: {}
+  defaultTextures: []
   userData: 
   assetBundleName: 
   assetBundleVariant: 

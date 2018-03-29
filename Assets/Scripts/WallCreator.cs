@@ -5,123 +5,61 @@ using UnityEngine;
 public class WallCreator : MonoBehaviour {
 
 	BoxCollider boxCollider;
+    Vector2 scale;
 	public float RowWidth;
 	public float ColoumnWidth;
-	Vector2 scale;
-
-    GameObject[] TileArray;
-    GameObject[] TileArray2;
-
-
-
-    //1st x = boxCollider.bounds.min.x+scale.x/2;
+    public GameObject TilePrefab;
+	
 
     void Start () 
 	{
+         Instantiate();
 		boxCollider = GetComponent<BoxCollider>();
-		scale = transform.GetChild(0).localScale;
-        TileArray = new GameObject[transform.childCount];
-        TileArray2 = new GameObject[transform.childCount];
+       
+        
+    }
+    void Instantiate()
+    {
+        for(int i=0; i<100;i++)
+        {
+           Instantiate(TilePrefab,Vector3.zero,Quaternion.identity,transform);
+        }
     }
 	
 	
 	void Update ()
-	{
-		
-	     transform.GetChild(0).position = new Vector3(boxCollider.bounds.min.x+scale.x/2,
-													-boxCollider.bounds.min.x-scale.y/2-ColoumnWidth,0);
+	{ 
+		 scale = transform.GetChild(0).localScale;
+             transform.GetChild(0).position = new Vector3(boxCollider.bounds.min.x+scale.x/2,
+													-boxCollider.bounds.min.x-scale.y/2,0);
 
+        
       
        
-        //for(int i=0; i<99;i++)
-        //{
-        //    SetPosition(i);
-        //}
-        for (int i = 10; i < 100; i = i + 10)
+        for(int i=0; i<99;i++)
         {
-            Init(i);
+           SetPosition(i);
 
+         
         }
-        for (int i = 0; i < 9; i++)
-        {
-
-
-            SetPosition(i);
-
-        }
-        for (int i = 10; i < 19; i++)
-        {
-
-            SetPosition(i);
-        }
-        for (int i = 20; i < 29; i++)
-        {
-
-            SetPosition(i);
-        }
-        for (int i = 30; i < 39; i++)
-        {
-
-            SetPosition(i);
-        }
-        for (int i = 40; i < 49; i++)
-        {
-
-            SetPosition(i);
-        }
-        for (int i = 50; i < 59; i++)
-        {
-
-            SetPosition(i);
-        }
-        for (int i = 60; i < 69; i++)
-        {
-
-            SetPosition(i);
-        }
-        for (int i = 70; i < 79; i++)
-        {
-
-            SetPosition(i);
-        }
-        for (int i = 80; i < 89; i++)
-        {
-
-            SetPosition(i);
-        }
-        for (int i = 90; i < 99; i++)
-        {
-
-            SetPosition(i);
-        }
-
-
-
-
 
     }
     void SetPosition(int i)
     {
-        
-
-
+        for (int j = 10; j < 100; j = j + 10)
+         {
+            transform.GetChild(j).position = new Vector3(transform.GetChild(j - 10).position.x,
+                                                 transform.GetChild(j - 10).position.y -scale.y - ColoumnWidth, 0);
+         }
+      
+       
             transform.GetChild(i + 1).position = transform.GetChild(i).position;
 
             transform.GetChild(i + 1).position = new Vector3(transform.GetChild(i + 1).position.x + scale.x + RowWidth,
                                                     transform.GetChild(i + 1).position.y,
                                                     transform.GetChild(i + 1).position.z);
-        
+         
     }
-    void Init(int i)
-    {
-        transform.GetChild(i).position = new Vector3(transform.GetChild(i - 10).position.x,
-                                                 transform.GetChild(i - 10).position.y - 1f - ColoumnWidth, 0);
-
-    }
-
-
-
-
 
 }
 

@@ -31,27 +31,17 @@ public class WallCreator : MonoBehaviour {
 	     transform.GetChild(0).position = new Vector3(boxCollider.bounds.min.x+scale.x/2,
 													-boxCollider.bounds.min.x-scale.y/2-ColoumnWidth,0);
 
-        //Init(10);
-        //Init(20);
-        //Init(30);
-        //Init(40);
-        //Init(50);
-        //Init(60);
-        //Init(70);
-        //Init(80);
-        //Init(90);
-        //Init(100);
-
-        for (int i = 10; i < 100; i=i+10) 
+      
+       
+        //for(int i=0; i<99;i++)
+        //{
+        //    SetPosition(i);
+        //}
+        for (int i = 10; i < 100; i = i + 10)
         {
             Init(i);
-            
+
         }
-
-        //for (int i = 0; i < 99; i++)
-        //        SetPosition(i);
-
-
         for (int i = 0; i < 9; i++)
         {
 
@@ -112,12 +102,15 @@ public class WallCreator : MonoBehaviour {
     }
     void SetPosition(int i)
     {
-        transform.GetChild(i +1).position = transform.GetChild(i).position;
+        
 
-        transform.GetChild(i +1).position = new Vector3(transform.GetChild(i + 1).position.x + scale.x + RowWidth,
-                                                transform.GetChild(i +1).position.y,
-                                                transform.GetChild(i + 1).position.z);
 
+            transform.GetChild(i + 1).position = transform.GetChild(i).position;
+
+            transform.GetChild(i + 1).position = new Vector3(transform.GetChild(i + 1).position.x + scale.x + RowWidth,
+                                                    transform.GetChild(i + 1).position.y,
+                                                    transform.GetChild(i + 1).position.z);
+        
     }
     void Init(int i)
     {

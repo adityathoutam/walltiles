@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WallCreation : MonoBehaviour {
 
@@ -9,6 +10,10 @@ public class WallCreation : MonoBehaviour {
 	public float RowWidth;
 	public float ColoumnWidth;
     public GameObject TilePrefab;
+
+    public Slider Row;
+    public Slider Coloumn;
+
 
 	List<GameObject> Tiles = new List<GameObject>();
 	
@@ -23,12 +28,12 @@ public class WallCreation : MonoBehaviour {
     void SetPosition()
     {
           for(int i=0; i<99;i++)
-        {
+          {
            // SetLocalScale(i);
            SetPosition(i);
        
          
-        }
+          }
 
     }
     void Instantiate()
@@ -42,8 +47,9 @@ public class WallCreation : MonoBehaviour {
 	
 	
 	void Update ()
-	{ 
-		
+	{
+        RowWidth = Row.value;
+        ColoumnWidth = Coloumn.value;
 
 		scale = Tiles[0].transform.localScale;
 

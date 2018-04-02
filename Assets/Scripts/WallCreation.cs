@@ -13,6 +13,7 @@ public class WallCreation : MonoBehaviour {
 
     public Slider Row;
     public Slider Coloumn;
+   
 
 
 	List<GameObject> Tiles = new List<GameObject>();
@@ -44,7 +45,10 @@ public class WallCreation : MonoBehaviour {
 		   Tiles.Add(go);
         }
     }
-	
+
+    
+
+    
 	
 	void Update ()
 	{
@@ -57,10 +61,10 @@ public class WallCreation : MonoBehaviour {
 													-boxCollider.bounds.min.y-scale.y/2,0);
 
           for(int i=0; i<99;i++)
-        {
-          SetLocalScale(i);
-          SetPosition(i);
-        }
+          {
+             SetLocalScale(i);
+             SetPosition(i);
+          }
       
        
        

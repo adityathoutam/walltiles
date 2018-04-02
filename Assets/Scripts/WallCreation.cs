@@ -17,8 +17,19 @@ public class WallCreation : MonoBehaviour {
 	{
          Instantiate();
 		boxCollider = GetComponent<BoxCollider>();
-       
+      Invoke("SetPosition",0.0001f);
         
+    }
+    void SetPosition()
+    {
+          for(int i=0; i<99;i++)
+        {
+           // SetLocalScale(i);
+           SetPosition(i);
+       
+         
+        }
+
     }
     void Instantiate()
     {
@@ -33,21 +44,20 @@ public class WallCreation : MonoBehaviour {
 	void Update ()
 	{ 
 		
+
 		scale = Tiles[0].transform.localScale;
 
              Tiles[0].transform.position = new Vector3(boxCollider.bounds.min.x+scale.x/2,
 													-boxCollider.bounds.min.y-scale.y/2,0);
 
-        
+          for(int i=0; i<99;i++)
+        {
+          SetLocalScale(i);
+          SetPosition(i);
+        }
       
        
-        for(int i=0; i<99;i++)
-        {
-            SetLocalScale(i);
-           SetPosition(i);
-
-         
-        }
+       
 
     }
 
@@ -57,19 +67,24 @@ public class WallCreation : MonoBehaviour {
 
     }
 
+   
     void SetPosition(int i)
     {
-
+       
 
         for (int j = 10; j < 100; j = j + 10)
         {
              Tiles[j].transform.position = new Vector3( Tiles[j-10].transform.position.x,
                                                  Tiles[j-10].transform.position.y -scale.y - ColoumnWidth, 0);
+        
         }
+        
+            
+        
 
-      
-       
+
             Tiles[i+1].transform.position = Tiles[i].transform.position;
+          
 
             Tiles[i+1].transform.position = new Vector3(Tiles[i+1].transform.position.x + scale.x + RowWidth,
                                                     Tiles[i+1].transform.position.y,

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallCreator2 : MonoBehaviour {
+public class WallCreation : MonoBehaviour {
 
 	BoxCollider boxCollider;
     Vector2 scale;

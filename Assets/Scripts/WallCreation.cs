@@ -43,14 +43,24 @@ public class WallCreator2 : MonoBehaviour {
        
         for(int i=0; i<99;i++)
         {
+            SetLocalScale(i);
            SetPosition(i);
 
          
         }
 
     }
+
+    void SetLocalScale(int i )
+    {
+        Tiles[i+1].transform.localScale = Tiles[0].transform.localScale;
+
+    }
+
     void SetPosition(int i)
     {
+
+
         for (int j = 10; j < 100; j = j + 10)
          {
              Tiles[j].transform.position = new Vector3( Tiles[j-10].transform.position.x,

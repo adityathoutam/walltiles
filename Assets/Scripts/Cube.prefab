@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33217415825005472}
   - component: {fileID: 65661784353062504}
   - component: {fileID: 23182491501478692}
-  - component: {fileID: 114073862941486150}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -96,22 +95,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114073862941486150
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1155079524275254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc70b147de5f8a489305e3b51cf2806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipPlanes: 1
-  planePreviewSize: 1
-  plane1Position: {x: 0, y: 0, z: 0}
-  plane1Rotation: {x: 0, y: 0, z: 90}
-  plane2Position: {x: 0, y: 0, z: 0}
-  plane2Rotation: {x: 0, y: 90, z: 90}
-  plane3Position: {x: 0, y: 0, z: 0}
-  plane3Rotation: {x: 0, y: 0, z: 90}

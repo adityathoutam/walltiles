@@ -13,6 +13,7 @@ public class WallCreation : MonoBehaviour {
 
     public Slider Row;
     public Slider Coloumn;
+    public Slider TileHeight;
    
 
 

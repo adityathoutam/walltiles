@@ -22,7 +22,6 @@ public class WallCreation : MonoBehaviour {
     void Start () 
 	{
        
-
          Instantiate();
 		boxCollider = GetComponent<BoxCollider>();
       Invoke("SetPosition",0.0001f);

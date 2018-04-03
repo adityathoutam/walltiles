@@ -14,14 +14,15 @@ public class WallCreation : MonoBehaviour {
     public Slider Row;
     public Slider Coloumn;
     public Slider TileHeight;
-   
 
-
+  
 	List<GameObject> Tiles = new List<GameObject>();
 	
 
     void Start () 
 	{
+       
+
          Instantiate();
 		boxCollider = GetComponent<BoxCollider>();
       Invoke("SetPosition",0.0001f);

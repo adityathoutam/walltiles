@@ -72,14 +72,16 @@ public class CheckingBoxCollider : MonoBehaviour {
 	}
 	void SetPosition2(int i )
       {     
-		    if(Tiles[i-1].transform.position.x>TopRowRight.x&&Tiles[i-1].transform.position.y==TopRowRight.y-ColoumnWidth)
-			SetPosition(i-1,1);
-			if(Tiles[i-1].transform.position.x>TopRowRight.x&&Tiles[i-1].transform.position.y==TopRowRight.y-1-ColoumnWidth)
-			SetPosition(i-1,2);
-			if(Tiles[i-1].transform.position.x>TopRowRight.x&&Tiles[i-1].transform.position.y==TopRowRight.y-2-ColoumnWidth)
-			SetPosition(i-1,3);
-			if(Tiles[i-1].transform.position.x>TopRowRight.x&&Tiles[i-1].transform.position.y==TopRowRight.y-3-ColoumnWidth)
-			SetPosition(i-1,4);
+		if(Tiles[i].transform.position.x>TopRowRight.x&&Tiles[i])
+		 { if(transform.position.y==TopRowRight.y-ColoumnWidth)
+			SetPosition(i,1);
+			else if(Tiles[i].transform.position.y==TopRowRight.y-1-ColoumnWidth)
+			SetPosition(i,2);
+			else if(Tiles[i].transform.position.y==TopRowRight.y-2-ColoumnWidth)
+			SetPosition(i,3);
+			else if(Tiles[i].transform.position.y==TopRowRight.y-3-ColoumnWidth)
+			SetPosition(i,4);
+		}
 		  
 		else
 		{

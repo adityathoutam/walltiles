@@ -5,12 +5,14 @@ using UnityEngine;
 public class Swipe : MonoBehaviour {
 
     Vector3 Touchposition;
+    RectTransform rect;
     float swipeX = 50f;
     public GameObject Panel;
 
     void Start ()
     {
         Panel.SetActive(true);
+        rect = Panel.GetComponent<RectTransform>();
 	}
 
     void SwipeManager()
@@ -26,11 +28,17 @@ public class Swipe : MonoBehaviour {
 
             if (Mathf.Abs(deltaSwipe.x) > swipeX)
             {
-                Panel.GetComponent<RectTransform>().position = new Vector3(400, 150);
+                rect.position = new Vector3(400, 150);
+                SetRect(rect,180,90,240,60);
+
             }
         }
     }
-
+ public static void SetRect(RectTransform rectTransform, float left, float top, float right, float bottom)
+{
+    rectTransform.offsetMin = new Vector2(left, bottom);
+    rectTransform.offsetMax = new Vector2(-right, -top);
+}
 	void Update ()
     {
         SwipeManager();

@@ -34,7 +34,6 @@ public class WallCreation : MonoBehaviour {
            // SetLocalScale(i);
            SetPosition(i);
        
-         
           }
 
     }

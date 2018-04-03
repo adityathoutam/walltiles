@@ -26,12 +26,14 @@ public class Swipe : MonoBehaviour {
         {
             Vector2 deltaSwipe = Touchposition - Input.mousePosition;
 
+
             if (Mathf.Abs(deltaSwipe.x) > swipeX)
             {
                 rect.position = new Vector3(400, 150);
                 SetRect(rect,180,90,240,60);
 
             }
+              
         }
     }
  public static void SetRect(RectTransform rectTransform, float left, float top, float right, float bottom)
@@ -42,5 +44,6 @@ public class Swipe : MonoBehaviour {
 	void Update ()
     {
         SwipeManager();
+        Debug.Log(Touchposition.x-Input.mousePosition.x);
     }
 }

@@ -49,7 +49,7 @@ public class CheckingBoxCollider : MonoBehaviour {
 		  else
 		  SetPosition2(i);
         }
-		Tile.transform.position =new Vector2(TopRowLeft.x,TopRowLeft.y-ColoumnWidth);
+		
 	}
 
 	void Instantiate()
@@ -94,5 +94,9 @@ public class CheckingBoxCollider : MonoBehaviour {
 		
 		}
 	  }
+
+	 
+
+	
 
 }

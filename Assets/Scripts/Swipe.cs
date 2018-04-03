@@ -6,7 +6,7 @@ public class Swipe : MonoBehaviour {
 
     Vector3 Touchposition;
     RectTransform rect;
-    float swipeX = 50f;
+    float swipeX = 150f;
     public GameObject Panel;
 
     void Start ()
@@ -29,11 +29,22 @@ public class Swipe : MonoBehaviour {
 
             if (Mathf.Abs(deltaSwipe.x) > swipeX)
             {
-                rect.position = new Vector3(400, 150);
-                SetRect(rect,180,90,240,60);
-
+                if (deltaSwipe.x > 0)
+                {
+                    rect.position = new Vector3(400, 150);
+                    //rect.offsetMin = new Vector2(180,60);
+                    //rect.offsetMax = new Vector2(-240,-90);
+                    //SetRect(rect, 180, 90, 240, 60);
+                }
+                else
+                {
+                    rect.position = new Vector3(1150, 150);
+                    //rect.offsetMin = new Vector2(2438,21);
+                    //rect.offsetMax = new Vector2(-1869, -58);
+                    //SetRect(rect, 2438, 58, 1869, 21);
+                }
             }
-              
+
         }
     }
  public static void SetRect(RectTransform rectTransform, float left, float top, float right, float bottom)

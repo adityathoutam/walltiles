@@ -31,17 +31,13 @@ public class Swipe : MonoBehaviour {
             {
                 if (deltaSwipe.x > 0)
                 {
-                    rect.position = new Vector3(400, 150);
-                    //rect.offsetMin = new Vector2(180,60);
-                    //rect.offsetMax = new Vector2(-240,-90);
-                    //SetRect(rect, 180, 90, 240, 60);
+                   
+                    SetRect(rect, 180, 90, 240, 60);
                 }
                 else
                 {
-                    rect.position = new Vector3(1150, 150);
-                    //rect.offsetMin = new Vector2(2438,21);
-                    //rect.offsetMax = new Vector2(-1869, -58);
-                    //SetRect(rect, 2438, 58, 1869, 21);
+                    
+                    SetRect(rect, 2250, 90, -1830, 60);
                 }
             }
 

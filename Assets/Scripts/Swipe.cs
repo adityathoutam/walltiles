@@ -55,6 +55,5 @@ public class Swipe : MonoBehaviour {
 	void Update ()
     {
         SwipeManager();
-        Debug.Log(Touchposition.x-Input.mousePosition.x);
     }
 }

@@ -15,15 +15,16 @@ public class WallCreation : MonoBehaviour {
     public Slider Coloumn;
     public Slider TileHeight;
 
+    Vector2 TopLeft,TopRight;
+
   
 	List<GameObject> Tiles = new List<GameObject>();
 	
 
     void Start () 
 	{
-       
-         Instantiate();
-		boxCollider = GetComponent<BoxCollider>();
+       boxCollider = GetComponent<BoxCollider>();
+        Instantiate();
       Invoke("SetPosition",0.0001f);
         
     }
@@ -31,7 +32,7 @@ public class WallCreation : MonoBehaviour {
     {
           for(int i=0; i<99;i++)
           {
-           // SetLocalScale(i);
+           // SetLocalScale(i);s
            SetPosition(i);
        
           }
@@ -39,6 +40,12 @@ public class WallCreation : MonoBehaviour {
     }
     void Instantiate()
     {
+        TopLeft = new Vector2(boxCollider.bounds.min.x+scale.x/2,
+	             -boxCollider.bounds.min.y-scale.y/2);
+
+	    TopRight = new Vector2( boxCollider.bounds.max.x-scale.x/2,
+	              boxCollider.bounds.max.y-scale.y/2);
+
         for(int i=0; i<100;i++)
         {
            GameObject go =Instantiate(TilePrefab,Vector3.zero,Quaternion.identity);

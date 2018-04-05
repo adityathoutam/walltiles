@@ -31,15 +31,7 @@ public class CheckingBoxCollider : MonoBehaviour {
 	//Top Right = boxCollider.bounds.max.x-scale.x/2;
 	//              boxCollider.bounds.max.y-scale.y/2
 
-	void Start () {
-
-			TopRowLeft = new Vector2(boxCollider.bounds.min.x+scale.x/2,
-	            					 -boxCollider.bounds.min.y-scale.y/2);
-			TopRowRight = new Vector2(boxCollider.bounds.max.x-scale.x/2,
-				                     boxCollider.bounds.max.y-scale.y/2);
-
-		
-	}
+	
 	void Update()
 	{
 		for(int i=0; i<30;i++)

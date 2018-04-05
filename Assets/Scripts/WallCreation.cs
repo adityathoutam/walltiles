@@ -16,23 +16,28 @@ public class WallCreation : MonoBehaviour {
     public Slider TileHeight;
 
     Vector2 TopLeft,TopRight;
+    int QuadWidth,QuadHeight,QuadArea;
 
   
 	List<GameObject> Tiles = new List<GameObject>();
 	
 
-    void Start () 
+    void Awake () 
 	{
        boxCollider = GetComponent<BoxCollider>();
+       QuadWidth =(int) transform.localScale.x;
+       QuadHeight = (int) transform.localScale.y;
+       QuadArea = QuadHeight*QuadWidth;
+
         Instantiate();
       Invoke("SetPosition",0.0001f);
         
     }
     void SetPosition()
     {
-          for(int i=0; i<99;i++)
+          for(int i=0; i<QuadArea-1;i++)
           {
-           // SetLocalScale(i);s
+           // SetLocalScale(i);
            SetPosition(i);
        
           }
@@ -46,7 +51,7 @@ public class WallCreation : MonoBehaviour {
 	    TopRight = new Vector2( boxCollider.bounds.max.x-scale.x/2,
 	              boxCollider.bounds.max.y-scale.y/2);
 
-        for(int i=0; i<100;i++)
+        for(int i=0; i<QuadArea;i++)
         {
            GameObject go =Instantiate(TilePrefab,Vector3.zero,Quaternion.identity);
 		   Tiles.Add(go);
@@ -67,39 +72,30 @@ public class WallCreation : MonoBehaviour {
              Tiles[0].transform.position = new Vector3(boxCollider.bounds.min.x+scale.x/2,
 													-boxCollider.bounds.min.y-scale.y/2,0);
 
-          for(int i=0; i<99;i++)
+          for(int i=0; i<QuadArea-1;i++)
           {
              SetLocalScale(i);
              SetPosition(i);
           }
-      
-       
-       
-
     }
-
     void SetLocalScale(int i )
     {
         Tiles[i+1].transform.localScale = Tiles[0].transform.localScale;
 
     }
-
+    
    
     void SetPosition(int i)
     {
        
 
-        for (int j = 10; j < 100; j = j + 10)
+        for (int j = QuadWidth; j < QuadArea; j = j + QuadWidth)
         {
-             Tiles[j].transform.position = new Vector3( Tiles[j-10].transform.position.x,
-                                                 Tiles[j-10].transform.position.y -scale.y - ColoumnWidth, 0);
+             Tiles[j].transform.position = new Vector3( Tiles[j-QuadWidth].transform.position.x,
+                                                 Tiles[j-QuadWidth].transform.position.y -scale.y - ColoumnWidth, 0);
         
         }
         
-            
-        
-
-
             Tiles[i+1].transform.position = Tiles[i].transform.position;
           
 

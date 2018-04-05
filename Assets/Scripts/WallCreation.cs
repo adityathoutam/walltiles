@@ -11,9 +11,7 @@ public class WallCreation : MonoBehaviour {
 	public float ColoumnWidth;
     public GameObject TilePrefab;
 
-    public Slider Row;
-    public Slider Coloumn;
-    public Slider TileHeight;
+    
 
   
 	List<GameObject> Tiles = new List<GameObject>();
@@ -52,8 +50,7 @@ public class WallCreation : MonoBehaviour {
 	
 	void Update ()
 	{
-        RowWidth = Row.value;
-        ColoumnWidth = Coloumn.value;
+       
 
 		scale = Tiles[0].transform.localScale;
 

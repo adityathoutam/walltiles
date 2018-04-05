@@ -20,7 +20,7 @@ public class CheckingBoxCollider : MonoBehaviour {
 	{
 		boxCollider = Wall.GetComponent<BoxCollider>();
 		scale = new Vector2(Tile.transform.localScale.x,Tile.transform.localScale.y);
-	SetTop();
+	//	gameObj=Instantiate(Tile);
 	Instantiate();
 	}
 
@@ -31,7 +31,7 @@ public class CheckingBoxCollider : MonoBehaviour {
 	//Top Right = boxCollider.bounds.max.x-scale.x/2;
 	//              boxCollider.bounds.max.y-scale.y/2
 
-	void SetTop () {
+	void Start () {
 
 			TopRowLeft = new Vector2(boxCollider.bounds.min.x+scale.x/2,
 	            					 -boxCollider.bounds.min.y-scale.y/2);
@@ -44,13 +44,13 @@ public class CheckingBoxCollider : MonoBehaviour {
 	{
 		for(int i=0; i<30;i++)
         {
+		if(i==0)
+          SetPosition(i,0);
+		  else
 		  SetPosition2(i);
         }
 		
 	}
-
-
-
 
 	void Instantiate()
     {
@@ -66,31 +66,26 @@ public class CheckingBoxCollider : MonoBehaviour {
 		if(row==0)
 		Tiles[i].transform.position = new Vector2(TopRowLeft.x,TopRowLeft.y);
 		else
-		Tiles[i].transform.position = new Vector2(TopRowLeft.x,TopRowLeft.y-scale.y-ColoumnWidth);
+		Tiles[i].transform.position = new Vector2(TopRowLeft.x,TopRowLeft.y-row-ColoumnWidth);
 
         
 	}
 	void SetPosition2(int i )
       {     
-		// if(Tiles[i].transform.position.x>TopRowRight.x&&Tiles[i])
-		//  { if(transform.position.y==TopRowRight.y-ColoumnWidth)
-		// 	SetPosition(i,1);
-		// 	else if(Tiles[i].transform.position.y==TopRowRight.y-1-ColoumnWidth)
-		// 	SetPosition(i,2);
-		// 	else if(Tiles[i].transform.position.y==TopRowRight.y-2-ColoumnWidth)
-		// 	SetPosition(i,3);
-		// 	else if(Tiles[i].transform.position.y==TopRowRight.y-3-ColoumnWidth)
-		// 	SetPosition(i,4);
-		// }
+		if(Tiles[i].transform.position.x>TopRowRight.x&&Tiles[i])
+		 { if(transform.position.y==TopRowRight.y-ColoumnWidth)
+			SetPosition(i,1);
+			else if(Tiles[i].transform.position.y==TopRowRight.y-1-ColoumnWidth)
+			SetPosition(i,2);
+			else if(Tiles[i].transform.position.y==TopRowRight.y-2-ColoumnWidth)
+			SetPosition(i,3);
+			else if(Tiles[i].transform.position.y==TopRowRight.y-3-ColoumnWidth)
+			SetPosition(i,4);
+		}
 		  
-		// else
-		// {
-		if(i==0)
-		Tiles[0].transform.position = TopRowLeft;
-		else if(i>0)
+		else
 		{
-			if(Tiles[i-1].transform.position.x<TopRowRight.x)
-			{
+
 		   Tiles[i].transform.localScale = Tiles[i-1].transform.localScale;
 		   Tiles[i].transform.position = Tiles[i-1].transform.position; 
           
@@ -98,7 +93,12 @@ public class CheckingBoxCollider : MonoBehaviour {
             Tiles[i].transform.position = new Vector3(Tiles[i].transform.position.x + scale.x+RowWidth,
                                                     Tiles[i].transform.position.y,
                                                     Tiles[i].transform.position.z);    
-			}
+		
 		}
 	  }
+
+	 
+
+	
+
 }

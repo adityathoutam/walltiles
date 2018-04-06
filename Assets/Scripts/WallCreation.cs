@@ -57,7 +57,9 @@ public class WallCreation : MonoBehaviour
         RowWidth = Row.value;
         ColoumnWidth = Coloumn.value;
 
-        TileWidth.value += TilePrefab.transform.localScale.x;
+
+        TilePrefab.transform.localScale = new Vector3(TileWidth.value, TileHeight.value, TilePrefab.transform.localScale.z);
+
 
         for (int i = 0; i < QuadArea - 1; i++)
         {

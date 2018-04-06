@@ -15,6 +15,7 @@ public class WallCreation : MonoBehaviour
     public Slider Row;
     public Slider Coloumn;
     public Slider TileHeight;
+    public Slider TileWidth;
 
     Vector2 TopLeft, TopRight;
     int QuadWidth, QuadHeight, QuadArea;
@@ -55,6 +56,8 @@ public class WallCreation : MonoBehaviour
     {
         RowWidth = Row.value;
         ColoumnWidth = Coloumn.value;
+
+        TileWidth.value += TilePrefab.transform.localScale.x;
 
         for (int i = 0; i < QuadArea - 1; i++)
         {

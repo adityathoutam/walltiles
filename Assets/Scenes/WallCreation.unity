@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44658017, g: 0.49641502, b: 0.57482153, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -393,12 +393,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WallPre: {fileID: 1399957869149058, guid: 541cd3a8a0a2736438efaefb76bbc4eb, type: 2}
-  TileSizeX: 1
-  TileSizeY: 1
-  WallSizeX: 10
-  WallSizeY: 10
-  RowWidth: 0.1
-  ColoumnWidth: 0.1
+  TileSizeX: 0
+  TileSizeY: 0
+  WallSizeX: 0
+  WallSizeY: 0
+  RowWidth: 0
+  ColoumnWidth: 0
   TileSizeXS: {fileID: 1170766113}
   TileSizeYS: {fileID: 691142983}
   WallSizeXS: {fileID: 1914301167}
@@ -2526,7 +2526,7 @@ RectTransform:
   m_GameObject: {fileID: 1364944962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000009, y: 1.000009, z: 1.000009}
+  m_LocalScale: {x: 1.000009, y: 1.000009, z: 0.99999994}
   m_Children:
   - {fileID: 106726515}
   - {fileID: 1678898641}
@@ -2581,7 +2581,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 548946675}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 20
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -3041,7 +3041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1794248746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3053,12 +3053,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d486d41c2073aaf4d8051b949599b207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorSpace: {fileID: 2800000, guid: 48058c3b52557df42bd88cf1860a9fa2, type: 3}
-  alphaGradient: {fileID: 2800000, guid: 489a8d8d475f05249804746275821bdd, type: 3}
+  colorSpace: {fileID: 0}
+  alphaGradient: {fileID: 0}
   Title: Color Picker
   startPos: {x: 20, y: 20}
   receiver: {fileID: 0}
-  colorSetFunctionName: OnSetColor
+  colorSetFunctionName: OnSetNewColor
   colorGetFunctionName: OnGetColor
   useExternalDrawer: 0
   drawOrder: 0

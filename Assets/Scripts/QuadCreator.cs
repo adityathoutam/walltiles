@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuadCreator : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class QuadCreator : MonoBehaviour
     
     WallCreation WallCreationScript;
     public float TileSizeX, TileSizeY, WallSizeX, WallSizeY, RowWidth, ColoumnWidth;
+
+    public Slider TileSizeXS, TileSizeYS, WallSizeXS, WallSizeYS, RowWidthS, ColoumnWidthS;
 
 
     void InstantiateValues()
@@ -20,10 +23,18 @@ public class QuadCreator : MonoBehaviour
         WallCreationScript.RowWidth = RowWidth;
         WallCreationScript.ColoumnWidth = ColoumnWidth;
 
+        RowWidth = RowWidthS.value;
+        ColoumnWidth = ColoumnWidthS.value;
+        WallSizeX = WallSizeXS.value;
+        WallSizeY = WallSizeYS.value;
+        TileSizeX = TileSizeXS.value;
+        TileSizeY = TileSizeYS.value;
     }
 
     private void Update()
     {
+        Resources.Load("WallPre");
+
         InstantiateValues();
         if (Input.GetKey(KeyCode.Space))
         {

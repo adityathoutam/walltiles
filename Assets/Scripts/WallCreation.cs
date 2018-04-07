@@ -78,10 +78,10 @@ public class WallCreation : MonoBehaviour
         }
          if(Tiles[i].transform.position.x<TopRight.x)
          {
-        Tiles[i + 1].transform.localScale = Tiles[i].transform.localScale;
-        Tiles[i + 1].transform.position = Tiles[i].transform.position;
+          Tiles[i + 1].transform.localScale = Tiles[i].transform.localScale;
+          Tiles[i + 1].transform.position = Tiles[i].transform.position;
 
-        Tiles[i + 1].transform.position = new Vector3(Tiles[i + 1].transform.position.x + scale.x + RowWidth,
+         Tiles[i + 1].transform.position = new Vector3(Tiles[i + 1].transform.position.x + scale.x + RowWidth,
                                                 Tiles[i + 1].transform.position.y,
                                                 Tiles[i + 1].transform.position.z);
          }

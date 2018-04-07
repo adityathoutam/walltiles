@@ -11,24 +11,30 @@ public class WallCreation : MonoBehaviour
     public float RowWidth;
     public float ColoumnWidth;
     public GameObject TilePrefab;
+    public GameObject Quad;
+     GameObject QuadPrefab;
 
-    public Slider Row;
-    public Slider Coloumn;
-    public Slider TileHeight;
-    public Slider TileWidth;
+    public Vector3 cubeScale;
+    public Vector3 QuadScale;
+
 
     Vector2 TopLeft, TopRight;
     int QuadWidth, QuadHeight, QuadArea;
 
     List<GameObject> Tiles = new List<GameObject>();
-    List<GameObject> ScalingTiles = new List<GameObject>();
 
     void Awake()
     {
+        QuadPrefab = Instantiate(Quad);
+        
+        QuadPrefab.transform.position = Vector3.zero;
+        TilePrefab.transform.localScale = cubeScale;
+        QuadPrefab.transform.localScale = QuadScale;
 
-        boxCollider = GetComponent<BoxCollider>();
-        QuadWidth = (int)transform.localScale.x;
-        QuadHeight = (int)transform.localScale.y;
+        QuadPrefab.AddComponent<BoxCollider>();
+        boxCollider = QuadPrefab.GetComponent<BoxCollider>();
+        QuadWidth = (int)QuadPrefab.transform.localScale.x;
+        QuadHeight = (int)QuadPrefab.transform.localScale.y;
         QuadArea = QuadHeight * QuadWidth;
 
         Instantiate();
@@ -54,13 +60,6 @@ public class WallCreation : MonoBehaviour
 
     void Update()
     {
-        RowWidth = Row.value;
-        ColoumnWidth = Coloumn.value;
-
-
-        TilePrefab.transform.localScale = new Vector3(TileWidth.value, TileHeight.value, TilePrefab.transform.localScale.z);
-
-
         for (int i = 0; i < QuadArea - 1; i++)
         {
             SetPosition(i);
@@ -71,7 +70,7 @@ public class WallCreation : MonoBehaviour
     {
 
 
-        for (int j = QuadWidth; j < QuadArea; j = j + QuadWidth/(int)scale.x)
+        for (int j = QuadWidth; j < QuadArea; j = j + QuadWidth)
         {
             Tiles[j].transform.position = new Vector3(Tiles[j - QuadWidth].transform.position.x,
                                                 Tiles[j - QuadWidth].transform.position.y - scale.y - ColoumnWidth, 0);
@@ -84,10 +83,15 @@ public class WallCreation : MonoBehaviour
         Tiles[i + 1].transform.position = new Vector3(Tiles[i + 1].transform.position.x + scale.x + RowWidth,
                                                 Tiles[i + 1].transform.position.y,
                                                 Tiles[i + 1].transform.position.z);
-         
+
+
+      
+
+        if (i+1 == QuadArea-1)
+            Tiles[i+1].SetActive(false);
         if(Tiles[i].transform.position.x>TopRight.x)
             Tiles[i].SetActive(false);
-        if(Tiles[i].transform.position.y<-boxCollider.bounds.max.y)
+        if(Tiles[i].transform.position.y<-boxCollider.bounds.max.y + scale.y / 2)
          Tiles[i].SetActive(false);
 
 

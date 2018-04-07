@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: ce80c95dcf80cee4e90ab06b9a1cbb5a
-timeCreated: 1523083377
+guid: ab36a8c78f94b8f4eb3c241dbcd20ae4
+timeCreated: 1523083344
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - TilePrefab: {instanceID: 0}
-  - QuadPrefab: {instanceID: 0}
+  - actualCube: {fileID: 1191189670944620, guid: 35cedebb4c9ec8a4b87b2e9d870d9792,
+      type: 2}
+  - actualQuad: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

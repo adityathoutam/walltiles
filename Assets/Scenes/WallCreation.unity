@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964128, b: 0.5748176, a: 1}
+  m_IndirectSpecularColor: {r: 0.44658017, g: 0.49641502, b: 0.57482153, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -393,18 +393,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WallPre: {fileID: 1399957869149058, guid: 541cd3a8a0a2736438efaefb76bbc4eb, type: 2}
-  TileSizeX: 0
-  TileSizeY: 0
-  WallSizeX: 0
-  WallSizeY: 0
-  RowWidth: 0
-  ColoumnWidth: 0
-  TileSizeXS: {fileID: 1170766113}
-  TileSizeYS: {fileID: 691142983}
-  WallSizeXS: {fileID: 1914301167}
-  WallSizeYS: {fileID: 1364944964}
-  RowWidthS: {fileID: 691142985}
-  ColoumnWidthS: {fileID: 691142984}
+  TileSizeX: 2
+  TileSizeY: 1
+  WallSizeX: 18
+  WallSizeY: 7
+  RowWidth: 0.1
+  ColoumnWidth: 0.1
 --- !u!4 &146699624
 Transform:
   m_ObjectHideFlags: 0
@@ -2041,7 +2035,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 36
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

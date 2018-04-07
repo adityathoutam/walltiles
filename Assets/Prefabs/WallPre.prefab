@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce80c95dcf80cee4e90ab06b9a1cbb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RowWidth: 0.2
-  ColoumnWidth: 0.2
+  RowWidth: 0.1
+  ColoumnWidth: 0.1
   TilePrefab: {fileID: 1033852473814368, guid: fb19056962705544e97da361ca1b96ae, type: 2}
   Quad: {fileID: 1482610250750218, guid: 94ffacc33ab0e104aa297c4fadabc726, type: 2}
-  cubeScale: {x: 3, y: 2, z: 0.1}
-  QuadScale: {x: 15, y: 10, z: 1}
+  cubeScale: {x: 2, y: 1, z: 0.1}
+  QuadScale: {x: 18, y: 7, z: 1}

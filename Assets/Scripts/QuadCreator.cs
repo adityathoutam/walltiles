@@ -36,7 +36,7 @@ public class QuadCreator : MonoBehaviour
 
 
         InstantiateValues();
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
 
            GameObject WallCreated =  Instantiate(WallPre) as GameObject;

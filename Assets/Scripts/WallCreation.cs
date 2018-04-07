@@ -88,8 +88,7 @@ public class WallCreation : MonoBehaviour
 
 
 
-        if (i+1 == QuadArea-1)
-            Tiles[i+1].SetActive(false);
+
         if(Tiles[i].transform.position.x>TopRight.x)
             Tiles[i].SetActive(false);
         if(Tiles[i].transform.position.y<-boxCollider.bounds.max.y + scale.y / 2)

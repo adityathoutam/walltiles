@@ -64,7 +64,7 @@ public class ColorPicker : MonoBehaviour {
         Renderer rend =  receiver.GetComponent<Renderer>();
         rend.sharedMaterial.mainTexture = (Texture)Resources.Load("Prefabs/ActualQuad",typeof(GameObject));
         
-        Debug.Log(rend);
+        Debug.Log(rend.GetType());
 
         txColorDisplay = new Texture2D(1, 1, TextureFormat.ARGB32, false);
 		if(receiver)

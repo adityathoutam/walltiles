@@ -399,12 +399,12 @@ MonoBehaviour:
   WallSizeY: 10
   RowWidth: 0.1
   ColoumnWidth: 0.1
-  TileSizeXS: {fileID: 1170766113}
-  TileSizeYS: {fileID: 691142983}
-  WallSizeXS: {fileID: 1914301167}
-  WallSizeYS: {fileID: 1364944964}
-  RowWidthS: {fileID: 691142985}
-  ColoumnWidthS: {fileID: 691142984}
+  TileSizeXS: {fileID: 0}
+  TileSizeYS: {fileID: 0}
+  WallSizeXS: {fileID: 0}
+  WallSizeYS: {fileID: 0}
+  RowWidthS: {fileID: 0}
+  ColoumnWidthS: {fileID: 0}
 --- !u!4 &146699624
 Transform:
   m_ObjectHideFlags: 0
@@ -3057,7 +3057,7 @@ MonoBehaviour:
   alphaGradient: {fileID: 2800000, guid: 489a8d8d475f05249804746275821bdd, type: 3}
   Title: Color Picker
   startPos: {x: 20, y: 20}
-  receiver: {fileID: 1482610250750218, guid: 94ffacc33ab0e104aa297c4fadabc726, type: 2}
+  receiver: {fileID: 0}
   colorSetFunctionName: OnSetColor
   colorGetFunctionName: OnGetColor
   useExternalDrawer: 0

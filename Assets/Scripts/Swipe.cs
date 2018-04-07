@@ -48,6 +48,6 @@ public class Swipe : MonoBehaviour
     }
     void Update()
     {
-        SwipeManager();
+       SwipeManager();
     }
 }

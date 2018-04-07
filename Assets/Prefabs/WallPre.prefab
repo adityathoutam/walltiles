@@ -54,6 +54,7 @@ MonoBehaviour:
   RowWidth: 0.1
   ColoumnWidth: 0.1
   TilePrefab: {fileID: 1033852473814368, guid: fb19056962705544e97da361ca1b96ae, type: 2}
-  Quad: {fileID: 1249737352313122, guid: 94ffacc33ab0e104aa297c4fadabc726, type: 2}
-  cubeScale: {x: 2, y: 1, z: 0.1}
-  QuadScale: {x: 18, y: 7, z: 1}
+  QuadPrefab: {fileID: 1249737352313122, guid: 94ffacc33ab0e104aa297c4fadabc726, type: 2}
+  cubeScale: {x: 1, y: 1, z: 0.1}
+  QuadScale: {x: 10, y: 10, z: 1}
+  QuadColor: {r: 0, g: 1, b: 0.9558823, a: 0}

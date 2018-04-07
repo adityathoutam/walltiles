@@ -8,44 +8,51 @@ public class WallCreation : MonoBehaviour
 
     BoxCollider boxCollider;
     Vector2 scale;
-    public float RowWidth;
-    public float ColoumnWidth;
+    public float RowWidth,ColoumnWidth;
     public GameObject TilePrefab;
-    public GameObject Quad;
-     GameObject QuadPrefab;
+    public GameObject QuadPrefab;
+
+     GameObject Quad;
 
     public Vector3 cubeScale;
     public Vector3 QuadScale;
+    public Material QuadColor;
 
 
     Vector2 TopLeft, TopRight;
     int QuadWidth, QuadHeight, QuadArea;
 
+
     List<GameObject> Tiles = new List<GameObject>();
 
     void Awake()
     {
-        QuadPrefab = Instantiate(Quad);
 
-        QuadPrefab.transform.position = Vector3.zero;
+        Quad = Instantiate(QuadPrefab);
+
+
+
         TilePrefab.transform.localScale = cubeScale;
-        QuadPrefab.transform.localScale = QuadScale;
-        boxCollider = QuadPrefab.GetComponent<BoxCollider>();
-        QuadWidth = (int)QuadPrefab.transform.localScale.x;
-        QuadHeight = (int)QuadPrefab.transform.localScale.y;
-        QuadArea = QuadHeight * QuadWidth;
+        Quad.transform.localScale = QuadScale;
+          scale = TilePrefab.transform.localScale;
+        boxCollider = Quad.GetComponent<BoxCollider>();
+        QuadWidth = (int)Quad.transform.localScale.x;
+        QuadHeight = (int)Quad.transform.localScale.y;
+        QuadArea = QuadHeight/(int)scale.y* QuadWidth/(int)scale.x;
 
         Instantiate();
     }
 
     void Instantiate()
     {
-        for (int i = 0; i < QuadArea; i++)
+        for (int i = 0; i < QuadArea+1; i++)
         {
             GameObject go = Instantiate(TilePrefab, Vector3.zero, Quaternion.identity);
+            go.transform.parent = Quad.transform.parent;
+
             Tiles.Add(go);
         }
-        scale = Tiles[0].transform.localScale;
+
 
         TopLeft = new Vector2(boxCollider.bounds.min.x + scale.x / 2,
                  -boxCollider.bounds.min.y - scale.y / 2);
@@ -58,14 +65,17 @@ public class WallCreation : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < QuadArea - 1; i++)
+        for (int i = 0; i < QuadArea; i++)
         {
             SetPosition(i);
+            Tiles[i].transform.parent = Quad.transform;
         }
+         Quad.GetComponent<Renderer>().material = QuadColor;
 
     }
     void SetPosition(int i)
     {
+        Tiles[0].transform.position = TopLeft;
 
         int k = QuadWidth/(int)scale.x;
 
@@ -87,10 +97,10 @@ public class WallCreation : MonoBehaviour
 
 
 
-        if(Tiles[i].transform.position.x>TopRight.x)
-            Tiles[i].SetActive(false);
-        if(Tiles[i].transform.position.y<-boxCollider.bounds.max.y + scale.y / 2)
-         Tiles[i].SetActive(false);
+        // if(Tiles[i].transform.position.x>TopRight.x)
+        //     Tiles[i].SetActive(false);
+        // if(Tiles[i].transform.position.y<-boxCollider.bounds.max.y + scale.y / 2)
+        //  Tiles[i].SetActive(false);
 
 
     }

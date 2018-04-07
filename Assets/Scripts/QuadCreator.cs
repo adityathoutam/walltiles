@@ -10,8 +10,8 @@ public class QuadCreator : MonoBehaviour
     WallCreation WallCreationScript;
     public float TileSizeX, TileSizeY, WallSizeX, WallSizeY, RowWidth, ColoumnWidth;
 
-    public Slider TileSizeXS, TileSizeYS, WallSizeXS, WallSizeYS, RowWidthS, ColoumnWidthS;
-//
+    // public Slider TileSizeXS, TileSizeYS, WallSizeXS, WallSizeYS, RowWidthS, ColoumnWidthS;
+
 
     void InstantiateValues()
     {

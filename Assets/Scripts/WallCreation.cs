@@ -26,7 +26,7 @@ public class WallCreation : MonoBehaviour
     void Awake()
     {
         QuadPrefab = Instantiate(Quad);
-        
+
         QuadPrefab.transform.position = Vector3.zero;
         TilePrefab.transform.localScale = cubeScale;
         QuadPrefab.transform.localScale = QuadScale;
@@ -69,14 +69,15 @@ public class WallCreation : MonoBehaviour
     void SetPosition(int i)
     {
 
+        int k = QuadWidth/(int)scale.x;
 
-        for (int j = QuadWidth; j < QuadArea; j = j + QuadWidth)
+        for (int j = k; j < QuadArea; j = j + k)
         {
-            Tiles[j].transform.position = new Vector3(Tiles[j - QuadWidth].transform.position.x,
-                                                Tiles[j - QuadWidth].transform.position.y - scale.y - ColoumnWidth, 0);
-            Tiles[j].transform.localScale = Tiles[j-QuadWidth].transform.localScale;
+            Tiles[j].transform.position = new Vector3(Tiles[j - k].transform.position.x,
+                                                Tiles[j - k].transform.position.y - scale.y - ColoumnWidth, 0);
+            Tiles[j].transform.localScale = Tiles[j-k].transform.localScale;
         }
-        
+
           Tiles[i + 1].transform.localScale = Tiles[i].transform.localScale;
           Tiles[i + 1].transform.position = Tiles[i].transform.position;
 
@@ -85,7 +86,7 @@ public class WallCreation : MonoBehaviour
                                                 Tiles[i + 1].transform.position.z);
 
 
-      
+
 
         if (i+1 == QuadArea-1)
             Tiles[i+1].SetActive(false);

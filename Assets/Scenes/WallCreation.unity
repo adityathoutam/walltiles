@@ -399,12 +399,12 @@ MonoBehaviour:
   WallSizeY: 10
   RowWidth: 0.1
   ColoumnWidth: 0.1
-  TileSizeXS: {fileID: 0}
-  TileSizeYS: {fileID: 0}
-  WallSizeXS: {fileID: 0}
-  WallSizeYS: {fileID: 0}
-  RowWidthS: {fileID: 0}
-  ColoumnWidthS: {fileID: 0}
+  TileSizeXS: {fileID: 1170766113}
+  TileSizeYS: {fileID: 691142983}
+  WallSizeXS: {fileID: 1914301167}
+  WallSizeYS: {fileID: 1364944964}
+  RowWidthS: {fileID: 691142985}
+  ColoumnWidthS: {fileID: 691142984}
 --- !u!4 &146699624
 Transform:
   m_ObjectHideFlags: 0
@@ -1160,10 +1160,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 977863504}
   m_HandleRect: {fileID: 1246218224}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1
   m_MaxValue: 4
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1864,10 +1864,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 42650084}
   m_HandleRect: {fileID: 274541961}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1
   m_MaxValue: 4
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2581,8 +2581,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 548946675}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 0.1
-  m_WholeNumbers: 0
+  m_MaxValue: 50
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3270,8 +3270,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 680251703}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 0.1
-  m_WholeNumbers: 0
+  m_MaxValue: 50
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:

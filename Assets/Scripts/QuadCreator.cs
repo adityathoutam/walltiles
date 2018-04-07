@@ -23,16 +23,17 @@ public class QuadCreator : MonoBehaviour
         WallCreationScript.RowWidth = RowWidth;
         WallCreationScript.ColoumnWidth = ColoumnWidth;
 
-        //RowWidth = RowWidthS.value;
-        //ColoumnWidth = ColoumnWidthS.value;
-        //WallSizeX = WallSizeXS.value;
-        //WallSizeY = WallSizeYS.value;
-        //TileSizeX = TileSizeXS.value;
-        //TileSizeY = TileSizeYS.value;
+        RowWidth = RowWidthS.value;
+        ColoumnWidth = ColoumnWidthS.value;
+        WallSizeX = WallSizeXS.value;
+        WallSizeY = WallSizeYS.value;
+        TileSizeX = TileSizeXS.value;
+        TileSizeY = TileSizeYS.value;
     }
 
     private void Update()
     {
+     
         Resources.Load("WallPre");
 
         InstantiateValues();

@@ -5,18 +5,25 @@ public class ColorPicker : MonoBehaviour {
 
 	public Texture2D colorSpace;
 	public Texture2D alphaGradient;
-	public string Title = "Color Picker";
+
+    public GameObject receiver;
+
+    public string Title = "Color Picker";
+
 	public Vector2 startPos = new Vector2(20, 20);
-	public GameObject receiver;
-	public string colorSetFunctionName = "OnSetNewColor";
+
+    public string colorSetFunctionName = "OnSetNewColor";
 	public string colorGetFunctionName = "OnGetColor";
-	public bool useExternalDrawer = false;
+
+    public bool useExternalDrawer = false;
 	public int drawOrder = 0;
 
 	private Color TempColor; 
 	private Color SelectedColor;
 
-	static ColorPicker activeColorPicker = null;
+   
+
+    static ColorPicker activeColorPicker = null;
 
 	enum ESTATE
 	{
@@ -54,7 +61,12 @@ public class ColorPicker : MonoBehaviour {
 	{
 		sizeCurr = sizeHidden;
 
-		txColorDisplay = new Texture2D(1, 1, TextureFormat.ARGB32, false);
+        Renderer rend =  receiver.GetComponent<Renderer>();
+        rend.sharedMaterial.mainTexture = (Texture)Resources.Load("Prefabs/ActualQuad",typeof(GameObject));
+        
+        Debug.Log(rend);
+
+        txColorDisplay = new Texture2D(1, 1, TextureFormat.ARGB32, false);
 		if(receiver)
 		{
 			receiver.SendMessage(colorGetFunctionName, this, SendMessageOptions.DontRequireReceiver);
@@ -62,7 +74,7 @@ public class ColorPicker : MonoBehaviour {
 	}
 
 
-	void OnGUI()
+    void OnGUI()
 	{
 		if(!useExternalDrawer)
 		{

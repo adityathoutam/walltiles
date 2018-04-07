@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44658017, g: 0.49641502, b: 0.57482153, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964128, b: 0.5748176, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1308,7 +1308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 98, y: -15}
+  m_AnchoredPosition: {x: 6, y: -15}
   m_SizeDelta: {x: -420, y: -150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &691142988
@@ -2001,6 +2001,7 @@ GameObject:
   - component: {fileID: 1243612525}
   - component: {fileID: 1243612524}
   - component: {fileID: 1243612528}
+  - component: {fileID: 1243612529}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2040,7 +2041,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 67
+  field of view: 36
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2051,7 +2052,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -2082,6 +2083,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 691142986}
+--- !u!114 &1243612529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1243612523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c25fb1db521757449e7dffe2a567667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1246218223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,10 +2592,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1546242039}
   m_HandleRect: {fileID: 548946675}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 10
   m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3041,7 +3053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1794248746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3053,12 +3065,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d486d41c2073aaf4d8051b949599b207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorSpace: {fileID: 0}
-  alphaGradient: {fileID: 0}
+  colorSpace: {fileID: 2800000, guid: 48058c3b52557df42bd88cf1860a9fa2, type: 3}
+  alphaGradient: {fileID: 2800000, guid: 489a8d8d475f05249804746275821bdd, type: 3}
+  receiver: {fileID: 1482610250750218, guid: 94ffacc33ab0e104aa297c4fadabc726, type: 2}
   Title: Color Picker
   startPos: {x: 20, y: 20}
-  receiver: {fileID: 0}
-  colorSetFunctionName: OnSetNewColor
+  colorSetFunctionName: OnSetColor
   colorGetFunctionName: OnGetColor
   useExternalDrawer: 0
   drawOrder: 0
@@ -3269,10 +3281,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1082513194}
   m_HandleRect: {fileID: 680251703}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 10
   m_MaxValue: 50
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

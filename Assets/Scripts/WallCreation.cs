@@ -30,8 +30,6 @@ public class WallCreation : MonoBehaviour
         QuadPrefab.transform.position = Vector3.zero;
         TilePrefab.transform.localScale = cubeScale;
         QuadPrefab.transform.localScale = QuadScale;
-
-        QuadPrefab.AddComponent<BoxCollider>();
         boxCollider = QuadPrefab.GetComponent<BoxCollider>();
         QuadWidth = (int)QuadPrefab.transform.localScale.x;
         QuadHeight = (int)QuadPrefab.transform.localScale.y;

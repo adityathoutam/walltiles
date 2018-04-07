@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class QuadCreator : MonoBehaviour
 {
     public GameObject WallPre;
+    GameObject WallCreated;
 
     WallCreation WallCreationScript;
     public float TileSizeX, TileSizeY, WallSizeX, WallSizeY, RowWidth, ColoumnWidth;
@@ -48,16 +49,27 @@ public class QuadCreator : MonoBehaviour
 
     private void Update()
     {
+        Material rand = GetComponent<Material>();
+
 
 
         InstantiateValues();
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
-           GameObject WallCreated =  Instantiate(WallPre) as GameObject;
+            WallCreated =  Instantiate(WallPre) as GameObject;
+
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+
+
+            Destroy(WallCreated);
 
         }
 
+    if(WallCreated!=null)
+    WallCreated.GetComponent<WallCreation>().QuadColor = rand;
 
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class QuadCreator : MonoBehaviour
 {
     public GameObject WallPre;
-    public GameObject ColorQuad;
+    public GameObject ColorPicker;
     GameObject WallCreated;
 
     WallCreation WallCreationScript;
@@ -50,8 +50,8 @@ public class QuadCreator : MonoBehaviour
 
     private void Update()
     {
-       // Color QuadColor = ColorQuad.GetComponent<Renderer>().material.color;
-        Color QuadColor = ColorQuad.GetComponent<ColorPicker>().SelectedColor;
+       // Color QuadColor = ColorPicker.GetComponent<Renderer>().material.color;
+        Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
 
 
 

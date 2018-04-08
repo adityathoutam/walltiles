@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WallPre: {fileID: 1399957869149058, guid: 541cd3a8a0a2736438efaefb76bbc4eb, type: 2}
-  ColorQuad: {fileID: 600487328}
+  ColorPicker: {fileID: 600487328}
   TileSizeX: 1
   TileSizeY: 1
   WallSizeX: 10

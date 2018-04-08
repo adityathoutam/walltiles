@@ -26,7 +26,7 @@ public class Swipe : MonoBehaviour
         rect2 = Panel2.GetComponent<RectTransform>();
 
 
-        SetRect(rect, 225, 815, 195, -665);
+        SetRect(rect, 225, 862, 195, -665);
         SetRect(rect2, -1795, 90, 2215, 60);
     }
 
@@ -54,7 +54,7 @@ public class Swipe : MonoBehaviour
                 }
                 else
                 {
-                    SetRect(rect, 225, 815, 195, -665);
+                    SetRect(rect, 225, 862, 195, -665);
                 }
             }
 

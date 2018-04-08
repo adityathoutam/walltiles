@@ -56,7 +56,6 @@ public class Swipe : MonoBehaviour
         {
              deltaSwipe = Touchposition - Input.mousePosition;
 
-            Debug.Log(deltaSwipe.x);
               if (deltaSwipe.x < 0)
                  {
                     SetRect(rect2, 180, 90, 240, 60);

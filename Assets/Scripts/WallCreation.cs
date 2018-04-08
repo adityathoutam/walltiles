@@ -16,7 +16,7 @@ public class WallCreation : MonoBehaviour
 
     public Vector3 cubeScale;
     public Vector3 QuadScale;
-    public Material QuadColor;
+    public Color QuadColor;
 
 
     Vector2 TopLeft, TopRight;
@@ -28,7 +28,7 @@ public class WallCreation : MonoBehaviour
     void Awake()
     {
 
-        Quad = Instantiate(QuadPrefab);
+        Quad = Instantiate(QuadPrefab) as GameObject;
 
 
 
@@ -70,7 +70,7 @@ public class WallCreation : MonoBehaviour
             SetPosition(i);
             Tiles[i].transform.parent = Quad.transform;
         }
-         Quad.GetComponent<Renderer>().material = QuadColor;
+         Quad.GetComponent<Renderer>().material.color = QuadColor;
 
     }
     void SetPosition(int i)

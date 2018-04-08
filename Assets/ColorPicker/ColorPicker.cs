@@ -6,7 +6,7 @@ public class ColorPicker : MonoBehaviour {
 	public Texture2D colorSpace;
 	public Texture2D alphaGradient;
 
-    public GameObject receiver;
+     GameObject receiver;
 
     public string Title = "Color Picker";
 
@@ -18,10 +18,10 @@ public class ColorPicker : MonoBehaviour {
     public bool useExternalDrawer = false;
 	public int drawOrder = 0;
 
-	private Color TempColor; 
-	private Color SelectedColor;
+	public Color TempColor;
+	public Color SelectedColor;
 
-   
+
 
     static ColorPicker activeColorPicker = null;
 
@@ -31,9 +31,9 @@ public class ColorPicker : MonoBehaviour {
 		Showed,
 		Showing,
 		Hidding
-	}; 
+	};
 	ESTATE mState = ESTATE.Hidden;
-	
+
 	int sizeFull = 200;
 	int sizeHidden = 20;
 	float animTime = 0.25f;
@@ -48,7 +48,7 @@ public class ColorPicker : MonoBehaviour {
 
 	string txtR, txtG, txtB, txtA;
 	float valR, valG, valB, valA;
-	
+
 	public void NotifyColor(Color color)
 	{
 		SetColor(color);
@@ -61,10 +61,9 @@ public class ColorPicker : MonoBehaviour {
 	{
 		sizeCurr = sizeHidden;
 
-        Renderer rend =  receiver.GetComponent<Renderer>();
-        rend.sharedMaterial.mainTexture = (Texture)Resources.Load("Prefabs/ActualQuad",typeof(GameObject));
-        
-        Debug.Log(rend.GetType());
+      //  Renderer rend =  receiver.GetComponent<Renderer>();
+      //  rend.sharedMaterial.mainTexture = (Texture)Resources.Load("Prefabs/ActualQuad",typeof(GameObject));
+
 
         txColorDisplay = new Texture2D(1, 1, TextureFormat.ARGB32, false);
 		if(receiver)
@@ -129,7 +128,7 @@ public class ColorPicker : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	public void _DrawGUI () 
+	public void _DrawGUI ()
 	{
 		if (titleStyle == null) {
 			titleStyle = new GUIStyle (GUI.skin.label);

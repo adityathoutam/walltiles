@@ -13,10 +13,12 @@ public class Swipe : MonoBehaviour
 
     void Start()
     {
-        Panel.SetActive(false);
+        Panel.SetActive(true);
         Panel2.SetActive(true);
         rect = Panel.GetComponent<RectTransform>();
         rect2 = Panel2.GetComponent<RectTransform>();
+        SetRect(rect, 2250, 90, -1830, 60);
+        SetRect(rect2, -1795, 90, 2215, 60);
     }
 
     void SwipeManager()

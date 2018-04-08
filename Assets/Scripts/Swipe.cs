@@ -68,7 +68,7 @@ public class Swipe : MonoBehaviour
             deltaSwipe = Touchposition - Input.mousePosition;
             if (Wall_Switch_T)
             {
-                if (Mathf.Abs(deltaSwipe.y) > swipeY)
+                if (Mathf.Abs(deltaSwipe.x) > swipeX)
                 {
                     if (deltaSwipe.x < 0)
                     {

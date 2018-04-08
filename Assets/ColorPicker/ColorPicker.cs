@@ -192,7 +192,7 @@ public class ColorPicker : MonoBehaviour {
 		GUI.DrawTexture(rect, colorSpace);
 
 		float alphaGradHeight = alphaGradientHeight * (sizeCurr/sizeFull);
-		Vector2 startPosAlpha = startPos + new Vector2(0, sizeCurr);
+		Vector2 startPosAlpha = startPos + new Vector2(4, sizeCurr);
 		Rect rectAlpha = new Rect(startPosAlpha.x, startPosAlpha.y, sizeCurr, alphaGradHeight);
 		GUI.DrawTexture(rectAlpha, alphaGradient);
 

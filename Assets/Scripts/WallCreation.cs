@@ -33,7 +33,7 @@ public class WallCreation : MonoBehaviour
 
         Quad = Instantiate(QuadPrefab) as GameObject;
 
-
+        Quad.transform.parent = transform;
 
         TilePrefab.transform.localScale = cubeScale;
         Quad.transform.localScale = QuadScale;

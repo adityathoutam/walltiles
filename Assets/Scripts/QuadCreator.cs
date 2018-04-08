@@ -7,7 +7,7 @@ public class QuadCreator : MonoBehaviour
 {
     public GameObject WallPre;
     public GameObject ColorPicker;
-    bool lol = false;
+    bool UserClicked = false;
     GameObject WallCreated;
     WallCreation WallCreationScript;
 
@@ -52,15 +52,20 @@ public class QuadCreator : MonoBehaviour
 
 
         InstantiateValues();
-        if (lol)
+
+        if(UserClicked)
         {
-            WallCreated =  Instantiate(WallPre) as GameObject;
-            lol =false;
+            if(WallCreated==null)
+            {
+             WallCreated =  Instantiate(WallPre) as GameObject;
+             UserClicked=false;
+            }
+            else
+            Create();
+
+
         }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Destroy(WallCreated);
-        }
+
 
         if(WallCreated!=null)
         {
@@ -70,6 +75,11 @@ public class QuadCreator : MonoBehaviour
 
     public void CreateWall()
     {
-        lol = true;
+        UserClicked = true;
+    }
+    void Create()
+    {
+        Destroy(WallCreated.gameObject);
+        UserClicked=true;
     }
 }

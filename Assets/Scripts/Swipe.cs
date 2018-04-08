@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Swipe : MonoBehaviour
 {
+    public GameObject Wall_Switch;
+    public GameObject Tile_Switch;
+    Toggle Wall_Switch_T,Tile_Switch_T;
+
+
 
     Vector3 Touchposition;
     RectTransform rect,rect2;
@@ -17,6 +23,7 @@ public class Swipe : MonoBehaviour
         Panel2.SetActive(true);
         rect = Panel.GetComponent<RectTransform>();
         rect2 = Panel2.GetComponent<RectTransform>();
+
         SetRect(rect, 2250, 90, -1830, 60);
         SetRect(rect2, -1795, 90, 2215, 60);
     }

@@ -2312,6 +2312,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035706388}
+--- !u!1 &1057417420 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1605749542326838, guid: dc496a2fd1a0917468a84dd8c9e95e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1138175338}
 --- !u!224 &1057417421 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224579655173500308, guid: dc496a2fd1a0917468a84dd8c9e95e4c,
@@ -2576,6 +2581,11 @@ Prefab:
     - target: {fileID: 1605749542326838, guid: dc496a2fd1a0917468a84dd8c9e95e4c, type: 2}
       propertyPath: m_Name
       value: Wall_Switch
+      objectReference: {fileID: 0}
+    - target: {fileID: 114528016608906336, guid: dc496a2fd1a0917468a84dd8c9e95e4c,
+        type: 2}
+      propertyPath: isTweening
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc496a2fd1a0917468a84dd8c9e95e4c, type: 2}
@@ -2864,6 +2874,11 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1223132931}
+--- !u!1 &1227287663 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1605749542326838, guid: dc496a2fd1a0917468a84dd8c9e95e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 760786141}
 --- !u!224 &1227287664 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224579655173500308, guid: dc496a2fd1a0917468a84dd8c9e95e4c,
@@ -2961,6 +2976,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517127466a8e90840b3e21fca71ec437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wall_Switch: {fileID: 1057417420}
+  Tile_Switch: {fileID: 1227287663}
   Panel: {fileID: 999292629}
   Panel2: {fileID: 691142986}
 --- !u!1 &1246218223

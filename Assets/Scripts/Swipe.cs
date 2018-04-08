@@ -46,7 +46,8 @@ public class Swipe : MonoBehaviour
 
         if(Tile_Switch_T)
         {
-           
+            if (Mathf.Abs(deltaSwipe.y) > swipeY)
+            {
                 if (deltaSwipe.y < 0)
                 {
                     SetRect(rect, 180, 90, 240, 60);
@@ -55,7 +56,7 @@ public class Swipe : MonoBehaviour
                 {
                     SetRect(rect, 225, 815, 195, -665);
                 }
-            
+            }
 
         }
     }
@@ -64,21 +65,23 @@ public class Swipe : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-             deltaSwipe = Touchposition - Input.mousePosition;
-            if(Wall_Switch_T)
+            deltaSwipe = Touchposition - Input.mousePosition;
+            if (Wall_Switch_T)
             {
-              if (deltaSwipe.x < 0)
-                 {
-                    SetRect(rect2, 180, 90, 240, 60);
+                if (Mathf.Abs(deltaSwipe.y) > swipeY)
+                {
+                    if (deltaSwipe.x < 0)
+                    {
+                        SetRect(rect2, 180, 90, 240, 60);
+                    }
+                    else
+                    {
+                        SetRect(rect2, -1795, 90, 2215, 60);
+                    }
                 }
-                 else
-                 {
-                     SetRect(rect2, -1795, 90, 2215, 60);
-                 }
             }
         }
-
-        }
+    }
     }
 
     public static void SetRect(RectTransform rectTransform, float left, float top, float right, float bottom)

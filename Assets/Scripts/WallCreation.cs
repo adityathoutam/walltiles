@@ -97,10 +97,10 @@ public class WallCreation : MonoBehaviour
 
 
 
-        // if(Tiles[i].transform.position.x>TopRight.x)
-        //     Tiles[i].SetActive(false);
-        // if(Tiles[i].transform.position.y<-boxCollider.bounds.max.y + scale.y / 2)
-        //  Tiles[i].SetActive(false);
+        if(Tiles[i].transform.position.x>TopRight.x)
+            Tiles[i].SetActive(false);
+        if(Tiles[i].transform.position.y<-boxCollider.bounds.max.y + scale.y / 2)
+         Tiles[i].SetActive(false);
 
 
     }

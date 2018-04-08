@@ -7,7 +7,7 @@ public class QuadCreator : MonoBehaviour
 {
     public GameObject WallPre;
     public GameObject ColorPicker;
-
+    bool lol = false;
     GameObject WallCreated;
     WallCreation WallCreationScript;
 
@@ -29,7 +29,7 @@ public class QuadCreator : MonoBehaviour
 
         RowWidth = RowWidthS.value;
         tRowWidth.text = " " + RowWidthS.value;
-      
+
         ColoumnWidth = ColoumnWidthS.value;
         tColoumnWidth.text = " " + ColoumnWidthS.value;
 
@@ -49,12 +49,13 @@ public class QuadCreator : MonoBehaviour
     private void Update()
     {
         Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
-        
+
 
         InstantiateValues();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (lol)
         {
             WallCreated =  Instantiate(WallPre) as GameObject;
+            lol =false;
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -63,5 +64,10 @@ public class QuadCreator : MonoBehaviour
 
         if(WallCreated!=null)
             WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
+    }
+
+    public void CreateWall()
+    {
+        lol = true;
     }
 }

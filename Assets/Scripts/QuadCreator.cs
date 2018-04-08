@@ -7,14 +7,14 @@ public class QuadCreator : MonoBehaviour
 {
     public GameObject WallPre;
     public GameObject ColorPicker;
-    GameObject WallCreated;
 
+    GameObject WallCreated;
     WallCreation WallCreationScript;
+
     public float TileSizeX, TileSizeY, WallSizeX, WallSizeY, RowWidth, ColoumnWidth;
 
-     public Slider TileSizeXS, TileSizeYS, WallSizeXS, WallSizeYS, RowWidthS, ColoumnWidthS;
+    public Slider TileSizeXS, TileSizeYS, WallSizeXS, WallSizeYS, RowWidthS, ColoumnWidthS;
     public Text tTileSizeX, tTileSizeY, tWallSizeX, tWallSizeY, tRowWidth, tColoumnWidth;
-
 
 
     void InstantiateValues()
@@ -28,7 +28,8 @@ public class QuadCreator : MonoBehaviour
         WallCreationScript.ColoumnWidth = ColoumnWidth;
 
         RowWidth = RowWidthS.value;
-        tRowWidth.text = " " + RowWidthS.value;
+        tRowWidth.text = " " + (int)RowWidthS.value;
+       // RowWidthS.value = Mathf.RoundToInt(0.01f);
 
         ColoumnWidth = ColoumnWidthS.value;
         tColoumnWidth.text = " " + ColoumnWidthS.value;
@@ -44,34 +45,24 @@ public class QuadCreator : MonoBehaviour
 
         TileSizeY = TileSizeYS.value;
         tTileSizeY.text = " " + TileSizeYS.value;
-
-
     }
 
     private void Update()
     {
-       // Color QuadColor = ColorPicker.GetComponent<Renderer>().material.color;
         Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
-
-
+        
 
         InstantiateValues();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
             WallCreated =  Instantiate(WallPre) as GameObject;
-
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-
-
             Destroy(WallCreated);
-
         }
 
-    if(WallCreated!=null)
-    WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
-
+        if(WallCreated!=null)
+            WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
     }
 }

@@ -14,6 +14,7 @@ public class Swipe : MonoBehaviour
     Vector3 Touchposition;
     RectTransform rect,rect2;
     float swipeX = 150f;
+    float swipeY = 150f;
     public GameObject Panel,Panel2;
     Vector2 deltaSwipe;
 
@@ -25,7 +26,7 @@ public class Swipe : MonoBehaviour
         rect2 = Panel2.GetComponent<RectTransform>();
 
 
-        SetRect(rect, 2250, 90, -1830, 60);
+        SetRect(rect, 225, 815, 195, -665);
         SetRect(rect2, -1795, 90, 2215, 60);
     }
 
@@ -45,7 +46,7 @@ public class Swipe : MonoBehaviour
 
         if(Tile_Switch_T)
         {
-            if (Mathf.Abs(deltaSwipe.x) > swipeX)
+            if (Mathf.Abs(deltaSwipe.y) > swipeY)
             {
                 if (deltaSwipe.x > 0)
                 {
@@ -53,7 +54,7 @@ public class Swipe : MonoBehaviour
                 }
                 else
                 {
-                    SetRect(rect, 2250, 90, -1830, 60);
+                    SetRect(rect, 225, 815, 195, -665);
                 }
             }
 

@@ -44,11 +44,12 @@ MonoBehaviour:
   alphaGradient: {fileID: 2800000, guid: 489a8d8d475f05249804746275821bdd, type: 3}
   Title: Background Color
   startPos: {x: 20, y: 20}
-  receiver: {fileID: 0}
   colorSetFunctionName: OnSetColor
   colorGetFunctionName: OnGetColor
   useExternalDrawer: 0
   drawOrder: 0
+  TempColor: {r: 0, g: 0, b: 0, a: 0}
+  SelectedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

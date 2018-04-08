@@ -46,9 +46,8 @@ public class Swipe : MonoBehaviour
 
         if(Tile_Switch_T)
         {
-            if (Mathf.Abs(deltaSwipe.y) > swipeY)
-            {
-                if (deltaSwipe.x > 0)
+           
+                if (deltaSwipe.y < 0)
                 {
                     SetRect(rect, 180, 90, 240, 60);
                 }
@@ -56,7 +55,7 @@ public class Swipe : MonoBehaviour
                 {
                     SetRect(rect, 225, 815, 195, -665);
                 }
-            }
+            
 
         }
     }

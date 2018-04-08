@@ -28,9 +28,8 @@ public class QuadCreator : MonoBehaviour
         WallCreationScript.ColoumnWidth = ColoumnWidth;
 
         RowWidth = RowWidthS.value;
-        tRowWidth.text = " " + (int)RowWidthS.value;
-       // RowWidthS.value = Mathf.RoundToInt(0.01f);
-
+        tRowWidth.text = " " + RowWidthS.value;
+      
         ColoumnWidth = ColoumnWidthS.value;
         tColoumnWidth.text = " " + ColoumnWidthS.value;
 

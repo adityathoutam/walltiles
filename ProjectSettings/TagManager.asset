@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Panel
   - tile
+  - Panel2
   layers:
   - Default
   - TransparentFX

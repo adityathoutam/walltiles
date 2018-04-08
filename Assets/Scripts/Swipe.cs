@@ -74,7 +74,7 @@ public class Swipe : MonoBehaviour
                  else
                  {
                      SetRect(rect2, -1795, 90, 2215, 60);
-                }
+                 }
             }
         }
 

@@ -63,7 +63,9 @@ public class QuadCreator : MonoBehaviour
         }
 
         if(WallCreated!=null)
+        {
             WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
+        }
     }
 
     public void CreateWall()

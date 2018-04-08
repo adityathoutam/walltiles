@@ -51,11 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce80c95dcf80cee4e90ab06b9a1cbb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RowWidth: 0.036423974
-  ColoumnWidth: 0.06024161
+  RowWidth: 0.1
+  ColoumnWidth: 0.1
   TilePrefab: {fileID: 1033852473814368, guid: fb19056962705544e97da361ca1b96ae, type: 2}
   QuadPrefab: {fileID: 1249737352313122, guid: 94ffacc33ab0e104aa297c4fadabc726, type: 2}
+  material: {fileID: 2100000, guid: 405557dd090bbfd499937839b1728b35, type: 2}
   cubeScale: {x: 1, y: 1, z: 0.1}
-  QuadScale: {x: 10, y: 10, z: 1}
+  QuadScale: {x: 10, y: 5, z: 1}
   QuadColor: {r: 0, g: 1, b: 0.9558823, a: 0}
-  quadMaterial: {fileID: 2100000, guid: ef63f393d89b495418159f9a47ca3ec8, type: 2}

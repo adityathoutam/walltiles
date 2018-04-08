@@ -7,7 +7,7 @@ public class Swipe : MonoBehaviour
 {
     public GameObject Wall_Switch;
     public GameObject Tile_Switch;
-    Toggle Wall_Switch_T,Tile_Switch_T;
+    bool Wall_Switch_T,Tile_Switch_T;
 
 
 
@@ -23,6 +23,7 @@ public class Swipe : MonoBehaviour
         Panel2.SetActive(true);
         rect = Panel.GetComponent<RectTransform>();
         rect2 = Panel2.GetComponent<RectTransform>();
+
 
         SetRect(rect, 2250, 90, -1830, 60);
         SetRect(rect2, -1795, 90, 2215, 60);
@@ -42,7 +43,8 @@ public class Swipe : MonoBehaviour
         {
              deltaSwipe = Touchposition - Input.mousePosition;
 
-
+        if(Tile_Switch_T)
+        {
             if (Mathf.Abs(deltaSwipe.x) > swipeX)
             {
                 if (deltaSwipe.x > 0)
@@ -57,12 +59,14 @@ public class Swipe : MonoBehaviour
 
         }
     }
+    }
     if(Touchposition.x<Screen.width/2)
     {
         if (Input.GetMouseButtonUp(0))
         {
              deltaSwipe = Touchposition - Input.mousePosition;
-
+            if(Wall_Switch_T)
+            {
               if (deltaSwipe.x < 0)
                  {
                     SetRect(rect2, 180, 90, 240, 60);
@@ -71,7 +75,8 @@ public class Swipe : MonoBehaviour
                  {
                      SetRect(rect2, -1795, 90, 2215, 60);
                 }
-             }
+            }
+        }
 
         }
     }
@@ -83,6 +88,8 @@ public class Swipe : MonoBehaviour
     }
     void Update()
     {
+        Wall_Switch_T = Wall_Switch.GetComponent<Switch>().isOn;
+        Tile_Switch_T = Tile_Switch.GetComponent<Switch>().isOn;
        SwipeManager();
 
     }

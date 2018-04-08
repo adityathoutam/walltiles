@@ -15,7 +15,7 @@ public class QuadCreator : MonoBehaviour
      public Slider TileSizeXS, TileSizeYS, WallSizeXS, WallSizeYS, RowWidthS, ColoumnWidthS;
     public Text tTileSizeX, tTileSizeY, tWallSizeX, tWallSizeY, tRowWidth, tColoumnWidth;
 
-    int count=0;
+
 
     void InstantiateValues()
     {

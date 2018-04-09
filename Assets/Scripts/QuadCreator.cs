@@ -14,6 +14,8 @@ public class QuadCreator : MonoBehaviour
     GameObject WallCreated;
     WallCreation WallCreationScript;
 
+    public GameObject AllTilesMaterial;
+
     public float TileSizeX, TileSizeY, WallSizeX, WallSizeY, RowWidth, ColoumnWidth;
 
     public Slider TileSizeXS, TileSizeYS, WallSizeXS, WallSizeYS, RowWidthS, ColoumnWidthS;
@@ -52,7 +54,7 @@ public class QuadCreator : MonoBehaviour
     private void Update()
     {
         Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
-
+        Material mat =AllTilesMaterial.GetComponent<Renderer>().material;
 
 
         InstantiateValues();
@@ -75,6 +77,7 @@ public class QuadCreator : MonoBehaviour
         {
             WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
             WallCreated.GetComponent<WallCreation>().HalfTiles = HalfTiles.GetComponent<Switch>().isOn;
+            WallCreated.GetComponent<WallCreation>().material = mat;
         }
     }
 

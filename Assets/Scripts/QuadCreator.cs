@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 public class QuadCreator : MonoBehaviour
 {
     public GameObject WallPre;
     public GameObject ColorPicker;
     public GameObject HalfTiles;
     public Camera camera;
+    public Canvas canvas;
+    GraphicRaycaster m_Raycaster;
+    PointerEventData m_PointerEventData;
+    EventSystem m_EventSystem;
+    List<RaycastResult> results = new List<RaycastResult>();
 
 
     bool UserClicked = false;
     GameObject WallCreated;
     WallCreation WallCreationScript;
+
+    Sprite image;
 
     public GameObject AllTilesMaterial;
 
@@ -23,12 +30,12 @@ public class QuadCreator : MonoBehaviour
     public Text tTileSizeX, tTileSizeY, tWallSizeX, tWallSizeY, tRowWidth, tColoumnWidth;
     RaycastHit hit;
      Ray ray;
-void Start()
-{
+private void Awake()
+    {
 
-
-}
-
+        m_Raycaster =canvas.GetComponent<GraphicRaycaster>();
+        m_EventSystem = GetComponent<EventSystem>();
+    }
     void InstantiateValues()
     {
         WallCreationScript = WallPre.GetComponent<WallCreation>();
@@ -57,13 +64,35 @@ void Start()
         TileSizeY = TileSizeYS.value;
         tTileSizeY.text = " " + TileSizeYS.value;
     }
+    void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            m_PointerEventData = new PointerEventData(m_EventSystem);
+            m_PointerEventData.position = Input.mousePosition;
+            m_Raycaster.Raycast(m_PointerEventData, results);
+             CellSelected();
+        }
 
+    }
+ void CellSelected()
+    {
+        foreach (RaycastResult result in results)
+        {
+            if(result.gameObject.tag == "ColorTile")
+            {
+                 image = result.gameObject.GetComponent<Image>().sprite;
+            }
+        }
+    }
     private void Update()
     {
         Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
         Material mat =AllTilesMaterial.GetComponent<Renderer>().material;
 
- ray = camera.ScreenPointToRay(Input.mousePosition);
+         ray = camera.ScreenPointToRay(Input.mousePosition);
+         if(Input.GetKey(KeyCode.Mouse0))
+         {
         if (Physics.Raycast(ray, out hit)) {
             Transform objectHit = hit.transform;
 
@@ -74,6 +103,7 @@ void Start()
 
 
         }
+         }
 
 
 

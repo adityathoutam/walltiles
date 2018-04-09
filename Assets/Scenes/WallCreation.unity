@@ -442,6 +442,7 @@ MonoBehaviour:
   ColorPicker: {fileID: 600487328}
   HalfTiles: {fileID: 1164828249}
   camera: {fileID: 1243612526}
+  canvas: {fileID: 1758405802}
   AllTilesMaterial: {fileID: 261263359}
   TileSizeX: 1
   TileSizeY: 1

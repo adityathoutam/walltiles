@@ -8,6 +8,7 @@ public class QuadCreator : MonoBehaviour
     public GameObject WallPre;
     public GameObject ColorPicker;
     public GameObject HalfTiles;
+    public Camera camera;
 
 
     bool UserClicked = false;
@@ -20,7 +21,13 @@ public class QuadCreator : MonoBehaviour
 
     public Slider TileSizeXS, TileSizeYS, WallSizeXS, WallSizeYS, RowWidthS, ColoumnWidthS;
     public Text tTileSizeX, tTileSizeY, tWallSizeX, tWallSizeY, tRowWidth, tColoumnWidth;
+    RaycastHit hit;
+     Ray ray;
+void Start()
+{
 
+
+}
 
     void InstantiateValues()
     {
@@ -55,6 +62,21 @@ public class QuadCreator : MonoBehaviour
     {
         Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
         Material mat =AllTilesMaterial.GetComponent<Renderer>().material;
+
+ ray = camera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit)) {
+            Transform objectHit = hit.transform;
+
+            if(objectHit.gameObject.tag == "tile")
+            {
+            Debug.Log("lol");
+            }
+
+
+        }
+
+
+
 
 
         InstantiateValues();

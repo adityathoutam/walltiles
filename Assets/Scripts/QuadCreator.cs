@@ -30,11 +30,11 @@ public class QuadCreator : MonoBehaviour
     public Slider TileSizeXS, TileSizeYS, WallSizeXS, WallSizeYS, RowWidthS, ColoumnWidthS;
     public Text tTileSizeX, tTileSizeY, tWallSizeX, tWallSizeY, tRowWidth, tColoumnWidth;
     RaycastHit hit;
-     Ray ray;
-private void Awake()
+    Ray ray;
+    private void Awake()
     {
 
-        m_Raycaster =canvas.GetComponent<GraphicRaycaster>();
+        m_Raycaster = canvas.GetComponent<GraphicRaycaster>();
         m_EventSystem = GetComponent<EventSystem>();
     }
     void InstantiateValues()
@@ -72,71 +72,71 @@ private void Awake()
             m_PointerEventData = new PointerEventData(m_EventSystem);
             m_PointerEventData.position = Input.mousePosition;
             m_Raycaster.Raycast(m_PointerEventData, results);
-             CellSelected();
+            CellSelected();
         }
 
     }
- void CellSelected()
+    void CellSelected()
     {
         foreach (RaycastResult result in results)
         {
-            if(result.gameObject.tag == "ColorTile")
+            if (result.gameObject.tag == "ColorTile")
             {
-                 image = result.gameObject.GetComponent<Image>().sprite;
+                image = result.gameObject.GetComponent<Image>().sprite;
             }
         }
     }
-void ImageSelected()
-{
-    if(image!=null)
+    void ImageSelected()
     {
-        if(image.name == "Tile_A")
-        material = materialList[0];
+        if (image != null)
+        {
+            if (image.name == "Tile_A")
+                material = materialList[0];
 
-        if(image.name == "Tile_B")
-          material = materialList[1];
+            if (image.name == "Tile_B")
+                material = materialList[1];
 
-        if(image.name == "Tile_C")
-          material = materialList[2];
-        if(image.name == "Tile_D")
-          material = materialList[3];
-        if(image.name == "Tile_E")
-          material = materialList[4];
-        if(image.name == "Tile_F")
-          material = materialList[5];
-        if(image.name == "Tile_G")
-          material = materialList[6];
-        if(image.name == "Tile_H")
-          material = materialList[7];
-        if(image.name == "Tile_I")
-          material = materialList[8];
-        if(image.name == "Tile_J")
-          material = materialList[9];
+            if (image.name == "Tile_C")
+                material = materialList[2];
+            if (image.name == "Tile_D")
+                material = materialList[3];
+            if (image.name == "Tile_E")
+                material = materialList[4];
+            if (image.name == "Tile_F")
+                material = materialList[5];
+            if (image.name == "Tile_G")
+                material = materialList[6];
+            if (image.name == "Tile_H")
+                material = materialList[7];
+            if (image.name == "Tile_I")
+                material = materialList[8];
+            if (image.name == "Tile_J")
+                material = materialList[9];
 
 
+        }
+        
     }
-}
     private void Update()
     {
         Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
-        Material mat =AllTilesMaterial.GetComponent<Renderer>().material;
+        Material mat = AllTilesMaterial.GetComponent<Renderer>().material;
 
         ImageSelected();
-         ray = camera.ScreenPointToRay(Input.mousePosition);
-         if(Input.GetKey(KeyCode.Mouse0))
-         {
-        if (Physics.Raycast(ray, out hit)) {
-            Transform objectHit = hit.transform;
-
-            if(objectHit.gameObject.tag == "tile")
+        ray = camera.ScreenPointToRay(Input.mousePosition);
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            if (Physics.Raycast(ray, out hit))
             {
+                Transform objectHit = hit.transform;
 
-                objectHit.GetComponent<Renderer>().material = material;
+                if (objectHit.gameObject.tag == "ATM")
+                {
+                    Debug.Log("kik");
+                    objectHit.GetComponent<Renderer>().material = material;
+                }
             }
-
-
-            }
-         }
+        }
 
 
 
@@ -144,21 +144,21 @@ void ImageSelected()
 
         InstantiateValues();
 
-        if(UserClicked)
+        if (UserClicked)
         {
-            if(WallCreated==null)
+            if (WallCreated == null)
             {
-             WallCreated =  Instantiate(WallPre) as GameObject;
-             UserClicked=false;
+                WallCreated = Instantiate(WallPre) as GameObject;
+                UserClicked = false;
             }
             else
-            Create();
+                Create();
 
 
         }
 
 
-        if(WallCreated!=null)
+        if (WallCreated != null)
         {
             WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
             WallCreated.GetComponent<WallCreation>().HalfTiles = HalfTiles.GetComponent<Switch>().isOn;
@@ -173,6 +173,6 @@ void ImageSelected()
     void Create()
     {
         Destroy(WallCreated.gameObject);
-        UserClicked=true;
+        UserClicked = true;
     }
 }

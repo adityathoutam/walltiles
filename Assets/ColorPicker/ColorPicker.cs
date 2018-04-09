@@ -6,7 +6,7 @@ public class ColorPicker : MonoBehaviour {
 	public Texture2D colorSpace;
 	public Texture2D alphaGradient;
 
-     GameObject receiver;
+     public GameObject receiver;
 
     public string Title = "Color Picker";
 

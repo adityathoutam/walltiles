@@ -443,6 +443,17 @@ MonoBehaviour:
   HalfTiles: {fileID: 1164828249}
   camera: {fileID: 1243612526}
   canvas: {fileID: 1758405802}
+  materialList:
+  - {fileID: 2100000, guid: 537d0bda499aa4549be8acc2d9caf7ee, type: 2}
+  - {fileID: 2100000, guid: 29482f5cd711b8f4bb20c93ecda80f9f, type: 2}
+  - {fileID: 2100000, guid: 721adbc457cc82b4fbba05f01a1e424e, type: 2}
+  - {fileID: 2100000, guid: ce07eaf0ab4601544a23884dcb909733, type: 2}
+  - {fileID: 2100000, guid: dd3b543ee49bd654185f2a6d85aa9f21, type: 2}
+  - {fileID: 2100000, guid: 405557dd090bbfd499937839b1728b35, type: 2}
+  - {fileID: 2100000, guid: b1eda325017450e429b39a3ee680e58e, type: 2}
+  - {fileID: 2100000, guid: 47988881543d898469c4879df30c80fd, type: 2}
+  - {fileID: 2100000, guid: b49da94f9c1c4ae4db1dc0703b65a3f8, type: 2}
+  - {fileID: 2100000, guid: f1c14aa62261e1e4a9d194d89d1ce01d, type: 2}
   AllTilesMaterial: {fileID: 261263359}
   TileSizeX: 1
   TileSizeY: 1

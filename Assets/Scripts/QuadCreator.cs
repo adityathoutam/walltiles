@@ -14,13 +14,14 @@ public class QuadCreator : MonoBehaviour
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
     List<RaycastResult> results = new List<RaycastResult>();
-
+    public Material[] materialList;
 
     bool UserClicked = false;
     GameObject WallCreated;
     WallCreation WallCreationScript;
 
     Sprite image;
+    Material material;
 
     public GameObject AllTilesMaterial;
 
@@ -85,11 +86,42 @@ private void Awake()
             }
         }
     }
+void ImageSelected()
+{
+    if(image!=null)
+    {
+        if(image.name == "Tile_A")
+        material = materialList[0];
+
+        if(image.name == "Tile_B")
+          material = materialList[1];
+
+        if(image.name == "Tile_C")
+          material = materialList[2];
+        if(image.name == "Tile_D")
+          material = materialList[3];
+        if(image.name == "Tile_E")
+          material = materialList[4];
+        if(image.name == "Tile_F")
+          material = materialList[5];
+        if(image.name == "Tile_G")
+          material = materialList[6];
+        if(image.name == "Tile_H")
+          material = materialList[7];
+        if(image.name == "Tile_I")
+          material = materialList[8];
+        if(image.name == "Tile_J")
+          material = materialList[9];
+
+
+    }
+}
     private void Update()
     {
         Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
         Material mat =AllTilesMaterial.GetComponent<Renderer>().material;
 
+        ImageSelected();
          ray = camera.ScreenPointToRay(Input.mousePosition);
          if(Input.GetKey(KeyCode.Mouse0))
          {
@@ -98,11 +130,12 @@ private void Awake()
 
             if(objectHit.gameObject.tag == "tile")
             {
-            Debug.Log("lol");
+
+                objectHit.GetComponent<Renderer>().material = material;
             }
 
 
-        }
+            }
          }
 
 

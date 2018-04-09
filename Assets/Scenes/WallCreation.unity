@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964128, b: 0.5748176, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -446,13 +446,13 @@ MonoBehaviour:
   materialList:
   - {fileID: 2100000, guid: 537d0bda499aa4549be8acc2d9caf7ee, type: 2}
   - {fileID: 2100000, guid: 29482f5cd711b8f4bb20c93ecda80f9f, type: 2}
-  - {fileID: 2100000, guid: 721adbc457cc82b4fbba05f01a1e424e, type: 2}
+  - {fileID: 2100000, guid: 573fe0be6d6767942a411a52caabbd4a, type: 2}
   - {fileID: 2100000, guid: ce07eaf0ab4601544a23884dcb909733, type: 2}
   - {fileID: 2100000, guid: dd3b543ee49bd654185f2a6d85aa9f21, type: 2}
   - {fileID: 2100000, guid: 405557dd090bbfd499937839b1728b35, type: 2}
   - {fileID: 2100000, guid: b1eda325017450e429b39a3ee680e58e, type: 2}
   - {fileID: 2100000, guid: 47988881543d898469c4879df30c80fd, type: 2}
-  - {fileID: 2100000, guid: b49da94f9c1c4ae4db1dc0703b65a3f8, type: 2}
+  - {fileID: 0}
   - {fileID: 2100000, guid: f1c14aa62261e1e4a9d194d89d1ce01d, type: 2}
   AllTilesMaterial: {fileID: 261263359}
   TileSizeX: 1
@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.52314013, g: 0.8106252, b: 0.86764705, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1780,7 +1780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.625, g: 0.07352941, b: 0.07352941, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3571,6 +3571,7 @@ GameObject:
   - component: {fileID: 1243612525}
   - component: {fileID: 1243612524}
   - component: {fileID: 1243612528}
+  - component: {fileID: 1243612529}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3601,7 +3602,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.16176468, g: 0.11845243, b: 0.0047577894, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -3610,7 +3611,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 98
+  field of view: 100
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3655,6 +3656,17 @@ MonoBehaviour:
   Tile_Switch: {fileID: 2119655926}
   Panel: {fileID: 999292629}
   Panel2: {fileID: 691142986}
+--- !u!114 &1243612529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1243612523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34eaab33b2cafa468618b8180bd6b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1246218223
 GameObject:
   m_ObjectHideFlags: 0

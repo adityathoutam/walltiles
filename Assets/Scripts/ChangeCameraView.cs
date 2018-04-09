@@ -38,7 +38,7 @@ public class ChangeCameraView : MonoBehaviour
 
     public void Third()
     {
-        Camera.main.fieldOfView = 70;
+        Camera.main.fieldOfView = 100;
     }
 
 }

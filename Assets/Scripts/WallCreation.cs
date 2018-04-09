@@ -12,6 +12,7 @@ public class WallCreation : MonoBehaviour
     public GameObject TilePrefab;
     public GameObject QuadPrefab;
 
+
     public Material material;
 
      GameObject Quad;
@@ -23,6 +24,8 @@ public class WallCreation : MonoBehaviour
 
     Vector2 TopLeft, TopRight;
     int QuadWidth, QuadHeight, QuadArea;
+
+    public bool HalfTiles;
 
 
     List<GameObject> Tiles = new List<GameObject>();
@@ -101,12 +104,13 @@ public class WallCreation : MonoBehaviour
 
 
 
-
+        if(!HalfTiles)
+        {
         if(Tiles[i].transform.position.x>TopRight.x)
             Tiles[i].SetActive(false);
         if(Tiles[i].transform.position.y<-boxCollider.bounds.max.y + scale.y / 2)
          Tiles[i].SetActive(false);
-
+        }
 
     }
 }

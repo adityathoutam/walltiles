@@ -7,6 +7,9 @@ public class QuadCreator : MonoBehaviour
 {
     public GameObject WallPre;
     public GameObject ColorPicker;
+    public GameObject HalfTiles;
+
+
     bool UserClicked = false;
     GameObject WallCreated;
     WallCreation WallCreationScript;
@@ -51,6 +54,7 @@ public class QuadCreator : MonoBehaviour
         Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
 
 
+
         InstantiateValues();
 
         if(UserClicked)
@@ -70,6 +74,7 @@ public class QuadCreator : MonoBehaviour
         if(WallCreated!=null)
         {
             WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
+            WallCreated.GetComponent<WallCreation>().HalfTiles = HalfTiles.GetComponent<Switch>().isOn;
         }
     }
 

@@ -93,24 +93,23 @@ public class QuadCreator : MonoBehaviour
             if (image.name == "Tile_A")
                 material = materialList[0];
 
-            if (image.name == "Tile_B")
+            else if (image.name == "Tile_B")
                 material = materialList[1];
-
-            if (image.name == "Tile_C")
+            else if (image.name == "Tile_C")
                 material = materialList[2];
-            if (image.name == "Tile_D")
+            else if (image.name == "Tile_D")
                 material = materialList[3];
-            if (image.name == "Tile_E")
+            else if (image.name == "Tile_E")
                 material = materialList[4];
-            if (image.name == "Tile_F")
+            else if (image.name == "Tile_F")
                 material = materialList[5];
-            if (image.name == "Tile_G")
+            else if (image.name == "Tile_G")
                 material = materialList[6];
-            if (image.name == "Tile_H")
+            else if (image.name == "Tile_H")
                 material = materialList[7];
-            if (image.name == "Tile_I")
+            else if (image.name == "Tile_I")
                 material = materialList[8];
-            if (image.name == "Tile_J")
+            else if (image.name == "Tile_J")
                 material = materialList[9];
 
 

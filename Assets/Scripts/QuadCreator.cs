@@ -107,7 +107,7 @@ public class QuadCreator : MonoBehaviour
                 material = materialList[6];
             else if (image.name == "Tile_H")
                 material = materialList[7];
-            else if (image.name == "Tile_I")
+            else if (image.name == "Tile_I")   
                 material = materialList[8];
             else if (image.name == "Tile_J")
                 material = materialList[9];
@@ -131,7 +131,7 @@ public class QuadCreator : MonoBehaviour
 
                 if (objectHit.gameObject.tag == "ATM")
                 {
-                    Debug.Log("kik");
+                   // Debug.Log("kik");
                     objectHit.GetComponent<Renderer>().material = material;
                 }
             }

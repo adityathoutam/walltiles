@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Swipe : MonoBehaviour
 {
-    public GameObject Wall_Switch;
-    public GameObject Tile_Switch;
-    bool Wall_Switch_T,Tile_Switch_T;
+   // public GameObject Wall_Switch;
+   // public GameObject Tile_Switch;
+   // bool Wall_Switch_T,Tile_Switch_T;
 
 
 
@@ -26,7 +26,7 @@ public class Swipe : MonoBehaviour
         rect2 = Panel2.GetComponent<RectTransform>();
 
 
-        SetRect(rect, 225, 1000, 195, -665);
+        SetRect(rect, 180, 1300,240, -1100);
         SetRect(rect2, -1795, 90, 2215, 60);
     }
 
@@ -44,8 +44,8 @@ public class Swipe : MonoBehaviour
         {
              deltaSwipe = Touchposition - Input.mousePosition;
 
-        if(Tile_Switch_T)
-        {
+        // if(Tile_Switch_T)
+        // {
             if (Mathf.Abs(deltaSwipe.y) > swipeY)
             {
                 if (deltaSwipe.y < 0)
@@ -54,9 +54,9 @@ public class Swipe : MonoBehaviour
                 }
                 else
                 {
-                    SetRect(rect, 225, 1000, 195, -665);
+                    SetRect(rect, 180, 1300, 240, -1100);
                 }
-            }
+            // }
 
         }
     }
@@ -66,8 +66,8 @@ public class Swipe : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             deltaSwipe = Touchposition - Input.mousePosition;
-            if (Wall_Switch_T)
-            {
+            // if (Wall_Switch_T)
+            // {
                 if (Mathf.Abs(deltaSwipe.x) > swipeX)
                 {
                     if (deltaSwipe.x < 0)
@@ -78,7 +78,7 @@ public class Swipe : MonoBehaviour
                     {
                         SetRect(rect2, -1795, 90, 2215, 60);
                     }
-                }
+               // }
             }
         }
     }
@@ -91,8 +91,8 @@ public class Swipe : MonoBehaviour
     }
     void Update()
     {
-        Wall_Switch_T = Wall_Switch.GetComponent<Switch>().isOn;
-        Tile_Switch_T = Tile_Switch.GetComponent<Switch>().isOn;
+       // Wall_Switch_T = Wall_Switch.GetComponent<Switch>().isOn;
+      //  Tile_Switch_T = Tile_Switch.GetComponent<Switch>().isOn;
        SwipeManager();
 
     }

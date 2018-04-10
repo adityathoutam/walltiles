@@ -29,16 +29,18 @@ public class CameraHandler : MonoBehaviour {
     {
         if (Input.touchSupported && Application.platform != RuntimePlatform.WebGLPlayer)
         {
-            HandleTouch();
+            HandleTouch();          
         }
         else
         {
-            HandleMouse();
+                HandleMouse();
         }
     }
 
     void HandleTouch()
     {
+        int touchcount = 0;
+
         switch (Input.touchCount)
         {
 
@@ -50,8 +52,14 @@ public class CameraHandler : MonoBehaviour {
                 Touch touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Began)
                 {
-                    lastPanPosition = touch.position;
-                    panFingerId = touch.fingerId;
+                    touchcount++;
+
+                    if (touchcount >= 2)
+                    {
+                        Debug.Log("tap");
+                        lastPanPosition = touch.position;
+                        panFingerId = touch.fingerId;
+                    }
                 }
                 else if (touch.fingerId == panFingerId && touch.phase == TouchPhase.Moved)
                 {
@@ -88,6 +96,7 @@ public class CameraHandler : MonoBehaviour {
 
     void HandleMouse()
     {
+       
         // On mouse down, capture it's position.
         // Otherwise, if the mouse is still down, pan the camera.
         if (Input.GetMouseButtonDown(0))

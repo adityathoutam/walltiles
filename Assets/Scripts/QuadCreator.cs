@@ -23,7 +23,7 @@ public class QuadCreator : MonoBehaviour
     Sprite image;
     Material material;
 
-    public GameObject AllTilesMaterial;
+
 
     public float TileSizeX, TileSizeY, WallSizeX, WallSizeY, RowWidth, ColoumnWidth;
 
@@ -107,21 +107,23 @@ public class QuadCreator : MonoBehaviour
                 material = materialList[6];
             else if (image.name == "Tile_H")
                 material = materialList[7];
-            else if (image.name == "Tile_I")   
+            else if (image.name == "Tile_I")
                 material = materialList[8];
             else if (image.name == "Tile_J")
                 material = materialList[9];
 
 
         }
-        
+
     }
     private void Update()
     {
         Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
-        Material mat = AllTilesMaterial.GetComponent<Renderer>().material;
+
 
         ImageSelected();
+        if(material!=null)
+          Debug.Log(material.name);
         ray = camera.ScreenPointToRay(Input.mousePosition);
         if (Input.GetKey(KeyCode.Mouse0))
         {
@@ -129,9 +131,9 @@ public class QuadCreator : MonoBehaviour
             {
                 Transform objectHit = hit.transform;
 
-                if (objectHit.gameObject.tag == "ATM")
+                if (objectHit.gameObject.tag == "tile")
                 {
-                   // Debug.Log("kik");
+                    Debug.Log("kik");
                     objectHit.GetComponent<Renderer>().material = material;
                 }
             }
@@ -161,7 +163,6 @@ public class QuadCreator : MonoBehaviour
         {
             WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
             WallCreated.GetComponent<WallCreation>().HalfTiles = HalfTiles.GetComponent<Switch>().isOn;
-            WallCreated.GetComponent<WallCreation>().material = mat;
         }
     }
 

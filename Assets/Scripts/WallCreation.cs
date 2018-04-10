@@ -12,9 +12,6 @@ public class WallCreation : MonoBehaviour
     public GameObject TilePrefab;
     public GameObject QuadPrefab;
 
-
-    public Material material;
-
      GameObject Quad;
 
     public Vector3 cubeScale;
@@ -75,7 +72,6 @@ public class WallCreation : MonoBehaviour
         {
             SetPosition(i);
             Tiles[i].transform.parent = Quad.transform;
-             Tiles[i].GetComponent<Renderer>().material = material;
         }
          Quad.GetComponent<Renderer>().material.color = QuadColor;
 

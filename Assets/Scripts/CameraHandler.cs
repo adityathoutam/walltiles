@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraHandler : MonoBehaviour {
 
     private static readonly float PanSpeed = 20f;
-    private static readonly float ZoomSpeedTouch = 0.1f;
-    private static readonly float ZoomSpeedMouse = 0.5f;
+    private static readonly float ZoomSpeedTouch = 1f;
+    private static readonly float ZoomSpeedMouse = 5f;
 
     private static readonly float[] BoundsX = new float[] { -10f, 5f };
     private static readonly float[] BoundsZ = new float[] { -18f, -4f };
@@ -68,7 +68,7 @@ public class CameraHandler : MonoBehaviour {
                 }
                 else
                 {
-                    // Zoom based on the distance between the new positions compared to the 
+                    // Zoom based on the distance between the new positions compared to the
                     // distance between the previous positions.
                     float newDistance = Vector2.Distance(newPositions[0], newPositions[1]);
                     float oldDistance = Vector2.Distance(lastZoomPositions[0], lastZoomPositions[1]);

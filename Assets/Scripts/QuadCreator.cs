@@ -122,8 +122,6 @@ public class QuadCreator : MonoBehaviour
 
 
         ImageSelected();
-        if(material!=null)
-          Debug.Log(material.name);
         ray = camera.ScreenPointToRay(Input.mousePosition);
         if (Input.GetKey(KeyCode.Mouse0))
         {

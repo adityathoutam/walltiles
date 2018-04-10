@@ -131,7 +131,6 @@ public class QuadCreator : MonoBehaviour
 
                 if (objectHit.gameObject.tag == "tile")
                 {
-                    Debug.Log("kik");
                     objectHit.GetComponent<Renderer>().material = material;
                 }
             }

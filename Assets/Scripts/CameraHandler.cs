@@ -39,35 +39,28 @@ public class CameraHandler : MonoBehaviour {
 
     void HandleTouch()
     {
-        int touchcount = 0;
 
-        switch (Input.touchCount)
-        {
+       // switch (Input.touchCount)
+       // {
 
-            case 1: // Panning
-                wasZoomingLastFrame = false;
+            //case 1: // Panning
+            //    wasZoomingLastFrame = false;
 
-                // If the touch began, capture its position and its finger ID.
-                // Otherwise, if the finger ID of the touch doesn't match, skip it.
-                Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Began)
-                {
-                    touchcount++;
+            //    // If the touch began, capture its position and its finger ID.
+            //    // Otherwise, if the finger ID of the touch doesn't match, skip it.
+            //    Touch touch = Input.GetTouch(0);
+            //    if (touch.phase == TouchPhase.Began)
+            //    {
+            //        lastPanPosition = touch.position;
+            //        panFingerId = touch.fingerId;
+            //    }
+            //    else if (touch.fingerId == panFingerId && touch.phase == TouchPhase.Moved)
+            //    {
+            //        PanCamera(touch.position);
+            //    }
+            //    break;
 
-                    if (touchcount >= 2)
-                    {
-                        Debug.Log("tap");
-                        lastPanPosition = touch.position;
-                        panFingerId = touch.fingerId;
-                    }
-                }
-                else if (touch.fingerId == panFingerId && touch.phase == TouchPhase.Moved)
-                {
-                    PanCamera(touch.position);
-                }
-                break;
-
-            case 2: // Zooming
+            //case 2: // Zooming
                 Vector2[] newPositions = new Vector2[] { Input.GetTouch(0).position, Input.GetTouch(1).position };
                 if (!wasZoomingLastFrame)
                 {
@@ -86,12 +79,12 @@ public class CameraHandler : MonoBehaviour {
 
                     lastZoomPositions = newPositions;
                 }
-                break;
+               // break;
 
-            default:
-                wasZoomingLastFrame = false;
-                break;
-        }
+          //  default:
+               // wasZoomingLastFrame = false;
+              //  break;
+       // }
     }
 
     void HandleMouse()

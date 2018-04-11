@@ -2242,7 +2242,7 @@ GameObject:
   - component: {fileID: 926903002}
   - component: {fileID: 926903001}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: ColorPickerSupport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

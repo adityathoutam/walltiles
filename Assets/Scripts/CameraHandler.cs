@@ -9,8 +9,8 @@ public class CameraHandler : MonoBehaviour {
     private static readonly float ZoomSpeedMouse = 5f;
 
     private static readonly float[] BoundsX = new float[] { -10f, 5f };
-    private static readonly float[] BoundsZ = new float[] { -18f, -4f };
-    private static readonly float[] ZoomBounds = new float[] { 10f, 85f };
+    public static float[] BoundsZ = new float[] { -5f, -1f };
+    private static readonly float[] ZoomBounds = new float[] { 10f, 10f };
 
     private Camera cam;
 
@@ -33,7 +33,7 @@ public class CameraHandler : MonoBehaviour {
         }
         else
         {
-                HandleMouse();
+            HandleMouse();
         }
     }
 

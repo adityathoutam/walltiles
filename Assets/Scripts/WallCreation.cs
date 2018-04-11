@@ -31,9 +31,13 @@ public class WallCreation : MonoBehaviour
     {
 
 
+       
+
         Quad = Instantiate(QuadPrefab) as GameObject;
 
         Quad.transform.parent = transform;
+
+        
 
         TilePrefab.transform.localScale = cubeScale;
         Quad.transform.localScale = QuadScale;
@@ -44,10 +48,23 @@ public class WallCreation : MonoBehaviour
         QuadArea = QuadHeight/(int)scale.y* QuadWidth/(int)scale.x;
 
         Instantiate();
+
+       
+
+        //float cameraDistance = 2.0f; // Constant factor
+        //Vector3 objectSizes = boxCollider.bounds.max - boxCollider.bounds.min;
+        //float objectSize = Mathf.Max(objectSizes.x, objectSizes.y, objectSizes.z);
+        //float cameraView = 2.0f * Mathf.Tan(0.5f * Mathf.Deg2Rad * Camera.main.fieldOfView); // Visible height 1 meter in front
+        //float distance = cameraDistance * objectSize / cameraView; // Combined wanted distance from the object
+        //distance += 0.5f * objectSize; // Estimated offset from the center to the outside of the object
+        //Camera.main.transform.position = boxCollider.bounds.center - distance * Camera.main.transform.forward*-20f;
     }
 
     void Instantiate()
     {
+
+
+
         for (int i = 0; i < QuadArea+1; i++)
         {
             GameObject go = Instantiate(TilePrefab, Vector3.zero, Quaternion.identity);
@@ -68,6 +85,8 @@ public class WallCreation : MonoBehaviour
 
     void Update()
     {
+
+
         for (int i = 0; i < QuadArea; i++)
         {
             SetPosition(i);
@@ -75,7 +94,7 @@ public class WallCreation : MonoBehaviour
         }
          Quad.GetComponent<Renderer>().material.color = QuadColor;
 
-
+        setFovForObject(Camera.main, Quad);
     }
     void SetPosition(int i)
     {
@@ -108,5 +127,36 @@ public class WallCreation : MonoBehaviour
          Tiles[i].SetActive(false);
         }
 
+    }
+
+    void setFovForObject(Camera camera, GameObject go)
+    {
+        Bounds bounds = getBounds(go);
+
+        float fovY = GetFieldOfView(camera, go.transform, bounds.size.y);
+        float fovX = GetFieldOfView(camera, go.transform, bounds.size.x) * ((float)camera.pixelHeight / camera.pixelWidth);
+
+        camera.fieldOfView = Mathf.Max(fovY, fovX);
+    }
+
+    float GetFieldOfView(Camera cam, Transform g, float size)
+    {
+        Vector3 diff = g.position - cam.transform.position;
+        float distance = Vector3.Dot(diff, cam.transform.forward);
+        float angle = Mathf.Atan((size * .5f) / distance);
+        return angle * 2f * Mathf.Rad2Deg;
+    }
+
+    public Bounds getBounds(GameObject go)
+    {
+        Renderer renderer = go.GetComponent<Renderer>();
+        Bounds combinedBounds = new Bounds();
+        Renderer[] renderers = go.GetComponentsInChildren<Renderer>();
+        foreach (Renderer render in renderers)
+        {
+            if (render != renderer) combinedBounds.Encapsulate(render.bounds);
+        }
+
+        return combinedBounds;
     }
 }

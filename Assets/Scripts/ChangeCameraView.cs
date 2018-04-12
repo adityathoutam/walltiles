@@ -5,46 +5,54 @@ using UnityEngine;
 public class ChangeCameraView : MonoBehaviour
 {
 
-    private void Start()
+    public bool CameraMan;
+    public GameObject GameManager;
+
+
+    private bool firstClick = false, secondClick = false;
+
+    void Update()
+
     {
-        
+        CameraMan = GameManager.GetComponent<QuadCreator>().CameraMan;
+    }
+    public void OnClicked()
+    {
+       if(CameraMan)
+       {
+
+       if (firstClick)
+       {
+           First();
+           firstClick = false;
+       }
+       else if(secondClick)
+       {
+           Second();
+           secondClick = false;
+       }
+       else
+       {
+           Third();
+           firstClick = true;
+           secondClick = true;
+       }
+       }
     }
 
-    //private bool firstClick = false, secondClick = false;
+    public void First()
+    {
+       Camera.main.fieldOfView = 12;
+    }
 
-    //public void OnClicked()
-    //{
-    //    if (firstClick)
-    //    {
-    //        First();
-    //        firstClick = false;
-    //    }
-    //    else if(secondClick)
-    //    {
-    //        Second();
-    //        secondClick = false;
-    //    }
-    //    else
-    //    {
-    //        Third();
-    //        firstClick = true;
-    //        secondClick = true;
-    //    }
-    //}
+    public void Second()
+    {
+       Camera.main.fieldOfView = 40;
+    }
 
-    //public void First()
-    //{
-    //    Camera.main.fieldOfView = 12;
-    //}
-
-    //public void Second()
-    //{
-    //    Camera.main.fieldOfView = 40;
-    //}
-
-    //public void Third()
-    //{
-    //    Camera.main.fieldOfView = 100;
-    //}
+    public void Third()
+    {
+       Camera.main.fieldOfView = 100;
+    }
 
 }

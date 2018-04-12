@@ -50,7 +50,6 @@ public class QuadCreator : MonoBehaviour
         WallCreationScript.RowWidth = RowWidth;
         WallCreationScript.ColoumnWidth = ColoumnWidth;
 
-        Debug.Log(WallCreationScript.boolcamera);
 
         WallCreationScript.boolcamera = CameraMan;
 

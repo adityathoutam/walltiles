@@ -42,17 +42,17 @@ public class ChangeCameraView : MonoBehaviour
 
     public void First()
     {
-       Camera.main.fieldOfView = 12;
+       Camera.main.fieldOfView =30;
     }
 
     public void Second()
     {
-       Camera.main.fieldOfView = 40;
+       Camera.main.fieldOfView = 20;
     }
 
     public void Third()
     {
-       Camera.main.fieldOfView = 100;
+       Camera.main.fieldOfView = 10;
     }
 
 }

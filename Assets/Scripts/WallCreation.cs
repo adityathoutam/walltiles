@@ -22,7 +22,7 @@ public class WallCreation : MonoBehaviour
 
 
     Vector2 TopLeft, TopRight;
-    int QuadWidth, QuadHeight, QuadArea;
+    float QuadWidth, QuadHeight, QuadArea;
 
     public bool HalfTiles;
 
@@ -45,9 +45,11 @@ public class WallCreation : MonoBehaviour
         Quad.transform.localScale = QuadScale;
           scale = TilePrefab.transform.localScale;
         boxCollider = Quad.GetComponent<BoxCollider>();
-        QuadWidth = (int)Quad.transform.localScale.x;
-        QuadHeight = (int)Quad.transform.localScale.y;
-        QuadArea = QuadHeight/(int)scale.y* QuadWidth/(int)scale.x;
+        QuadWidth = Quad.transform.localScale.x;
+        QuadHeight = Quad.transform.localScale.y; 
+        QuadArea = QuadHeight/scale.y * QuadWidth/scale.x; 
+                                                           
+
 
         Instantiate();
 
@@ -58,7 +60,7 @@ public class WallCreation : MonoBehaviour
 
 
 
-        for (int i = 0; i < QuadArea+1; i++)
+        for (int i = 0; i < QuadArea+1; ++i)
         {
             GameObject go = Instantiate(TilePrefab, Vector3.zero, Quaternion.identity);
             go.transform.parent = Quad.transform.parent;
@@ -95,7 +97,7 @@ public class WallCreation : MonoBehaviour
     {
         Tiles[0].transform.position = TopLeft;
 
-        int k = QuadWidth/(int)scale.x;
+        int k = (int)(QuadWidth/scale.x);
 
         for (int j = k; j < QuadArea; j = j + k)
         {
@@ -155,3 +157,5 @@ public class WallCreation : MonoBehaviour
         return combinedBounds;
     }
 }
+
+

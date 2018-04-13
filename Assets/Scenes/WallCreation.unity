@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 3654932}
   - component: {fileID: 3654931}
   - component: {fileID: 3654930}
+  - component: {fileID: 3654929}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -131,6 +132,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3654929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3654928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34eaab33b2cafa468618b8180bd6b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3654930
 MonoBehaviour:
   m_ObjectHideFlags: 0

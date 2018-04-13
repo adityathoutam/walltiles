@@ -26,8 +26,18 @@ public class Swipe : MonoBehaviour
         rect2 = Panel2.GetComponent<RectTransform>();
 
 
-        SetRect(rect, 180, 1300,240, -1100);
-        SetRect(rect2, -1795, 90, 2215, 60);
+        SetRect(rect, -10,1076,10,-1076);
+        SetRect(rect2, -2100, 10, 2100, 10);
+    }
+
+    public void OnClickP2()
+    {
+        SetRect(rect2, -2100, 10, 2100, 10);
+    }
+
+    public void OnClickP1()
+    {
+        SetRect(rect, -10, 1076, 10, -1076);
     }
 
     void SwipeManager()
@@ -50,12 +60,9 @@ public class Swipe : MonoBehaviour
             {
                 if (deltaSwipe.y < 0)
                 {
-                    SetRect(rect, 180, 90, 240, 60);
+                    SetRect(rect, 10, 10, 10, 10);
                 }
-                else
-                {
-                    SetRect(rect, 180, 1300, 240, -1100);
-                }
+                
             // }
 
         }
@@ -72,12 +79,9 @@ public class Swipe : MonoBehaviour
                 {
                     if (deltaSwipe.x < 0)
                     {
-                        SetRect(rect2, 180, 90, 240, 60);
+                        SetRect(rect2, 10,10,10,10);
                     }
-                    else
-                    {
-                        SetRect(rect2, -1795, 90, 2215, 60);
-                    }
+
                // }
             }
         }

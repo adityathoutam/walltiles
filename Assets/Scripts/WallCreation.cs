@@ -90,7 +90,7 @@ public class WallCreation : MonoBehaviour
         }
          Quad.GetComponent<Renderer>().material.color = QuadColor;
 
-        if(!boolcamera)
+        if(Camera.main!=null)
         setFovForObject(Camera.main, this.gameObject);
     }
     void SetPosition(int i)

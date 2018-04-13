@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class QuadCreator : MonoBehaviour
 {
-    public bool CameraMan;
+    
     public GameObject WallPre;
     public GameObject ColorPicker;
     public GameObject HalfTiles;
@@ -16,7 +16,6 @@ public class QuadCreator : MonoBehaviour
     EventSystem m_EventSystem;
     List<RaycastResult> results = new List<RaycastResult>();
     public Material[] materialList;
-    public Toggle toggle;
     bool UserClicked = false;
     GameObject WallCreated;
     WallCreation WallCreationScript;
@@ -51,7 +50,7 @@ public class QuadCreator : MonoBehaviour
         WallCreationScript.ColoumnWidth = ColoumnWidth;
 
 
-        WallCreationScript.boolcamera = CameraMan;
+
 
         RowWidth = RowWidthS.value;
         tRowWidth.text = " " + RowWidthS.value;
@@ -130,15 +129,10 @@ public class QuadCreator : MonoBehaviour
         material = materialList[0];
 
     }
-    public void Togle()
-    {
-        CameraMan = toggle.isOn;
-
-
-    }
+   
     private void Update()
     {
-        Togle();
+
         Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
 
 

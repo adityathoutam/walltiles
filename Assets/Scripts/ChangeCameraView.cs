@@ -6,16 +6,24 @@ public class ChangeCameraView : MonoBehaviour
 {
 
     public bool CameraMan;
-    public GameObject GameManager;
 
+    public Camera mainCamera;
+    public Camera ZoomCamera;
+
+    private bool CamSwitch = false;
+
+
+    public void SwitchZoom()
+    {
+        CamSwitch = !CamSwitch;
+        mainCamera.gameObject.SetActive(CamSwitch);
+        ZoomCamera.gameObject.SetActive(!CamSwitch);
+      
+    }
 
     private bool firstClick = false, secondClick = false;
 
-    void Update()
-
-    {
-        CameraMan = GameManager.GetComponent<QuadCreator>().CameraMan;
-    }
+  
     public void OnClicked()
     {
        if(CameraMan)

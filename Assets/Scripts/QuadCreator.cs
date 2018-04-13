@@ -98,27 +98,33 @@ public class QuadCreator : MonoBehaviour
         {
             if (image.name == "Tile_A")
                 material = materialList[0];
-
+                
             else if (image.name == "Tile_B")
                 material = materialList[1];
+
             else if (image.name == "Tile_C")
                 material = materialList[2];
+
             else if (image.name == "Tile_D")
                 material = materialList[3];
+
             else if (image.name == "Tile_E")
                 material = materialList[4];
+
             else if (image.name == "Tile_F")
                 material = materialList[5];
+
             else if (image.name == "Tile_G")
                 material = materialList[6];
+
             else if (image.name == "Tile_H")
                 material = materialList[7];
+
             else if (image.name == "Tile_I")
                 material = materialList[8];
+
             else if (image.name == "Tile_J")
                 material = materialList[9];
-
-
         }
         else
         material = materialList[0];
@@ -150,11 +156,6 @@ public class QuadCreator : MonoBehaviour
                 }
             }
         }
-
-
-
-
-
         InstantiateValues();
 
         if (UserClicked)
@@ -165,16 +166,14 @@ public class QuadCreator : MonoBehaviour
                 UserClicked = false;
             }
             else
+
                 Create();
-
-
         }
-
 
         if (WallCreated != null)
         {
             WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
-            WallCreated.GetComponent<WallCreation>().HalfTiles = HalfTiles.GetComponent<Switch>().isOn;
+           // WallCreated.GetComponent<WallCreation>().HalfTiles = HalfTiles.GetComponent<Switch>().isOn;
         }
     }
 

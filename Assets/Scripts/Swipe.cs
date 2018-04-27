@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class Swipe : MonoBehaviour
 {
-   // public GameObject Wall_Switch;
-   // public GameObject Tile_Switch;
-   // bool Wall_Switch_T,Tile_Switch_T;
+    // public GameObject Wall_Switch;
+    // public GameObject Tile_Switch;
+    // bool Wall_Switch_T,Tile_Switch_T;
 
-
+    private bool change = false;
+    public Animator anim;
 
     Vector3 Touchposition;
     RectTransform rect,rect2;
@@ -20,6 +21,11 @@ public class Swipe : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+        anim = Panel2.GetComponent<Animator>();
+        anim.enabled = false;
+
+
         Panel.SetActive(true);
         Panel2.SetActive(true);
         rect = Panel.GetComponent<RectTransform>();
@@ -30,6 +36,27 @@ public class Swipe : MonoBehaviour
         SetRect(rect2, -2100, 10, 2100, 10);
     }
 
+    public void MenuIN()
+    {
+        anim.enabled = true;
+
+        anim.Play("MenuIN");
+
+        change = true;
+
+        Time.timeScale = 0;
+    }
+
+    public void MenuOUT()
+    {
+
+        change = false;
+
+        anim.Play("MenuOUT");
+
+        Time.timeScale = 1;
+    }
+
     public void OnClickP2()
     {
         SetRect(rect2, -2100, 10, 2100, 10);
@@ -38,6 +65,13 @@ public class Swipe : MonoBehaviour
     public void OnClickP1()
     {
         SetRect(rect, -10, 1076, 10, -1076);
+    }
+
+    public void Options()
+    {
+        if (!change)
+            MenuIN();
+        
     }
 
     void SwipeManager()
@@ -52,21 +86,23 @@ public class Swipe : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-             deltaSwipe = Touchposition - Input.mousePosition;
+               // MenuOUT();
+            // deltaSwipe = Touchposition - Input.mousePosition;
 
-        // if(Tile_Switch_T)
-        // {
-            if (Mathf.Abs(deltaSwipe.y) > swipeY)
-            {
-                if (deltaSwipe.y < 0)
-                {
-                    SetRect(rect, 10, 10, 10, 10);
-                }
+        //// if(Tile_Switch_T)
+        //// {
+        //    if (Mathf.Abs(deltaSwipe.y) > swipeY)
+        //    {
+        //        if (deltaSwipe.y < 0)
+        //        {
+        //            SetRect(rect, 10, 10, 10, 10);
+        //        }
                 
-            // }
+        //    // }
 
-        }
+        //}
     }
+
     }
     if(Touchposition.x<Screen.width/2)
     {

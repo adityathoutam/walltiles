@@ -170,7 +170,7 @@ public class QuadCreator : MonoBehaviour
            // WallCreated.GetComponent<WallCreation>().HalfTiles = HalfTiles.GetComponent<Switch>().isOn;
         }
     }
-
+    
     public void CreateWall()
     {
         UserClicked = true;

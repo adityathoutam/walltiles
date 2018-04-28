@@ -35,6 +35,7 @@ public class Swipe : MonoBehaviour
         SetRect(rect, -10,1076,10,-1076);
         SetRect(rect2, -2100, 10, 2100, 10);
     }
+    
 
     public void MenuIN()
     {

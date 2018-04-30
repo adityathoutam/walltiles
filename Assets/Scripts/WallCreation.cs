@@ -11,7 +11,7 @@ public class WallCreation : MonoBehaviour
     public float RowWidth,ColoumnWidth;
     public GameObject TilePrefab;
     public GameObject QuadPrefab;
-    public GameObject []room;
+   
 
      GameObject Quad;
 

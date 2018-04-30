@@ -11,6 +11,7 @@ public class WallCreation : MonoBehaviour
     public float RowWidth,ColoumnWidth;
     public GameObject TilePrefab;
     public GameObject QuadPrefab;
+    public GameObject []room;
 
      GameObject Quad;
 
@@ -33,26 +34,27 @@ public class WallCreation : MonoBehaviour
     {
 
 
+        foreach (GameObject child in room)
+        {
+
+            Quad = Instantiate(child) as GameObject;
+
+            Quad.transform.parent = transform;
 
 
-        Quad = Instantiate(QuadPrefab) as GameObject;
 
-        Quad.transform.parent = transform;
-
-
-
-        TilePrefab.transform.localScale = cubeScale;
-        Quad.transform.localScale = QuadScale;
-          scale = TilePrefab.transform.localScale;
-        boxCollider = Quad.GetComponent<BoxCollider>();
-        QuadWidth = Quad.transform.localScale.x;
-        QuadHeight = Quad.transform.localScale.y; 
-        QuadArea = QuadHeight/scale.y * QuadWidth/scale.x; 
-                                                           
+            TilePrefab.transform.localScale = cubeScale;
+            Quad.transform.localScale = QuadScale;
+            scale = TilePrefab.transform.localScale;
+            boxCollider = Quad.GetComponent<BoxCollider>();
+            QuadWidth = Quad.transform.localScale.x;
+            QuadHeight = Quad.transform.localScale.y;
+            QuadArea = QuadHeight / scale.y * QuadWidth / scale.x;
 
 
-        Instantiate();
 
+            Instantiate();
+        }
     }
 
     void Instantiate()

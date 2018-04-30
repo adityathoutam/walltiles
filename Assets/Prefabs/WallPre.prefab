@@ -54,9 +54,10 @@ MonoBehaviour:
   RowWidth: 0.1
   ColoumnWidth: 0.1
   TilePrefab: {fileID: 1033852473814368, guid: fb19056962705544e97da361ca1b96ae, type: 2}
-  QuadPrefab: {fileID: 1249737352313122, guid: 94ffacc33ab0e104aa297c4fadabc726, type: 2}
+  QuadPrefab: {fileID: 1132281525825374, guid: 94a012542a1cec94d896c04cbc8e83a3, type: 2}
+  room: []
   cubeScale: {x: 1, y: 1, z: 0.1}
-  QuadScale: {x: 10, y: 5, z: 1}
+  QuadScale: {x: 5, y: 5, z: 1}
   QuadColor: {r: 0, g: 0, b: 0, a: 0}
   boolcamera: 1
   HalfTiles: 0

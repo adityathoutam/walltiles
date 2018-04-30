@@ -17,7 +17,7 @@ public class UserInfo : MonoBehaviour {
 	public Slider TileHeightSlider;
 	public GameObject TileWidthDisplay;
 	public Slider TileWidthSlider;
-	
+
 	private void Update()
 	{
 		WallHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",WallHeightSlider.value);

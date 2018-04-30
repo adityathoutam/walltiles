@@ -5314,7 +5314,7 @@ MonoBehaviour:
   RowWidth: 0.1
   ColoumnWidth: 0.1
   scale: {x: 1, y: 1}
-  XYZ_Position: {x: 0, y: -6.2, z: -3.2}
+  XYZ_Position: {x: 0, y: -5.05, z: -3.2}
   X_Angle: 90
   Y_Angle: 45
 --- !u!4 &1562447340

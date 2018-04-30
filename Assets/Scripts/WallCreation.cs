@@ -34,10 +34,9 @@ public class WallCreation : MonoBehaviour
     {
 
 
-        foreach (GameObject child in room)
-        {
+       
 
-            Quad = Instantiate(child) as GameObject;
+            Quad = Instantiate(QuadPrefab) as GameObject;
 
             Quad.transform.parent = transform;
 
@@ -54,7 +53,7 @@ public class WallCreation : MonoBehaviour
 
 
             Instantiate();
-        }
+        
     }
 
     void Instantiate()

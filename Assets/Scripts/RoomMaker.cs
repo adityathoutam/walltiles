@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class RoomMaker : MonoBehaviour {
 
-	public GameObject LeftWall;
-	public GameObject RightWall;
+	public GameObject Wall;
+	
 	public  GameObject TilePrefab;
+    
 	public float RowWidth,ColoumnWidth;
 
  float QuadWidth, QuadHeight, QuadArea;
   BoxCollider boxCollider;
-    Vector2 scale;
+   public Vector2 scale;
+   public Vector3 XYZ_Position;
 	Vector2 TopLeft, TopRight;
+    public float X_Angle,Y_Angle;
  List<GameObject> Tiles = new List<GameObject>();
 
 	void Awake()
     {
 
-           // LeftWall.transform.parent = transform;
-
-            scale = TilePrefab.transform.localScale;
-            boxCollider = LeftWall.GetComponent<BoxCollider>();
-            QuadWidth = LeftWall.transform.localScale.x;
-            QuadHeight = LeftWall.transform.localScale.y;
+           
+            boxCollider = Wall.GetComponent<BoxCollider>();
+            QuadWidth = Wall.transform.localScale.x;
+            QuadHeight = Wall.transform.localScale.y;
             QuadArea = QuadHeight / scale.y * QuadWidth / scale.x;
 
 
@@ -35,12 +36,13 @@ public class RoomMaker : MonoBehaviour {
     void Instantiate()
     {
 
-
+        TilePrefab.transform.localScale = scale;
+        TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.1f);
 
         for (int i = 0; i < QuadArea+1; ++i)
         {
             GameObject go = Instantiate(TilePrefab, Vector3.zero, Quaternion.identity);
-            go.transform.parent = LeftWall.transform.parent;
+            go.transform.parent = Wall.transform.parent;
 
             Tiles.Add(go);
         }
@@ -54,26 +56,30 @@ public class RoomMaker : MonoBehaviour {
         Tiles[0].transform.position = TopLeft;
 
     }
-	void Start()
+void Start()
     {
 
+		
+   
+        StartFunction();
 
-     for (int i = 0; i < QuadArea; i++)
+        Wall.transform.localPosition = XYZ_Position;
+		Wall.transform.Rotate(new Vector3(X_Angle,Y_Angle,0));
+
+		Destroy(Tiles[Tiles.Count-1]);
+     }
+
+
+void StartFunction()
+{
+	 for (int i = 0; i < QuadArea; i++)
         {
             SetPosition(i);
-            Tiles[i].transform.parent = LeftWall.transform;
+            Tiles[i].transform.parent = Wall.transform;
+			
         }
-        
-       
-    }
-private IEnumerator f()
- {
-    while (true)
-    {
-       
-      yield return null; //after having done things, exit this loop and wait null frames before reentering. So the next frame 'things' will happen again.  
-    }
- }
+}
+
 	
     void SetPosition(int i)
     {
@@ -90,7 +96,7 @@ private IEnumerator f()
 
         }
 
-          Tiles[i + 1].transform.localScale = Tiles[i].transform.localScale;
+          //Tiles[i + 1].transform.localScale = Tiles[i].transform.localScale;
           Tiles[i + 1].transform.position = Tiles[i].transform.position;
 
         Tiles[i + 1].transform.position = new Vector3(Tiles[i + 1].transform.position.x + scale.x + RowWidth,

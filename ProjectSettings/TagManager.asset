@@ -8,6 +8,7 @@ TagManager:
   - Panel2
   - ColorTile
   - ATM
+  - GroutColor
   layers:
   - Default
   - TransparentFX

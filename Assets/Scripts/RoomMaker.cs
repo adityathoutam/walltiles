@@ -13,9 +13,9 @@ public class RoomMaker : MonoBehaviour {
  float QuadWidth, QuadHeight, QuadArea;
   BoxCollider boxCollider;
    public Vector2 scale;
-   public Vector3 XYZ_Position;
+   
 	Vector2 TopLeft, TopRight;
-    public float X_Angle,Y_Angle;
+   
  List<GameObject> Tiles = new List<GameObject>();
 
 	void Awake()
@@ -63,9 +63,7 @@ void Start()
    
         StartFunction();
 
-        Wall.transform.localPosition = XYZ_Position;
-		Wall.transform.Rotate(new Vector3(X_Angle,Y_Angle,0));
-
+       
 		Destroy(Tiles[Tiles.Count-1]);
      }
 

@@ -8,6 +8,13 @@ using TMPro;
 
 public class UserInfo : MonoBehaviour {
 
+
+    public GameObject LeftWall;
+    public GameObject RightWall;
+    public GameObject BottomWall;
+
+    public GameObject RoomMaker;
+
 	public GameObject WallHeightDisplay;
 	public Slider WallHeightSlider;
 	public GameObject WallWidthDisplay;
@@ -36,7 +43,7 @@ public class UserInfo : MonoBehaviour {
 
 	private void Update()
 	{
-			TileImageSelected();
+		TileImageSelected();
 		GroutImageSelected();
 		
 		WallHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",WallHeightSlider.value);
@@ -46,13 +53,20 @@ public class UserInfo : MonoBehaviour {
 		TileWidthDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N0}",TileWidthSlider.value);
 
 		GroutDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N2}",GroutSlider.value);
-	
+    
 	}
 	 private void Awake()
     {
 
         m_Raycaster = canvas.GetComponent<GraphicRaycaster>();
         m_EventSystem = GetComponent<EventSystem>();
+
+
+        RoomMaker.GetComponent<RoomMaker>().scale.x =2;
+
+        GameObject go =Instantiate(RoomMaker);
+       
+      
     }
 
 	void FixedUpdate()

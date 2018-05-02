@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomMaker : MonoBehaviour {
-
-	public GameObject Wall;
+ GameObject Wall;
+	public GameObject WallPrefab;
 	
 	public  GameObject TilePrefab;
     
@@ -21,7 +21,7 @@ public class RoomMaker : MonoBehaviour {
 	void Awake()
     {
 
-           
+           Wall = Instantiate(WallPrefab);
             boxCollider = Wall.GetComponent<BoxCollider>();
             QuadWidth = Wall.transform.localScale.x;
             QuadHeight = Wall.transform.localScale.y;

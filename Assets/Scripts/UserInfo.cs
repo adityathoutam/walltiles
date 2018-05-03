@@ -44,6 +44,7 @@ public class UserInfo : MonoBehaviour {
       RoomMaker[] roomMakerComponents;
 
 bool done =false;
+bool done2 =false;
 	private void Update()
 	{
 		TileImageSelected();
@@ -63,8 +64,7 @@ bool done =false;
 
         m_Raycaster = canvas.GetComponent<GraphicRaycaster>();
         m_EventSystem = GetComponent<EventSystem>();
-          go =Instantiate(RoomMaker) as GameObject;
-         roomMakerComponents = go.GetComponents<RoomMaker>();
+        
 
         
        
@@ -87,6 +87,8 @@ bool done =false;
         {
             if(!done)
          {
+               go =Instantiate(RoomMaker) as GameObject;
+         roomMakerComponents = go.GetComponents<RoomMaker>();
         
         for(int i=0;i<roomMakerComponents[0].Tiles.Count;i++)
         {
@@ -99,16 +101,19 @@ bool done =false;
         done=true;
         }
         }
-        if(Input.GetKeyDown(KeyCode.D))
+
+        if(done==true)
         {
-            
+            if(!done2)
+            {
             roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
         roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
         roomMakerComponents[2].Wall.transform.position = new Vector3(0,-6.2f,-3.2f);
         roomMakerComponents[0].Wall.transform.Rotate(0,-45,0);
          roomMakerComponents[1].Wall.transform.Rotate(0,45,0);
           roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);
-        
+          done2=true;
+            }
         }
     }
     void CellSelected()

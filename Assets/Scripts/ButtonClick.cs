@@ -4,36 +4,66 @@ using UnityEngine;
 
 public class ButtonClick : MonoBehaviour {
 
-    public GameObject Panel1;
-    public GameObject Panel2;
-    public GameObject Panel3;
-    public GameObject Panel4;
+    public GameObject DimensionsCanvas;
+    public GameObject TileCanvas;
+    public GameObject View3DCanvas;
+    public GameObject PriceCanvas;
+
     public GameObject CanvasCamera;
 
    
    public void Awake()
    {
-       View1();
+       DimensionsCanvasBtn();
    }
-    public void View1()
+    public void DimensionsCanvasBtn()
     {
-        Panel1.SetActive(true);
-        Panel2.SetActive(false);
-        Panel3.SetActive(false);
+        DimensionsCanvas.SetActive(true);
+        TileCanvas.SetActive(false);
+        PriceCanvas.SetActive(false);
+        View3DCanvas.SetActive(false);
+        
     }
-    public void View2()
+    
+    public void TileCnvasBtn()
     {
-        Panel2.SetActive(true);
-        Panel1.SetActive(false);
-        Panel3.SetActive(false);
-
+        DimensionsCanvas.SetActive(false);
+        TileCanvas.SetActive(true);
+        PriceCanvas.SetActive(false);
+        View3DCanvas.SetActive(false);
     }
 
-    public void PriceView()
+    public void View3DCanvasBtn()
     {
-        Panel3.SetActive(true);
-        Panel2.SetActive(false);
-        Panel1.SetActive(false);
+        DimensionsCanvas.SetActive(false);
+        TileCanvas.SetActive(false);
+        PriceCanvas.SetActive(false);
+        View3DCanvas.SetActive(true);
+    }
+
+    public void PriceCanvasBtn()
+    {
+        DimensionsCanvas.SetActive(false);
+        TileCanvas.SetActive(false);
+        PriceCanvas.SetActive(true);
+        View3DCanvas.SetActive(false);
+    }
+
+    public void ThreeDBtn()
+    {
+        DimensionsCanvas.SetActive(false);
+        TileCanvas.SetActive(false);
+        PriceCanvas.SetActive(false);
+        View3DCanvas.SetActive(false);
+        CanvasCamera.SetActive(false);
+    }
+    public void ThreeDBtnBACK()
+    {
+        DimensionsCanvas.SetActive(true);
+        TileCanvas.SetActive(false);
+        PriceCanvas.SetActive(false);
+        View3DCanvas.SetActive(true);
+        CanvasCamera.SetActive(true);
     }
 
 

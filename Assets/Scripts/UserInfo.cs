@@ -99,6 +99,8 @@ bool done2 =false;
   
     IEnumerator StartCounting()
  {
+
+       
     
         go =Instantiate(RoomMaker) as GameObject;
          roomMakerComponents = go.GetComponents<RoomMaker>();

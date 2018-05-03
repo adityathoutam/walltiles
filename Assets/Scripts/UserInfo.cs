@@ -40,6 +40,8 @@ public class UserInfo : MonoBehaviour {
 	 Material GroutMaterial;
 	 public Material[] materialList;
     List<RaycastResult> results = new List<RaycastResult>();
+    GameObject go;
+      RoomMaker[] roomMakerComponents;
 
 bool done =false;
 	private void Update()
@@ -61,7 +63,8 @@ bool done =false;
 
         m_Raycaster = canvas.GetComponent<GraphicRaycaster>();
         m_EventSystem = GetComponent<EventSystem>();
-
+          go =Instantiate(RoomMaker) as GameObject;
+         roomMakerComponents = go.GetComponents<RoomMaker>();
 
         
        
@@ -83,9 +86,8 @@ bool done =false;
         if(Input.GetKeyDown(KeyCode.A))
         {
             if(!done)
-    {
-         GameObject go =Instantiate(RoomMaker) as GameObject;
-         RoomMaker[] roomMakerComponents = go.GetComponents<RoomMaker>();
+         {
+        
         for(int i=0;i<roomMakerComponents[0].Tiles.Count;i++)
         {
          roomMakerComponents[0].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
@@ -95,8 +97,11 @@ bool done =false;
         }
         
         done=true;
-
-        if(done)
+        }
+        }
+        if(Input.GetKeyUp(KeyCode.D))
+        {
+            if(done)
         {
             roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
         roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
@@ -106,8 +111,6 @@ bool done =false;
           roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);
         }
         }
-        
-    }
     }
     void CellSelected()
     {

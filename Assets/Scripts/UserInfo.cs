@@ -109,12 +109,18 @@ bool done2 =false;
          roomMakerComponents[1].Tiles[i].GetComponent<Renderer>().material=TileMaterial;
          roomMakerComponents[2].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
 
+          roomMakerComponents[0].Wall.GetComponent<Renderer>().material = GroutMaterial;
+            roomMakerComponents[1].Wall.GetComponent<Renderer>().material = GroutMaterial;
+            roomMakerComponents[2].Wall.GetComponent<Renderer>().material = GroutMaterial;
+
         }   
        
     
-     yield return new WaitForSeconds(4);
+     yield return new WaitForSeconds(2);
      
-     roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
+           
+
+            roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
             roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
             roomMakerComponents[2].Wall.transform.position = new Vector3(0,-5.1f,-4.2f);
             roomMakerComponents[0].Wall.transform.Rotate(0,-45,0);

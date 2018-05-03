@@ -87,7 +87,20 @@ bool done2 =false;
         {
             if(!done)
          {
-               go =Instantiate(RoomMaker) as GameObject;
+             StartCoroutine(StartCounting());
+              
+        
+        done=true;
+        }
+        }
+
+    }
+
+  
+    IEnumerator StartCounting()
+ {
+    
+        go =Instantiate(RoomMaker) as GameObject;
          roomMakerComponents = go.GetComponents<RoomMaker>();
         
         for(int i=0;i<roomMakerComponents[0].Tiles.Count;i++)
@@ -96,26 +109,21 @@ bool done2 =false;
          roomMakerComponents[1].Tiles[i].GetComponent<Renderer>().material=TileMaterial;
          roomMakerComponents[2].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
 
-        }
-        
-        done=true;
-        }
-        }
-
-        if(done==true)
-        {
-            if(!done2)
-            {
-            roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
-        roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
-        roomMakerComponents[2].Wall.transform.position = new Vector3(0,-6.2f,-3.2f);
-        roomMakerComponents[0].Wall.transform.Rotate(0,-45,0);
-         roomMakerComponents[1].Wall.transform.Rotate(0,45,0);
-          roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);
-          done2=true;
-            }
-        }
-    }
+        }   
+       
+    
+     yield return new WaitForSeconds(4);
+     
+     roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
+            roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
+            roomMakerComponents[2].Wall.transform.position = new Vector3(0,-6.2f,-3.2f);
+            roomMakerComponents[0].Wall.transform.Rotate(0,-45,0);
+            roomMakerComponents[1].Wall.transform.Rotate(0,45,0);
+            roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);
+     yield return new WaitForSeconds(1);
+     
+    
+ }
     void CellSelected()
     {
         foreach (RaycastResult result in results)

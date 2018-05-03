@@ -24,7 +24,9 @@ public class UserInfo : MonoBehaviour {
 
     public Image tileImage;
     public Text TileSize;
-    public Text price;
+    public Text NoOfTiles;
+    public Text Totalprice;
+    public Text tileprice;
     int Tileprice;
     int count = 0;
 
@@ -83,10 +85,11 @@ public class UserInfo : MonoBehaviour {
 
         
         count = Tileprice * roomMakerComponents[0].Tiles.Count;
-       
 
+        tileprice.text = " " + Tileprice;
+        NoOfTiles.text = " " + roomMakerComponents[0].Tiles.Count;
         TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
-        price.text = " " + count;
+        Totalprice.text = " " + count;
     }
 
 	private void Awake()

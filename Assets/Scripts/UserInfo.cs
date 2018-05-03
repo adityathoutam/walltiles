@@ -76,7 +76,6 @@ public class UserInfo : MonoBehaviour {
     void PriceDetails()
     {
         count = 20;
-        //count++;
 
         if(TileHeightSlider.value==1)
         {

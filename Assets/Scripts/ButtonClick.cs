@@ -8,13 +8,13 @@ public class ButtonClick : MonoBehaviour {
     public GameObject Panel2;
     public GameObject Panel3;
 
-    private void Start()
-    {
-        Panel1.SetActive(true);
-        Panel2.SetActive(true);
-        Panel3.SetActive(false);
+    // private void Update()
+    // {
+    //     Panel1.SetActive(true);
+    //     Panel2.SetActive(false);
+    //     Panel3.SetActive(false);
 
-    }
+    // }
     public void View1()
     {
         Panel1.SetActive(true);

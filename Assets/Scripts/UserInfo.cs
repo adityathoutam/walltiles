@@ -25,6 +25,7 @@ public class UserInfo : MonoBehaviour {
     public Image tileImage;
     public Text TileSize;
     public Text price;
+    int Tileprice;
     int count = 0;
 
 	public GameObject TileHeightDisplay;
@@ -78,20 +79,11 @@ public class UserInfo : MonoBehaviour {
 
     void PriceDetails()
     {
-        count = 20;
+        Tileprice = 20;
 
-        if(TileHeightSlider.value==1)
-        {
-            count = count * 100;
-        }
-        else if(TileHeightSlider.value>1)
-        {
-            count = count * 150;
-        }
-        else if(TileHeightSlider.value>2)
-        {
-            count = count * 200;
-        }
+        
+        count = Tileprice * roomMakerComponents[0].Tiles.Count;
+       
 
         TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
         price.text = " " + count;

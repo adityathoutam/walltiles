@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomMaker : MonoBehaviour {
 
-    GameObject Wall;
+    public GameObject Wall;
 
 	public GameObject WallPrefab;
 	
@@ -20,11 +20,12 @@ public class RoomMaker : MonoBehaviour {
    
 	Vector2 TopLeft, TopRight;
    
- List<GameObject> Tiles = new List<GameObject>();
+ public List<GameObject> Tiles = new List<GameObject>();
 
 	void Awake()
     {
         Wall = Instantiate(WallPrefab);
+        Wall.transform.parent = this.transform;
         boxCollider = Wall.GetComponent<BoxCollider>();
         QuadWidth = Wall.transform.localScale.x;
         QuadHeight = Wall.transform.localScale.y;
@@ -102,5 +103,6 @@ public class RoomMaker : MonoBehaviour {
 
 
     }
-
+    
+   
 }

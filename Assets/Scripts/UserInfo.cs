@@ -41,6 +41,7 @@ public class UserInfo : MonoBehaviour {
 	 public Material[] materialList;
     List<RaycastResult> results = new List<RaycastResult>();
 
+bool done =false;
 	private void Update()
 	{
 		TileImageSelected();
@@ -62,9 +63,7 @@ public class UserInfo : MonoBehaviour {
         m_EventSystem = GetComponent<EventSystem>();
 
 
-        RoomMaker.GetComponent<RoomMaker>().scale.x =2;
-
-        GameObject go =Instantiate(RoomMaker);
+        
        
       
     }
@@ -78,7 +77,37 @@ public class UserInfo : MonoBehaviour {
             m_Raycaster.Raycast(m_PointerEventData, results);
             CellSelected();
         }
+        
+    
+    
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            if(!done)
+    {
+         GameObject go =Instantiate(RoomMaker) as GameObject;
+         RoomMaker[] roomMakerComponents = go.GetComponents<RoomMaker>();
+        for(int i=0;i<roomMakerComponents[0].Tiles.Count;i++)
+        {
+         roomMakerComponents[0].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
+         roomMakerComponents[1].Tiles[i].GetComponent<Renderer>().material=TileMaterial;
+         roomMakerComponents[2].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
 
+        }
+        
+        done=true;
+
+        if(done)
+        {
+            roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
+        roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
+        roomMakerComponents[2].Wall.transform.position = new Vector3(0,-6.2f,-3.2f);
+        roomMakerComponents[0].Wall.transform.Rotate(0,-45,0);
+         roomMakerComponents[1].Wall.transform.Rotate(0,45,0);
+          roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);
+        }
+        }
+        
+    }
     }
     void CellSelected()
     {

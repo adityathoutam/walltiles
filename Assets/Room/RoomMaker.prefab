@@ -53,11 +53,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fcba1157b34304d99c7a93306a5f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wall: {fileID: 0}
   WallPrefab: {fileID: 1469267432943082, guid: f032fc3afd26e054eb533210f24c02d9, type: 2}
   TilePrefab: {fileID: 1033852473814368, guid: fb19056962705544e97da361ca1b96ae, type: 2}
   RowWidth: 0.1
   ColoumnWidth: 0.1
   scale: {x: 1, y: 1}
+  Tiles: []
 --- !u!114 &114181388276069966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,11 +71,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fcba1157b34304d99c7a93306a5f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wall: {fileID: 0}
   WallPrefab: {fileID: 1699520663949430, guid: f032fc3afd26e054eb533210f24c02d9, type: 2}
   TilePrefab: {fileID: 1033852473814368, guid: fb19056962705544e97da361ca1b96ae, type: 2}
   RowWidth: 0.1
   ColoumnWidth: 0.1
-  scale: {x: 2, y: 1}
+  scale: {x: 1, y: 1}
+  Tiles: []
 --- !u!114 &114644152013333036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,8 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fcba1157b34304d99c7a93306a5f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wall: {fileID: 0}
   WallPrefab: {fileID: 1925298798897452, guid: f032fc3afd26e054eb533210f24c02d9, type: 2}
   TilePrefab: {fileID: 1033852473814368, guid: fb19056962705544e97da361ca1b96ae, type: 2}
   RowWidth: 0.1
   ColoumnWidth: 0.1
   scale: {x: 1, y: 1}
+  Tiles: []

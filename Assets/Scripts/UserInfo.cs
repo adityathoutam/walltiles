@@ -15,12 +15,15 @@ public class UserInfo : MonoBehaviour {
 
     public GameObject RoomMaker;
 
+   
+
 	public GameObject WallHeightDisplay;
 	public Slider WallHeightSlider;
 	public GameObject WallWidthDisplay;
 	public Slider WallWidthSlider;
 
-
+    public Sprite tileImage;
+    public Text TileSize;
     public Text price;
     int count = 0;
 
@@ -51,18 +54,17 @@ public class UserInfo : MonoBehaviour {
     bool done =false;
     bool done2 =false;
 
+
     private void Update()
 	{
 		TileImageSelected();
 		GroutImageSelected();
 
-        count = 20;
-        count = count * 100;
-        //count++;
-        price.text = " " + count;
 
-        
-		WallHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",WallHeightSlider.value);
+        PriceDetails();
+
+
+        WallHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",WallHeightSlider.value);
 		WallWidthDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N0}",WallWidthSlider.value);
 
 		TileHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",TileHeightSlider.value);
@@ -70,6 +72,28 @@ public class UserInfo : MonoBehaviour {
 
 		GroutDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N2}",GroutSlider.value);
 	}
+
+    void PriceDetails()
+    {
+        count = 20;
+        //count++;
+
+        if(TileHeightSlider.value==1)
+        {
+            count = count * 100;
+        }
+        else if(TileHeightSlider.value>1)
+        {
+            count = count * 150;
+        }
+        else if(TileHeightSlider.value>2)
+        {
+            count = count * 200;
+        }
+
+        TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
+        price.text = " " + count;
+    }
 
 	private void Awake()
     {
@@ -87,15 +111,26 @@ public class UserInfo : MonoBehaviour {
             CellSelected();
         }
        
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            if(!done)
-            {
-                StartCoroutine(StartCounting());
-                done =true;
-            }
-        }
+        //if(Input.GetKeyDown(KeyCode.A))
+        //{
+        //    if(!done)
+        //    {
+        //        StartCoroutine(StartCounting());
+        //        done =true;
+        //    }
+        //}
 
+    }
+
+    public Camera canvasCam;
+    public void ThreeD()
+    {
+        if (!done)
+        {
+            StartCoroutine(StartCounting());
+            canvasCam.enabled = false;
+            done = true;
+        }
     }
 
   
@@ -115,7 +150,7 @@ public class UserInfo : MonoBehaviour {
             roomMakerComponents[2].Wall.GetComponent<Renderer>().material = GroutMaterial;
 
         }
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
 
             roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
             roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
@@ -134,7 +169,7 @@ public class UserInfo : MonoBehaviour {
             if (result.gameObject.tag == "ColorTile")
             {
                 TileImage = result.gameObject.GetComponent<Image>().sprite;
-				
+                tileImage = result.gameObject.GetComponent<Image>().sprite;
             }
 			if (result.gameObject.tag == "GroutColor")
             {

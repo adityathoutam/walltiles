@@ -22,7 +22,7 @@ public class UserInfo : MonoBehaviour {
 	public GameObject WallWidthDisplay;
 	public Slider WallWidthSlider;
 
-    public Sprite tileImage;
+    public Image tileImage;
     public Text TileSize;
     public Text price;
     int count = 0;
@@ -111,27 +111,19 @@ public class UserInfo : MonoBehaviour {
             CellSelected();
         }
        
-        //if(Input.GetKeyDown(KeyCode.A))
-        //{
-        //    if(!done)
-        //    {
-        //        StartCoroutine(StartCounting());
-        //        done =true;
-        //    }
-        //}
-
-    }
-
-    public Camera canvasCam;
-    public void ThreeD()
-    {
-        if (!done)
+        if(Input.GetKeyDown(KeyCode.A))
         {
-            StartCoroutine(StartCounting());
-            canvasCam.enabled = false;
-            done = true;
+           if(!done)
+           {
+               StartCoroutine(StartCounting());
+               done =true;
+           }
         }
+
     }
+
+   
+   
 
   
     IEnumerator StartCounting()
@@ -169,7 +161,7 @@ public class UserInfo : MonoBehaviour {
             if (result.gameObject.tag == "ColorTile")
             {
                 TileImage = result.gameObject.GetComponent<Image>().sprite;
-                tileImage = result.gameObject.GetComponent<Image>().sprite;
+                tileImage.sprite = TileImage;
             }
 			if (result.gameObject.tag == "GroutColor")
             {

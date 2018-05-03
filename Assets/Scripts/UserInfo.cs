@@ -53,8 +53,8 @@ bool done2 =false;
 		TileImageSelected();
 		GroutImageSelected();
 
-        count = 100;
-        count = count * 30;
+        count = 20;
+        count = count * 100;
         //count++;
         price.text = " " + count;
 

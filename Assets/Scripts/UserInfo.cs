@@ -27,7 +27,10 @@ public class UserInfo : MonoBehaviour {
     public Text NoOfTiles;
     public Text Totalprice;
     public Text tileprice;
-    float Tileprice;
+    public float Tileprice1x1 = 20;
+    public float Tileprice2x2 = 50;
+    public float Tileprice3x3 = 80;
+
     float count = 0;
 
 	public GameObject TileHeightDisplay;
@@ -81,16 +84,25 @@ public class UserInfo : MonoBehaviour {
 
     void PriceDetails()
     {
-        Tileprice = 20;
-
-
-        count = WallHeightSlider.value * WallWidthSlider.value;
-
-
-        tileprice.text = " "+Tileprice;
         NoOfTiles.text = " " + WallHeightSlider.value * WallWidthSlider.value;
         TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
-        Totalprice.text = " " + count * Tileprice;
+        count = WallHeightSlider.value * WallWidthSlider.value;
+
+        if (TileHeightSlider.value>=2)
+        {
+            tileprice.text = " " + Tileprice2x2;
+            Totalprice.text = " " + count * Tileprice2x2;
+        }
+        else if(TileHeightSlider.value>=3)
+        {
+            tileprice.text = " " + Tileprice3x3;
+            Totalprice.text = " " + count * Tileprice3x3;
+        }
+        else
+        {
+            tileprice.text = " " + Tileprice1x1;
+            Totalprice.text = " " + count * Tileprice1x1;
+        }
     }
 
 	private void Awake()

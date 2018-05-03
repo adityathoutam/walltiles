@@ -33,22 +33,25 @@ public class UserInfo : MonoBehaviour {
 	public Slider GroutSlider;
 
 	public Canvas canvas;
-	 GraphicRaycaster m_Raycaster;
+
+    GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
-	 Sprite TileImage;
-	 Material TileMaterial;
+	Sprite TileImage;
+	Material TileMaterial;
 
-	 Sprite GroutImage;
-	 Material GroutMaterial;
-	 public Material[] materialList;
+    public Material[] materialList;
+
+    Sprite GroutImage;
+	Material GroutMaterial;
     List<RaycastResult> results = new List<RaycastResult>();
     GameObject go;
-      RoomMaker[] roomMakerComponents;
+    RoomMaker[] roomMakerComponents;
 
-bool done =false;
-bool done2 =false;
-	private void Update()
+    bool done =false;
+    bool done2 =false;
+
+    private void Update()
 	{
 		TileImageSelected();
 		GroutImageSelected();
@@ -66,18 +69,12 @@ bool done2 =false;
 		TileWidthDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N0}",TileWidthSlider.value);
 
 		GroutDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N2}",GroutSlider.value);
-    
 	}
-	 private void Awake()
+
+	private void Awake()
     {
-
-        m_Raycaster = canvas.GetComponent<GraphicRaycaster>();
-        m_EventSystem = GetComponent<EventSystem>();
-        
-
-        
-       
-      
+       m_Raycaster = canvas.GetComponent<GraphicRaycaster>();
+       m_EventSystem = GetComponent<EventSystem>();
     }
 
 	void FixedUpdate()
@@ -89,47 +86,36 @@ bool done2 =false;
             m_Raycaster.Raycast(m_PointerEventData, results);
             CellSelected();
         }
-        
-    
-    
+       
         if(Input.GetKeyDown(KeyCode.A))
         {
             if(!done)
-         {
-             StartCoroutine(StartCounting());
-              
-        
-        done=true;
-        }
+            {
+                StartCoroutine(StartCounting());
+                done =true;
+            }
         }
 
     }
 
   
     IEnumerator StartCounting()
- {
-
-       
-    
+    {
         go =Instantiate(RoomMaker) as GameObject;
          roomMakerComponents = go.GetComponents<RoomMaker>();
         
         for(int i=0;i<roomMakerComponents[0].Tiles.Count;i++)
         {
-         roomMakerComponents[0].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
-         roomMakerComponents[1].Tiles[i].GetComponent<Renderer>().material=TileMaterial;
-         roomMakerComponents[2].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
+            roomMakerComponents[0].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
+            roomMakerComponents[1].Tiles[i].GetComponent<Renderer>().material=TileMaterial;
+            roomMakerComponents[2].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
 
-          roomMakerComponents[0].Wall.GetComponent<Renderer>().material = GroutMaterial;
+            roomMakerComponents[0].Wall.GetComponent<Renderer>().material = GroutMaterial;
             roomMakerComponents[1].Wall.GetComponent<Renderer>().material = GroutMaterial;
             roomMakerComponents[2].Wall.GetComponent<Renderer>().material = GroutMaterial;
 
-        }   
-       
-    
-     yield return new WaitForSeconds(2);
-     
-           
+        }
+        yield return new WaitForSeconds(2);
 
             roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
             roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
@@ -137,10 +123,10 @@ bool done2 =false;
             roomMakerComponents[0].Wall.transform.Rotate(0,-45,0);
             roomMakerComponents[1].Wall.transform.Rotate(0,45,0);
             roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);
-     yield return new WaitForSeconds(1);
-     
-    
- }
+
+        yield return new WaitForSeconds(1);
+    }
+
     void CellSelected()
     {
         foreach (RaycastResult result in results)
@@ -193,8 +179,8 @@ bool done2 =false;
         }
         else
         TileMaterial = materialList[0];
-
     }
+
 	void GroutImageSelected()
     {
         if (GroutImage != null)
@@ -231,7 +217,6 @@ bool done2 =false;
         }
         else
         GroutMaterial = materialList[0];
-
     }
 
 }

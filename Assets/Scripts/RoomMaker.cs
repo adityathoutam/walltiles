@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomMaker : MonoBehaviour {
- GameObject Wall;
+
+    GameObject Wall;
+
 	public GameObject WallPrefab;
 	
 	public  GameObject TilePrefab;
     
 	public float RowWidth,ColoumnWidth;
 
- float QuadWidth, QuadHeight, QuadArea;
-  BoxCollider boxCollider;
-   public Vector2 scale;
+    float QuadWidth, QuadHeight, QuadArea;
+
+    BoxCollider boxCollider;
+
+    public Vector2 scale;
    
 	Vector2 TopLeft, TopRight;
    
@@ -20,22 +24,18 @@ public class RoomMaker : MonoBehaviour {
 
 	void Awake()
     {
-
-           Wall = Instantiate(WallPrefab);
-            boxCollider = Wall.GetComponent<BoxCollider>();
-            QuadWidth = Wall.transform.localScale.x;
-            QuadHeight = Wall.transform.localScale.y;
-            QuadArea = QuadHeight / scale.y * QuadWidth / scale.x;
-
-
-
-            Instantiate();
+        Wall = Instantiate(WallPrefab);
+        boxCollider = Wall.GetComponent<BoxCollider>();
+        QuadWidth = Wall.transform.localScale.x;
+        QuadHeight = Wall.transform.localScale.y;
+        QuadArea = QuadHeight / scale.y * QuadWidth / scale.x;
+        
+        Instantiate();
         
     }
 
     void Instantiate()
     {
-
         TilePrefab.transform.localScale = scale;
         TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.1f);
 
@@ -56,27 +56,23 @@ public class RoomMaker : MonoBehaviour {
         Tiles[0].transform.position = TopLeft;
 
     }
-void Start()
-    {
 
-		
-   
-        StartFunction();
-
-       
+    void Start()
+    {  
+        StartFunction();       
 		Destroy(Tiles[Tiles.Count-1]);
-     }
+    }
 
 
-void StartFunction()
-{
-	 for (int i = 0; i < QuadArea; i++)
+    void StartFunction()
+    {
+	    for (int i = 0; i < QuadArea; i++)
         {
             SetPosition(i);
             Tiles[i].transform.parent = Wall.transform;
 			
         }
-}
+    }
 
 	
     void SetPosition(int i)

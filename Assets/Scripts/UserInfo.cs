@@ -21,6 +21,9 @@ public class UserInfo : MonoBehaviour {
 	public Slider WallWidthSlider;
 
 
+    public Text price;
+    int count = 0;
+
 	public GameObject TileHeightDisplay;
 	public Slider TileHeightSlider;
 	public GameObject TileWidthDisplay;
@@ -49,7 +52,13 @@ bool done2 =false;
 	{
 		TileImageSelected();
 		GroutImageSelected();
-		
+
+        count = 100;
+        count = count * 30;
+        //count++;
+        price.text = " " + count;
+
+        
 		WallHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",WallHeightSlider.value);
 		WallWidthDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N0}",WallWidthSlider.value);
 

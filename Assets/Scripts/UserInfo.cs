@@ -115,7 +115,7 @@ public class UserInfo : MonoBehaviour {
             roomMakerComponents[2].Wall.GetComponent<Renderer>().material = GroutMaterial;
 
         }
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
 
             roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
             roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);

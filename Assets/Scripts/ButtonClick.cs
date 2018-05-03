@@ -7,6 +7,8 @@ public class ButtonClick : MonoBehaviour {
     public GameObject Panel1;
     public GameObject Panel2;
     public GameObject Panel3;
+    public GameObject Panel4;
+    public GameObject CanvasCamera;
 
    
    public void Awake()

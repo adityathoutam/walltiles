@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114181388276069966}
   - component: {fileID: 114644152013333036}
   - component: {fileID: 114051803458139048}
-  - component: {fileID: 114264179688413226}
+  - component: {fileID: 114443679239513490}
   m_Layer: 0
   m_Name: RoomMaker
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MonoBehaviour:
   ColoumnWidth: 0.1
   scale: {x: 1, y: 1}
   Tiles: []
---- !u!114 &114264179688413226
+--- !u!114 &114443679239513490
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1729495577800134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07230d6f8c21d9547b7be7b4258c888b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ecf81807aa32214e90a3b2b52089135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TopWallPrefab: {fileID: 1278387996517270, guid: f032fc3afd26e054eb533210f24c02d9,

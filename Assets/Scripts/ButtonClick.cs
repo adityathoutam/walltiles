@@ -54,16 +54,16 @@ public class ButtonClick : MonoBehaviour {
         DimensionsCanvas.SetActive(false);
         TileCanvas.SetActive(false);
         PriceCanvas.SetActive(false);
-        View3DCanvas.SetActive(false);
-        CanvasCamera.SetActive(false);
+        View3DCanvas.SetActive(true);
+      
     }
     public void ThreeDBtnBACK()
     {
         DimensionsCanvas.SetActive(true);
         TileCanvas.SetActive(false);
         PriceCanvas.SetActive(false);
-        View3DCanvas.SetActive(true);
-        CanvasCamera.SetActive(true);
+        View3DCanvas.SetActive(false);
+        
     }
 
 

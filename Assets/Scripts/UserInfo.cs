@@ -99,17 +99,16 @@ bool done =false;
         done=true;
         }
         }
-        if(Input.GetKeyUp(KeyCode.D))
+        if(Input.GetKeyDown(KeyCode.D))
         {
-            if(done)
-        {
+            
             roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
         roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
         roomMakerComponents[2].Wall.transform.position = new Vector3(0,-6.2f,-3.2f);
         roomMakerComponents[0].Wall.transform.Rotate(0,-45,0);
          roomMakerComponents[1].Wall.transform.Rotate(0,45,0);
           roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);
-        }
+        
         }
     }
     void CellSelected()

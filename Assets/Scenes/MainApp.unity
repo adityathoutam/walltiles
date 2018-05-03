@@ -252,7 +252,7 @@ MonoBehaviour:
   Totalprice: {fileID: 607755808}
   tileprice: {fileID: 697028066}
   Tileprice1x1: 20
-  Tileprice2x2: 80
+  Tileprice2x2: 50
   Tileprice3x3: 80
   TileHeightDisplay: {fileID: 1688441480}
   TileHeightSlider: {fileID: 545047367}

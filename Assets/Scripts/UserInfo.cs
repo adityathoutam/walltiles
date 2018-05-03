@@ -88,21 +88,22 @@ public class UserInfo : MonoBehaviour {
         TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
         count = WallHeightSlider.value * WallWidthSlider.value;
 
-        if (TileHeightSlider.value>=2)
-        {
-            tileprice.text = " " + Tileprice2x2;
-            Totalprice.text = " " + count * Tileprice2x2;
-        }
-        else if(TileHeightSlider.value>=3)
-        {
-            tileprice.text = " " + Tileprice3x3;
-            Totalprice.text = " " + count * Tileprice3x3;
-        }
-        else
+        if ((TileHeightSlider.value >= 1 && TileWidthSlider.value >= 1) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 3))
         {
             tileprice.text = " " + Tileprice1x1;
             Totalprice.text = " " + count * Tileprice1x1;
         }
+        if ((TileHeightSlider.value>=2 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 1))
+        {
+            tileprice.text = " " + Tileprice2x2;
+            Totalprice.text = " " + count * Tileprice2x2;
+        }
+        if ((TileHeightSlider.value >= 3 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 1))
+        {
+            tileprice.text = " " + Tileprice3x3;
+            Totalprice.text = " " + count * Tileprice3x3;
+        }
+        
     }
 
 	private void Awake()

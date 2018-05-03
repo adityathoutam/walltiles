@@ -9,6 +9,10 @@ public class ButtonClick : MonoBehaviour {
     public GameObject Panel3;
 
    
+   public void Awake()
+   {
+       View1();
+   }
     public void View1()
     {
         Panel1.SetActive(true);

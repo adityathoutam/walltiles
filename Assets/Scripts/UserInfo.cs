@@ -54,6 +54,9 @@ public class UserInfo : MonoBehaviour {
     bool done =false;
     bool done2 =false;
 
+   public int ThreeDBtnClick =0;
+
+    public GameObject CanvasCamera;
 
     private void Update()
 	{
@@ -110,23 +113,42 @@ public class UserInfo : MonoBehaviour {
             CellSelected();
         }
        
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-           if(!done)
-           {
-               StartCoroutine(StartCounting());
-               done =true;
-           }
-        }
+        
 
     }
+    public void ThreeDRoom()
+    {
+        if(ThreeDBtnClick==0)
+        {
+        
+                 CanvasCamera.SetActive(false);
+               StartCoroutine(StartCounting());
+               ThreeDBtnClick++;
+               return;
+        }
 
+        if(ThreeDBtnClick==1)
+        {
+                Destroy(go);
+                  CanvasCamera.SetActive(true);
+                  ThreeDBtnClick=0;
+        }
+       
+    }
    
-   
+public void DestoryYhreeDWall()
+{
+    if(go!=null)
+    {
+    Destroy(go);
+    }
 
+}
   
     IEnumerator StartCounting()
     {
+        if(go==null)
+        {
         go =Instantiate(RoomMaker) as GameObject;
          roomMakerComponents = go.GetComponents<RoomMaker>();
         
@@ -151,6 +173,7 @@ public class UserInfo : MonoBehaviour {
             roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);
 
         yield return new WaitForSeconds(1);
+        }
     }
 
     void CellSelected()

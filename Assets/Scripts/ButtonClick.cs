@@ -47,6 +47,10 @@ public class ButtonClick : MonoBehaviour {
         TileCanvas.SetActive(false);
         PriceCanvas.SetActive(true);
         View3DCanvas.SetActive(false);
+        CanvasCamera.SetActive(true);
+
+        this.GetComponent<UserInfo>().DestoryYhreeDWall();
+        this.GetComponent<UserInfo>().ThreeDBtnClick =0;
     }
 
     public void ThreeDBtn()

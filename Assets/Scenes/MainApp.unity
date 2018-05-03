@@ -267,6 +267,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 47988881543d898469c4879df30c80fd, type: 2}
   - {fileID: 2100000, guid: 6a38770f9b2a3324da9b54255398d0ee, type: 2}
   - {fileID: 2100000, guid: f3372bff8f03c4748a37734740c85bc1, type: 2}
+  CanvasCamera: {fileID: 1807944529}
 --- !u!1 &33242373
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,7 +4584,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 30524809}
-        m_MethodName: ThreeD
+        m_MethodName: ThreeDRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7538,8 +7539,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 30524807}
-        m_MethodName: View1
+      - m_Target: {fileID: 30524809}
+        m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7663,7 +7664,7 @@ GameObject:
   - component: {fileID: 1807944532}
   - component: {fileID: 1807944531}
   m_Layer: 5
-  m_Name: Camera
+  m_Name: Canvas Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

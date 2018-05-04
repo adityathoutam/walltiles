@@ -133,7 +133,7 @@ public class QuadCreator : MonoBehaviour
     private void Update()
     {
 
-        Color QuadColor = ColorPicker.GetComponent<ColorPicker>().SelectedColor;
+        
 
 
         ImageSelected();
@@ -166,7 +166,7 @@ public class QuadCreator : MonoBehaviour
 
         if (WallCreated != null)
         {
-            WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
+           // WallCreated.GetComponent<WallCreation>().QuadColor = QuadColor;
            // WallCreated.GetComponent<WallCreation>().HalfTiles = HalfTiles.GetComponent<Switch>().isOn;
         }
     }

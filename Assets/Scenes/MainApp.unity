@@ -197,7 +197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &30524807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3999,6 +3999,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 966005626}
+  - component: {fileID: 966005625}
   m_Layer: 0
   m_Name: SingleWallCreator
   m_TagString: Untagged
@@ -4006,6 +4007,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &966005625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 966005624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b5c4fa2f5bb384483cb730146eb1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wall: {fileID: 0}
+  Tile: {fileID: 0}
+  WallPrefab: {fileID: 1249737352313122, guid: 94ffacc33ab0e104aa297c4fadabc726, type: 2}
+  TilePrefab: {fileID: 1033852473814368, guid: fb19056962705544e97da361ca1b96ae, type: 2}
+  RowWidth: 0.1
+  ColoumnWidth: 0.1
+  scale: {x: 1, y: 1}
+  Tiles: []
 --- !u!4 &966005626
 Transform:
   m_ObjectHideFlags: 0
@@ -7809,7 +7829,7 @@ GameObject:
   - component: {fileID: 1772178392}
   - component: {fileID: 1772178391}
   m_Layer: 5
-  m_Name: View1
+  m_Name: 1D Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7873,8 +7893,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 30524809}
-        m_MethodName: BackButton
+      - m_Target: {fileID: 966005625}
+        m_MethodName: Create
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

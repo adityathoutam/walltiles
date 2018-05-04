@@ -9,7 +9,7 @@ public class QuadCreator : MonoBehaviour
     public GameObject WallPre;
     public GameObject ColorPicker;
     public GameObject HalfTiles;
-    public Camera camera;
+    public Camera RaycastCamera;
     public Canvas canvas;
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
@@ -137,7 +137,7 @@ public class QuadCreator : MonoBehaviour
 
 
         ImageSelected();
-        ray = camera.ScreenPointToRay(Input.mousePosition);
+        ray = RaycastCamera.ScreenPointToRay(Input.mousePosition);
         if (Input.GetKey(KeyCode.Mouse0))
         {
             if (Physics.Raycast(ray, out hit))

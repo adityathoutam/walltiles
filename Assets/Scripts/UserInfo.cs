@@ -57,9 +57,7 @@ public class UserInfo : MonoBehaviour {
     GameObject go;
     RoomMaker[] roomMakerComponents;
 
-    bool done =false;
-    bool done2 =false;
-
+   
    public int ThreeDBtnClick =0;
 
     public GameObject CanvasCamera;

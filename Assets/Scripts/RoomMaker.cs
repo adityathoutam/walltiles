@@ -18,7 +18,8 @@ public class RoomMaker : MonoBehaviour {
 
     public Vector2 scale;
    
-	Vector2 TopLeft, TopRight;
+	Vector2 TopLeft;
+    //Vector2 TopRight;
    
  public List<GameObject> Tiles = new List<GameObject>();
 
@@ -51,8 +52,8 @@ public class RoomMaker : MonoBehaviour {
 
         TopLeft = new Vector2(boxCollider.bounds.min.x + scale.x / 2,
                  -boxCollider.bounds.min.y - scale.y / 2);
-        TopRight = new Vector2(boxCollider.bounds.max.x - scale.x / 2,
-                  boxCollider.bounds.max.y - scale.y / 2);
+        // TopRight = new Vector2(boxCollider.bounds.max.x - scale.x / 2,
+        //           boxCollider.bounds.max.y - scale.y / 2);
 
         Tiles[0].transform.position = TopLeft;
 

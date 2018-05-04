@@ -22,7 +22,8 @@ public class WallCreation : MonoBehaviour
     public bool boolcamera;
 
 
-    Vector2 TopLeft, TopRight;
+    Vector2 TopLeft;
+    //Vector2 TopRight;
     float QuadWidth, QuadHeight, QuadArea;
 
     public bool HalfTiles;
@@ -72,8 +73,8 @@ public class WallCreation : MonoBehaviour
 
         TopLeft = new Vector2(boxCollider.bounds.min.x + scale.x / 2,
                  -boxCollider.bounds.min.y - scale.y / 2);
-        TopRight = new Vector2(boxCollider.bounds.max.x - scale.x / 2,
-                  boxCollider.bounds.max.y - scale.y / 2);
+        // TopRight = new Vector2(boxCollider.bounds.max.x - scale.x / 2,
+        //           boxCollider.bounds.max.y - scale.y / 2);
 
         Tiles[0].transform.position = TopLeft;
 

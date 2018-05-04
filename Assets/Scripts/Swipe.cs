@@ -92,19 +92,20 @@ public class Swipe : MonoBehaviour
 
         //// if(Tile_Switch_T)
         //// {
-        //    if (Mathf.Abs(deltaSwipe.y) > swipeY)
-        //    {
-        //        if (deltaSwipe.y < 0)
-        //        {
-        //            SetRect(rect, 10, 10, 10, 10);
-        //        }
+           if (Mathf.Abs(deltaSwipe.y) > swipeY)
+           {
+               if (deltaSwipe.y < 0)
+               {
+                   SetRect(rect, 10, 10, 10, 10);
+               }
                 
-        //    // }
+           // }
 
-        //}
+        }
     }
 
     }
+    
     if(Touchposition.x<Screen.width/2)
     {
         if (Input.GetMouseButtonUp(0))

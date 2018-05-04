@@ -31,7 +31,7 @@ public class UserInfo : MonoBehaviour {
     public float Tileprice2x2 = 50;
     public float Tileprice3x3 = 80;
 
-    float count = 0;
+    double count = 0;
 
 	public GameObject TileHeightDisplay;
 	public Slider TileHeightSlider;
@@ -84,9 +84,11 @@ public class UserInfo : MonoBehaviour {
 
     void PriceDetails()
     {
-        NoOfTiles.text = " " + WallHeightSlider.value * WallWidthSlider.value;
+          count = System.Math.Round(WallHeightSlider.value/TileHeightSlider.value * WallWidthSlider.value/TileWidthSlider.value, 0, System.MidpointRounding.AwayFromZero); 
+        NoOfTiles.text = " " + count;
         TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
-        count = WallHeightSlider.value * WallWidthSlider.value;
+
+      
 
         if ((TileHeightSlider.value >= 1 && TileWidthSlider.value >= 1) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 3))
         {

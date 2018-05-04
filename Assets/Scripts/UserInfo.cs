@@ -176,7 +176,7 @@ public void DestoryYhreeDWall()
 
             roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
             roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
-            roomMakerComponents[2].Wall.transform.position = new Vector3(0,-5.1f,-4.2f);
+            roomMakerComponents[2].Wall.transform.position = new Vector3(0,-4.8f,-4.2f);
             roomMakerComponents[0].Wall.transform.Rotate(0,-45,0);
             roomMakerComponents[1].Wall.transform.Rotate(0,45,0);
             roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);

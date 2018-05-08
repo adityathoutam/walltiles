@@ -34,6 +34,8 @@ public class ButtonClick : MonoBehaviour {
          CanvasCamera.SetActive(true);
          this.GetComponent<UserInfo>().DestoryYhreeDWall();
         this.GetComponent<UserInfo>().ThreeDBtnClick =0;
+
+     
     }
 
     public void View3DCanvasBtn()
@@ -54,6 +56,7 @@ public class ButtonClick : MonoBehaviour {
 
         this.GetComponent<UserInfo>().DestoryYhreeDWall();
         this.GetComponent<UserInfo>().ThreeDBtnClick =0;
+         
     }
 
     public void ThreeDBtn()

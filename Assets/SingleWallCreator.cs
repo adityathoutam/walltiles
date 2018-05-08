@@ -25,7 +25,7 @@ public class SingleWallCreator : MonoBehaviour {
    
 	Vector2 TopLeft;
 	 //Vector2 TopRight;
-     int ThreeDBtnClick;	
+    public int ThreeDBtnClick;	
 
 	 public List<GameObject> Tiles = new List<GameObject>();
 
@@ -75,7 +75,14 @@ public class SingleWallCreator : MonoBehaviour {
 
     }
 
+public void DestoryOneDWall()
+{
+    if(Wall!=null)
+    {
+    Destroy(Wall);
+    }
 
+}
 
 
 

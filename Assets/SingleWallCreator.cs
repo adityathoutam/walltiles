@@ -11,7 +11,7 @@ public class SingleWallCreator : MonoBehaviour {
 	
 	public  GameObject TilePrefab;
     
-	public float RowWidth,ColoumnWidth;
+	 float RowWidth,ColoumnWidth;
 
     float QuadWidth, QuadHeight, QuadArea;
 
@@ -41,6 +41,9 @@ public class SingleWallCreator : MonoBehaviour {
 
             scale.x=xa;
             scale.y =ya; 
+        RowWidth = GameManager.GetComponent<UserInfo>().GroutSlider.value;
+        ColoumnWidth = GameManager.GetComponent<UserInfo>().GroutSlider.value;
+
 
         if(Wall!=null)
         {

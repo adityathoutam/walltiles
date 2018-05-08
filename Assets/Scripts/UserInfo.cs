@@ -131,7 +131,7 @@ public class UserInfo : MonoBehaviour {
     {
         if(ThreeDBtnClick==0)
         {
-        
+            Camera.main.fieldOfView=60f;
             if(SingleWallCreator.GetComponent<SingleWallCreator>().Wall!=null)
             Destroy(SingleWallCreator.GetComponent<SingleWallCreator>().Wall);
                  CanvasCamera.SetActive(false);

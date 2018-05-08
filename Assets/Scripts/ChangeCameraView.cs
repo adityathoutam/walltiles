@@ -7,7 +7,7 @@ public class ChangeCameraView : MonoBehaviour
 
     public bool CameraMan;
 
-    public Camera mainCamera;
+   // public Camera mainCamera;
     public Camera ZoomCamera;
 
     private bool CamSwitch;
@@ -18,13 +18,13 @@ public class ChangeCameraView : MonoBehaviour
         
     }
 
-    public void SwitchZoom()
-    {
-        CamSwitch = !CamSwitch;
-        mainCamera.gameObject.SetActive(!CamSwitch);
-        ZoomCamera.gameObject.SetActive(CamSwitch);
+    // public void SwitchZoom()
+    // {
+    //     CamSwitch = !CamSwitch;
+    //     mainCamera.gameObject.SetActive(!CamSwitch);
+    //     ZoomCamera.gameObject.SetActive(CamSwitch);
       
-    }
+    // }
 
     private bool firstClick = false, secondClick = false;
 

@@ -96,7 +96,7 @@ public void DestoryOneDWall()
         {
             if(Wall==null)
             {
-           
+            Camera.main.fieldOfView=60f;
             if(GameManager.GetComponent<UserInfo>().CompletedRoom!=null)
                 Destroy(GameManager.GetComponent<UserInfo>().CompletedRoom);
              CanvasCamera.SetActive(false);

@@ -17,7 +17,7 @@ public class SingleWallCreator : MonoBehaviour {
 
     BoxCollider boxCollider;
 
-    public Vector2 scale;
+     Vector2 scale;
 
     public GameObject GameManager;
 
@@ -34,13 +34,22 @@ public class SingleWallCreator : MonoBehaviour {
     private void Update()
     {
 
+        
+
+        float xa = GameManager.GetComponent<UserInfo>().TileWidthSlider.value;
+            float ya = GameManager.GetComponent<UserInfo>().TileWidthSlider.value;
+
+            scale.x=xa;
+            scale.y =ya; 
+
         if(Wall!=null)
         {
             float x =  GameManager.GetComponent<UserInfo>().WallWidthSlider.value;
             float y = GameManager.GetComponent<UserInfo>().WallHeightSlider.value;
 
-            Wall.transform.localScale= new Vector2(x,0); 
+            Wall.transform.localScale= new Vector3(x,y,1); 
         }
+
 
         if(Wall!=null)
         {
@@ -53,7 +62,13 @@ public class SingleWallCreator : MonoBehaviour {
             Material TileMaterial = GameManager.GetComponent<UserInfo>().TileMaterial;
             //Tile.GetComponent<Renderer>().material= GroutMaterial;
             if(Tiles[i]!=null)
+            {
             Tiles[i].GetComponent<Renderer>().material = TileMaterial;
+
+            
+            }
+
+
         }
 
 
@@ -121,6 +136,10 @@ public class SingleWallCreator : MonoBehaviour {
        
         Wall = Instantiate(WallPrefab) as GameObject;
 		Tile = Instantiate(TilePrefab) as GameObject;
+         Wall.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().WallWidthSlider.value,
+                                                    GameManager.GetComponent<UserInfo>().WallHeightSlider.value,1f);
+        Tile.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().TileWidthSlider.value,
+                                                    GameManager.GetComponent<UserInfo>().TileWidthSlider.value,0.1f);
 
         Wall.transform.parent = this.transform;
         boxCollider = Wall.GetComponent<BoxCollider>();
@@ -134,10 +153,14 @@ public class SingleWallCreator : MonoBehaviour {
 	void Instantiate()
     {
         
-        TilePrefab.transform.localScale = scale;
-        TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.1f);
+      //  TilePrefab.transform.localScale = scale;
+      //  TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.1f);
 
         Tiles.Add(Tile);
+       TilePrefab.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().TileWidthSlider.value,
+                                                    GameManager.GetComponent<UserInfo>().TileWidthSlider.value,0.1f);
+       
+       
         for (int i = 1; i < QuadArea+1; ++i)
         {
             GameObject go = Instantiate(TilePrefab, Vector3.zero, Quaternion.identity);

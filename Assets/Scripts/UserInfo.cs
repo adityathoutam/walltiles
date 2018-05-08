@@ -46,21 +46,23 @@ public class UserInfo : MonoBehaviour {
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
-	Sprite TileImage;
-	Material TileMaterial;
+	public Sprite TileImage;
+	public Material TileMaterial;
 
     public Material[] materialList;
 
-    Sprite GroutImage;
-	Material GroutMaterial;
+   public Sprite GroutImage;
+	public Material GroutMaterial;
     List<RaycastResult> results = new List<RaycastResult>();
-    GameObject go;
+    public GameObject CompletedRoom;
     RoomMaker[] roomMakerComponents;
 
    
    public int ThreeDBtnClick =0;
 
     public GameObject CanvasCamera;
+
+    public GameObject SingleWallCreator;
 
     private void Update()
 	{
@@ -130,6 +132,8 @@ public class UserInfo : MonoBehaviour {
         if(ThreeDBtnClick==0)
         {
         
+            if(SingleWallCreator.GetComponent<SingleWallCreator>().Wall!=null)
+            Destroy(SingleWallCreator.GetComponent<SingleWallCreator>().Wall);
                  CanvasCamera.SetActive(false);
                StartCoroutine(StartCounting());
                ThreeDBtnClick++;
@@ -138,7 +142,8 @@ public class UserInfo : MonoBehaviour {
 
         if(ThreeDBtnClick==1)
         {
-                Destroy(go);
+                Destroy(CompletedRoom);
+               
                   CanvasCamera.SetActive(true);
                   ThreeDBtnClick=0;
         }
@@ -147,19 +152,19 @@ public class UserInfo : MonoBehaviour {
    
 public void DestoryYhreeDWall()
 {
-    if(go!=null)
+    if(CompletedRoom!=null)
     {
-    Destroy(go);
+    Destroy(CompletedRoom);
     }
 
 }
   
     IEnumerator StartCounting()
     {
-        if(go==null)
+        if(CompletedRoom==null)
         {
-        go =Instantiate(RoomMaker) as GameObject;
-         roomMakerComponents = go.GetComponents<RoomMaker>();
+        CompletedRoom =Instantiate(RoomMaker) as GameObject;
+         roomMakerComponents = CompletedRoom.GetComponents<RoomMaker>();
         
         for(int i=0;i<roomMakerComponents[0].Tiles.Count;i++)
         {
@@ -172,7 +177,7 @@ public void DestoryYhreeDWall()
             roomMakerComponents[2].Wall.GetComponent<Renderer>().material = GroutMaterial;
 
         }
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
             roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
             roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);

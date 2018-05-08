@@ -18,6 +18,10 @@ public class SingleWallCreator : MonoBehaviour {
     BoxCollider boxCollider;
 
     public Vector2 scale;
+
+    public GameObject GameManager;
+
+    public GameObject CanvasCamera;
    
 	Vector2 TopLeft;
 	 //Vector2 TopRight;
@@ -26,15 +30,52 @@ public class SingleWallCreator : MonoBehaviour {
 	 public List<GameObject> Tiles = new List<GameObject>();
 
 
+
+    private void Update()
+    {
+
+        if(Wall!=null)
+        {
+            float x =  GameManager.GetComponent<UserInfo>().WallWidthSlider.value;
+            float y = GameManager.GetComponent<UserInfo>().WallHeightSlider.value;
+
+            Wall.transform.localScale= new Vector2(x,0); 
+        }
+
+        if(Wall!=null)
+        {
+             Material GroutMaterial = GameManager.GetComponent<UserInfo>().GroutMaterial;
+           
+            Wall.GetComponent<Renderer>().material = GroutMaterial;
+        }
+        for (int i=0;i<Tiles.Count;i++)
+        {
+            Material TileMaterial = GameManager.GetComponent<UserInfo>().TileMaterial;
+            //Tile.GetComponent<Renderer>().material= GroutMaterial;
+            if(Tiles[i]!=null)
+            Tiles[i].GetComponent<Renderer>().material = TileMaterial;
+        }
+
+
+
+    }
+
+
+
+
+
+
     public void Create()
     {
         if(ThreeDBtnClick==0)
         {
             if(Wall==null)
             {
-             Awake2();
-        StartFunction();       
-		Destroy(Tiles[Tiles.Count-1]);
+           
+            if(GameManager.GetComponent<UserInfo>().CompletedRoom!=null)
+                Destroy(GameManager.GetComponent<UserInfo>().CompletedRoom);
+             CanvasCamera.SetActive(false);
+		     StartCoroutine(StartCounting());
                 
                ThreeDBtnClick++;
                return;
@@ -43,11 +84,29 @@ public class SingleWallCreator : MonoBehaviour {
 
         if(ThreeDBtnClick==1)
         {
+             CanvasCamera.SetActive(true);
                 Destroy(Wall);
+                Tiles.Clear();
+                
                  
                   ThreeDBtnClick=0;
+                  return;
         }
     }
+
+
+     IEnumerator StartCounting()
+    {
+          Awake2();
+       
+        yield return new WaitForSeconds(0.1f);
+
+            StartFunction();  
+            Destroy(Tiles[Tiles.Count-1]);
+
+        yield return new WaitForSeconds(0.1f);
+    }
+    
     void StartFunction()
     {
 	    for (int i = 0; i < QuadArea; i++)
@@ -60,8 +119,8 @@ public class SingleWallCreator : MonoBehaviour {
 	void Awake2()
     {
        
-        Wall = Instantiate(WallPrefab);
-		Tile = Instantiate(TilePrefab);
+        Wall = Instantiate(WallPrefab) as GameObject;
+		Tile = Instantiate(TilePrefab) as GameObject;
 
         Wall.transform.parent = this.transform;
         boxCollider = Wall.GetComponent<BoxCollider>();
@@ -93,6 +152,7 @@ public class SingleWallCreator : MonoBehaviour {
         // TopRight = new Vector2(boxCollider.bounds.max.x - scale.x / 2,
         //           boxCollider.bounds.max.y - scale.y / 2);
 
+        
         Tiles[0].transform.position = TopLeft;
         
 

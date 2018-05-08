@@ -197,7 +197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &30524807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +261,8 @@ MonoBehaviour:
   GroutDisplay: {fileID: 1324635409}
   GroutSlider: {fileID: 2007703015}
   canvas: {fileID: 590902428}
+  TileImage: {fileID: 0}
+  TileMaterial: {fileID: 0}
   materialList:
   - {fileID: 2100000, guid: 537d0bda499aa4549be8acc2d9caf7ee, type: 2}
   - {fileID: 2100000, guid: 29482f5cd711b8f4bb20c93ecda80f9f, type: 2}
@@ -272,8 +274,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 47988881543d898469c4879df30c80fd, type: 2}
   - {fileID: 2100000, guid: 6a38770f9b2a3324da9b54255398d0ee, type: 2}
   - {fileID: 2100000, guid: f3372bff8f03c4748a37734740c85bc1, type: 2}
+  GroutImage: {fileID: 0}
+  GroutMaterial: {fileID: 0}
+  CompletedRoom: {fileID: 0}
   ThreeDBtnClick: 0
   CanvasCamera: {fileID: 1807944529}
+  SingleWallCreator: {fileID: 966005624}
 --- !u!1 &33242373
 GameObject:
   m_ObjectHideFlags: 0
@@ -4025,6 +4031,8 @@ MonoBehaviour:
   RowWidth: 0.1
   ColoumnWidth: 0.1
   scale: {x: 1, y: 1}
+  GameManager: {fileID: 30524806}
+  CanvasCamera: {fileID: 1807944529}
   Tiles: []
 --- !u!4 &966005626
 Transform:

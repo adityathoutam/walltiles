@@ -273,34 +273,34 @@ public void DestoryYhreeDWall()
     {
         if (TileImage != null)
         {
-            if (TileImage.name == "Tile_A")
+            if (TileImage.name == "Tile1")
                 TileMaterial = TilematerialList[0];
                 
-            else if (TileImage.name == "Tile_B")
+            else if (TileImage.name == "Tile2")
                 TileMaterial = TilematerialList[1];
 
-            else if (TileImage.name == "Tile_C")
+            else if (TileImage.name == "Tile3")
                 TileMaterial = TilematerialList[2];
 
-            else if (TileImage.name == "Tile_D")
+            else if (TileImage.name == "Tile4")
                 TileMaterial = TilematerialList[3];
 
-            else if (TileImage.name == "Tile_E")
+            else if (TileImage.name == "Tile5")
                 TileMaterial = TilematerialList[4];
 
-            else if (TileImage.name == "Tile_F")
+            else if (TileImage.name == "Tile6")
                 TileMaterial = TilematerialList[5];
 
-            else if (TileImage.name == "Tile_G")
+            else if (TileImage.name == "Tile7")
                 TileMaterial = TilematerialList[6];
 
-            else if (TileImage.name == "Tile_H")
+            else if (TileImage.name == "Tile8")
                 TileMaterial = TilematerialList[7];
 
-            else if (TileImage.name == "Tile_I")
+            else if (TileImage.name == "Tile9")
                 TileMaterial = TilematerialList[8];
 
-            else if (TileImage.name == "Tile_J")
+            else if (TileImage.name == "Tile10")
                 TileMaterial = TilematerialList[9];
         }
         else

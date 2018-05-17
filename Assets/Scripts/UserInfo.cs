@@ -20,6 +20,17 @@ public class UserInfo : MonoBehaviour {
     public GameObject Wall_B_H,Wall_B_W;
     public GameObject Wall_C_H,Wall_C_W;
     public GameObject Wall_D_H,Wall_D_W;
+    public GameObject Tile_H,Tile_W;
+    public GameObject Grout_H,Grout_W;
+
+    public float Wall_A_H_Num,Wall_A_W_Num;
+    public float Wall_B_H_Num,Wall_B_W_Num;
+    public float Wall_C_H_Num,Wall_C_W_Num;
+    public float Wall_D_H_Num,Wall_D_W_Num;
+    public float Tile_H_Num,Tile_W_Num;
+    public float Grout_H_Num,Grout_W_Num;
+
+
     
 
 	
@@ -77,7 +88,23 @@ public class UserInfo : MonoBehaviour {
 		GroutImageSelected();
 
 
+        Wall_A_H.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Wall_A_H_Num);
+         Wall_A_W.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Wall_A_W_Num);
+
+          Wall_B_H.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Wall_B_H_Num);
+         Wall_B_W.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Wall_B_W_Num);
+
+          Wall_C_H.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Wall_C_H_Num);
+         Wall_C_W.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Wall_C_W_Num);
+
+          Wall_D_H.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Wall_D_H_Num);
+         Wall_D_W.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Wall_D_W_Num);
+        
+
+        
+        
         // PriceDetails();
+        
 
 
         // WallHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",WallHeightSlider.value);

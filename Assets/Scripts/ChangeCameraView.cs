@@ -11,20 +11,15 @@ public class ChangeCameraView : MonoBehaviour
     public Camera ZoomCamera;
 
     private bool CamSwitch;
+    float originalFOV;
     
     void Awake()
     {
          CamSwitch = false;
+
+         originalFOV =ZoomCamera.fieldOfView;
         
     }
-
-    // public void SwitchZoom()
-    // {
-    //     CamSwitch = !CamSwitch;
-    //     mainCamera.gameObject.SetActive(!CamSwitch);
-    //     ZoomCamera.gameObject.SetActive(CamSwitch);
-      
-    // }
 
     private bool firstClick = false, secondClick = false;
 
@@ -54,17 +49,17 @@ public class ChangeCameraView : MonoBehaviour
 
     public void First()
     {
-      ZoomCamera.fieldOfView =30;
+      ZoomCamera.fieldOfView =+10f;;
     }
 
     public void Second()
     {
-       ZoomCamera.fieldOfView = 20;
+       ZoomCamera.fieldOfView = +20f;
     }
 
     public void Third()
     {
-       ZoomCamera.fieldOfView = 10;
+       ZoomCamera.fieldOfView = originalFOV;
     }
 
 }

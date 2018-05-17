@@ -70,43 +70,43 @@ public class UserInfo : MonoBehaviour {
 		GroutImageSelected();
 
 
-        PriceDetails();
+        // PriceDetails();
 
 
-        WallHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",WallHeightSlider.value);
-		WallWidthDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N0}",WallWidthSlider.value);
+        // WallHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",WallHeightSlider.value);
+		// WallWidthDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N0}",WallWidthSlider.value);
 
-		TileHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",TileHeightSlider.value);
-		TileWidthDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N0}",TileWidthSlider.value);
+		// TileHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",TileHeightSlider.value);
+		// TileWidthDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N0}",TileWidthSlider.value);
 
-		GroutDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N2}",GroutSlider.value);
+		// GroutDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N2}",GroutSlider.value);
 	}
 
-    void PriceDetails()
-    {
-          count = System.Math.Round(WallHeightSlider.value/TileHeightSlider.value * WallWidthSlider.value/TileWidthSlider.value, 0, System.MidpointRounding.AwayFromZero); 
-        NoOfTiles.text = " " + count;
-        TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
+    // void PriceDetails()
+    // {
+    //       count = System.Math.Round(WallHeightSlider.value/TileHeightSlider.value * WallWidthSlider.value/TileWidthSlider.value, 0, System.MidpointRounding.AwayFromZero); 
+    //     NoOfTiles.text = " " + count;
+    //     TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
 
       
 
-        if ((TileHeightSlider.value >= 1 && TileWidthSlider.value >= 1) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 3))
-        {
-            tileprice.text = " " + Tileprice1x1;
-            Totalprice.text = " " + count * Tileprice1x1;
-        }
-        if ((TileHeightSlider.value>=2 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 1))
-        {
-            tileprice.text = " " + Tileprice2x2;
-            Totalprice.text = " " + count * Tileprice2x2;
-        }
-        if ((TileHeightSlider.value >= 3 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 1))
-        {
-            tileprice.text = " " + Tileprice3x3;
-            Totalprice.text = " " + count * Tileprice3x3;
-        }
+    //     if ((TileHeightSlider.value >= 1 && TileWidthSlider.value >= 1) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 3))
+    //     {
+    //         tileprice.text = " " + Tileprice1x1;
+    //         Totalprice.text = " " + count * Tileprice1x1;
+    //     }
+    //     if ((TileHeightSlider.value>=2 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 1))
+    //     {
+    //         tileprice.text = " " + Tileprice2x2;
+    //         Totalprice.text = " " + count * Tileprice2x2;
+    //     }
+    //     if ((TileHeightSlider.value >= 3 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 1))
+    //     {
+    //         tileprice.text = " " + Tileprice3x3;
+    //         Totalprice.text = " " + count * Tileprice3x3;
+    //     }
         
-    }
+    // }
 
 	private void Awake()
     {

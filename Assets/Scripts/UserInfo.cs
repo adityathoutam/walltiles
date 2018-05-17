@@ -16,10 +16,10 @@ public class UserInfo : MonoBehaviour {
     public GameObject RoomMaker;
 
    
-    public float Wall_A_H,Wall_A_W;
-    public float Wall_B_H,Wall_B_W;
-    public float Wall_C_H,Wall_C_W;
-    public float Wall_D_H,Wall_D_W;
+    public GameObject Wall_A_H,Wall_A_W;
+    public GameObject Wall_B_H,Wall_B_W;
+    public GameObject Wall_C_H,Wall_C_W;
+    public GameObject Wall_D_H,Wall_D_W;
     
 
 	
@@ -89,36 +89,38 @@ public class UserInfo : MonoBehaviour {
 		// GroutDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N2}",GroutSlider.value);
 	}
 
-    // void PriceDetails()
-    // {
-    //       count = System.Math.Round(WallHeightSlider.value/TileHeightSlider.value * WallWidthSlider.value/TileWidthSlider.value, 0, System.MidpointRounding.AwayFromZero); 
-    //     NoOfTiles.text = " " + count;
-    //     TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
+    void PriceDetails()
+    {
+          count = System.Math.Round(WallHeightSlider.value/TileHeightSlider.value * WallWidthSlider.value/TileWidthSlider.value, 0, System.MidpointRounding.AwayFromZero); 
+        NoOfTiles.text = " " + count;
+        TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
 
       
 
-    //     if ((TileHeightSlider.value >= 1 && TileWidthSlider.value >= 1) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 3))
-    //     {
-    //         tileprice.text = " " + Tileprice1x1;
-    //         Totalprice.text = " " + count * Tileprice1x1;
-    //     }
-    //     if ((TileHeightSlider.value>=2 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 1))
-    //     {
-    //         tileprice.text = " " + Tileprice2x2;
-    //         Totalprice.text = " " + count * Tileprice2x2;
-    //     }
-    //     if ((TileHeightSlider.value >= 3 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 1))
-    //     {
-    //         tileprice.text = " " + Tileprice3x3;
-    //         Totalprice.text = " " + count * Tileprice3x3;
-    //     }
+        if ((TileHeightSlider.value >= 1 && TileWidthSlider.value >= 1) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 3))
+        {
+            tileprice.text = " " + Tileprice1x1;
+            Totalprice.text = " " + count * Tileprice1x1;
+        }
+        if ((TileHeightSlider.value>=2 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 1))
+        {
+            tileprice.text = " " + Tileprice2x2;
+            Totalprice.text = " " + count * Tileprice2x2;
+        }
+        if ((TileHeightSlider.value >= 3 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 1))
+        {
+            tileprice.text = " " + Tileprice3x3;
+            Totalprice.text = " " + count * Tileprice3x3;
+        }
         
-    // }
+    }
 
 	private void Awake()
     {
        m_Raycaster = canvas.GetComponent<GraphicRaycaster>();
        m_EventSystem = GetComponent<EventSystem>();
+
+      // Wall_A_H = WallHeightDisplay.GetComponent<TMP_InputField>().text;
     }
 
 	void FixedUpdate()

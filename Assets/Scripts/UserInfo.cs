@@ -23,6 +23,13 @@ public class UserInfo : MonoBehaviour {
     public GameObject Tile_H,Tile_W;
     public GameObject Grout_H,Grout_W;
 
+    
+         public Button Wall_A_H_Plus,Wall_A_W_Plus;  
+         public Button Wall_B_H_Plus,Wall_B_W_Plus;
+         public Button Wall_C_H_Plus,Wall_C_W_Plus;
+           public Button Wall_D_H_Plus,Wall_D_W_Plus;
+
+
     public float Wall_A_H_Num=5,Wall_A_W_Num=5;
     public float Wall_B_H_Num=5,Wall_B_W_Num=5;
     public float Wall_C_H_Num=5,Wall_C_W_Num=5;
@@ -32,7 +39,11 @@ public class UserInfo : MonoBehaviour {
 
 
     
+    void AddMethod(float value,float increment)
+    {
+        
 
+    }
 	
 
     public Image tileImage;
@@ -104,7 +115,11 @@ public class UserInfo : MonoBehaviour {
           Wall_D_H.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Wall_D_H_Num);
          Wall_D_W.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Wall_D_W_Num);
         
+        Tile_H.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Tile_H_Num);
+        Tile_W.GetComponent<TMP_InputField>().text = string.Format("{0:N0}", Tile_W_Num);
 
+        Grout_H.GetComponent<TMP_InputField>().text = string.Format("{0:N2}", Grout_H_Num);
+        Grout_W.GetComponent<TMP_InputField>().text = string.Format("{0:N2}", Grout_W_Num);
         
         
         // PriceDetails();

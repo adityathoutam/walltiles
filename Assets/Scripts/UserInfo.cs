@@ -16,11 +16,13 @@ public class UserInfo : MonoBehaviour {
     public GameObject RoomMaker;
 
    
+    public float Wall_A_H,Wall_A_W;
+    public float Wall_B_H,Wall_B_W;
+    public float Wall_C_H,Wall_C_W;
+    public float Wall_D_H,Wall_D_W;
+    
 
-	public GameObject WallHeightDisplay;
-	public Slider WallHeightSlider;
-	public GameObject WallWidthDisplay;
-	public Slider WallWidthSlider;
+	
 
     public Image tileImage;
     public Text TileSize;
@@ -37,6 +39,11 @@ public class UserInfo : MonoBehaviour {
 	public Slider TileHeightSlider;
 	public GameObject TileWidthDisplay;
 	public Slider TileWidthSlider;
+
+    public GameObject WallHeightDisplay;
+	public Slider WallHeightSlider;
+	public GameObject WallWidthDisplay;
+	public Slider WallWidthSlider;
 
 	public GameObject GroutDisplay;
 	public Slider GroutSlider;

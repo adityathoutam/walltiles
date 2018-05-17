@@ -24,10 +24,14 @@ public class UserInfo : MonoBehaviour {
     public GameObject Grout_H,Grout_W;
 
     
-         public Button Wall_A_H_Plus,Wall_A_W_Plus;  
+         public Button Wall_A_H_Plus,Wall_A_W_Plus;
+         public Button Wall_A_H_Minus,Wall_A_W_Minus;
          public Button Wall_B_H_Plus,Wall_B_W_Plus;
+         public Button Wall_B_H_Minus,Wall_B_W_Minus;
          public Button Wall_C_H_Plus,Wall_C_W_Plus;
+         public Button Wall_C_H_Minus,Wall_C_W_Minus;
            public Button Wall_D_H_Plus,Wall_D_W_Plus;
+           public Button Wall_D_H_Minus,Wall_D_W_Minus;
 
 
     public float Wall_A_H_Num=5,Wall_A_W_Num=5;

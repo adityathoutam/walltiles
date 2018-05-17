@@ -23,12 +23,12 @@ public class UserInfo : MonoBehaviour {
     public GameObject Tile_H,Tile_W;
     public GameObject Grout_H,Grout_W;
 
-    public float Wall_A_H_Num,Wall_A_W_Num;
-    public float Wall_B_H_Num,Wall_B_W_Num;
-    public float Wall_C_H_Num,Wall_C_W_Num;
-    public float Wall_D_H_Num,Wall_D_W_Num;
-    public float Tile_H_Num,Tile_W_Num;
-    public float Grout_H_Num,Grout_W_Num;
+    public float Wall_A_H_Num=5,Wall_A_W_Num=5;
+    public float Wall_B_H_Num=5,Wall_B_W_Num=5;
+    public float Wall_C_H_Num=5,Wall_C_W_Num=5;
+    public float Wall_D_H_Num=5,Wall_D_W_Num=5;
+    public float Tile_H_Num=1,Tile_W_Num=1;
+    public float Grout_H_Num=0.01f,Grout_W_Num=0.01f;
 
 
     

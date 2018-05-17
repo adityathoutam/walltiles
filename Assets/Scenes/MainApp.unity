@@ -396,14 +396,30 @@ MonoBehaviour:
   RightWall: {fileID: 1925298798897452, guid: f032fc3afd26e054eb533210f24c02d9, type: 2}
   BottomWall: {fileID: 1469267432943082, guid: f032fc3afd26e054eb533210f24c02d9, type: 2}
   RoomMaker: {fileID: 1729495577800134, guid: 445b98d8ded6eba4688bea1c95e919fa, type: 2}
-  Wall_A_H: {fileID: 0}
-  Wall_A_W: {fileID: 0}
-  Wall_B_H: {fileID: 0}
-  Wall_B_W: {fileID: 0}
-  Wall_C_H: {fileID: 0}
-  Wall_C_W: {fileID: 0}
-  Wall_D_H: {fileID: 0}
-  Wall_D_W: {fileID: 0}
+  Wall_A_H: {fileID: 1379102922}
+  Wall_A_W: {fileID: 2096943663}
+  Wall_B_H: {fileID: 1170726516}
+  Wall_B_W: {fileID: 1096670885}
+  Wall_C_H: {fileID: 1947379921}
+  Wall_C_W: {fileID: 115055363}
+  Wall_D_H: {fileID: 1209172660}
+  Wall_D_W: {fileID: 1488126674}
+  Tile_H: {fileID: 1688441480}
+  Tile_W: {fileID: 865737092}
+  Grout_H: {fileID: 1081624820}
+  Grout_W: {fileID: 1980829207}
+  Wall_A_H_Num: 5
+  Wall_A_W_Num: 5
+  Wall_B_H_Num: 5
+  Wall_B_W_Num: 5
+  Wall_C_H_Num: 5
+  Wall_C_W_Num: 5
+  Wall_D_H_Num: 5
+  Wall_D_W_Num: 5
+  Tile_H_Num: 1
+  Tile_W_Num: 1
+  Grout_H_Num: 0.01
+  Grout_W_Num: 0.01
   tileImage: {fileID: 75915679}
   TileSize: {fileID: 1296473795}
   NoOfTiles: {fileID: 977038474}
@@ -767,7 +783,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -1630,7 +1646,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -3934,7 +3950,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -7119,7 +7135,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -7632,7 +7648,7 @@ GameObject:
   - component: {fileID: 1081624823}
   - component: {fileID: 1081624822}
   m_Layer: 5
-  m_Name: TileHeight Display
+  m_Name: GroutHeight Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8238,7 +8254,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -9388,7 +9404,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -9737,7 +9753,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -9890,7 +9906,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -10709,7 +10725,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -11256,7 +11272,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -13633,7 +13649,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -16060,7 +16076,7 @@ GameObject:
   - component: {fileID: 1980829210}
   - component: {fileID: 1980829209}
   m_Layer: 5
-  m_Name: TileWidth Display
+  m_Name: GroutWidth Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16353,7 +16369,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}

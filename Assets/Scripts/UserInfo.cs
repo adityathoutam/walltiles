@@ -36,14 +36,6 @@ public class UserInfo : MonoBehaviour {
     public float Wall_D_H_Num=5,Wall_D_W_Num=5;
     public float Tile_H_Num=1,Tile_W_Num=1;
     public float Grout_H_Num=0.01f,Grout_W_Num=0.01f;
-
-
-    
-    void AddMethod(float value,float increment)
-    {
-        
-
-    }
 	
 
     public Image tileImage;

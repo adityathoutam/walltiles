@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964128, b: 0.5748176, a: 1}
+  m_IndirectSpecularColor: {r: 0.44658017, g: 0.49641502, b: 0.57482153, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -408,6 +408,14 @@ MonoBehaviour:
   Tile_W: {fileID: 0}
   Grout_H: {fileID: 0}
   Grout_W: {fileID: 0}
+  Wall_A_H_Plus: {fileID: 0}
+  Wall_A_W_Plus: {fileID: 0}
+  Wall_B_H_Plus: {fileID: 0}
+  Wall_B_W_Plus: {fileID: 0}
+  Wall_C_H_Plus: {fileID: 0}
+  Wall_C_W_Plus: {fileID: 0}
+  Wall_D_H_Plus: {fileID: 0}
+  Wall_D_W_Plus: {fileID: 0}
   Wall_A_H_Num: 5
   Wall_A_W_Num: 5
   Wall_B_H_Num: 5
@@ -421,10 +429,10 @@ MonoBehaviour:
   Grout_H_Num: 0.01
   Grout_W_Num: 0.01
   tileImage: {fileID: 75915679}
-  WallArea_A: {fileID: 2129876130}
-  WallArea_B: {fileID: 790971712}
-  WallArea_C: {fileID: 1125643820}
-  WallArea_D: {fileID: 1744056066}
+  WallArea_A: {fileID: 0}
+  WallArea_B: {fileID: 0}
+  WallArea_C: {fileID: 0}
+  WallArea_D: {fileID: 0}
   TileSize: {fileID: 1296473795}
   NoOfTiles: {fileID: 977038474}
   Totalprice: {fileID: 607755808}
@@ -10861,7 +10869,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1394224819}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30524809}
+        m_MethodName: OnClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1394224819

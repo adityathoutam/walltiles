@@ -36,6 +36,10 @@ public class UserInfo : MonoBehaviour {
 	
 
     public Image tileImage;
+    public Text WallArea_A;
+    public Text WallArea_B;
+    public Text WallArea_C;
+    public Text WallArea_D;
     public Text TileSize;
     public Text NoOfTiles;
     public Text Totalprice;
@@ -122,7 +126,10 @@ public class UserInfo : MonoBehaviour {
         NoOfTiles.text = " " + count;
         TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
 
-      
+        WallArea_A.text = " " + Wall_A_H_Num * Wall_A_W_Num;
+        WallArea_B.text = " " + Wall_B_H_Num * Wall_B_W_Num;
+        WallArea_C.text = " " + Wall_C_H_Num * Wall_C_W_Num;
+        WallArea_D.text = " " + Wall_D_H_Num * Wall_D_W_Num;
 
         if ((TileHeightSlider.value >= 1 && TileWidthSlider.value >= 1) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 3))
         {

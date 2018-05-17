@@ -40,6 +40,14 @@ public class UserInfo : MonoBehaviour {
     public float Wall_D_H_Num=5,Wall_D_W_Num=5;
     public float Tile_H_Num=1,Tile_W_Num=1;
     public float Grout_H_Num=0.01f,Grout_W_Num=0.01f;
+
+
+    
+    void AddMethod(float value,float increment)
+    {
+        
+
+    }
 	
 
     public Image tileImage;
@@ -78,7 +86,8 @@ public class UserInfo : MonoBehaviour {
 	public Sprite TileImage;
 	public Material TileMaterial;
 
-    public Material[] materialList;
+    public Material[] TilematerialList;
+    public Material[] GroutMaterialList;
 
    public Sprite GroutImage;
 	public Material GroutMaterial;
@@ -133,7 +142,7 @@ public class UserInfo : MonoBehaviour {
 
     void PriceDetails()
     {
-          count = System.Math.Round(WallHeightSlider.value/TileHeightSlider.value * WallWidthSlider.value/TileWidthSlider.value, 0, System.MidpointRounding.AwayFromZero); 
+        count = System.Math.Round(WallHeightSlider.value/TileHeightSlider.value * WallWidthSlider.value/TileWidthSlider.value, 0, System.MidpointRounding.AwayFromZero); 
         NoOfTiles.text = " " + count;
         TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
 
@@ -265,75 +274,69 @@ public void DestoryYhreeDWall()
         if (TileImage != null)
         {
             if (TileImage.name == "Tile_A")
-                TileMaterial = materialList[0];
+                TileMaterial = TilematerialList[0];
                 
             else if (TileImage.name == "Tile_B")
-                TileMaterial = materialList[1];
+                TileMaterial = TilematerialList[1];
 
             else if (TileImage.name == "Tile_C")
-                TileMaterial = materialList[2];
+                TileMaterial = TilematerialList[2];
 
             else if (TileImage.name == "Tile_D")
-                TileMaterial = materialList[3];
+                TileMaterial = TilematerialList[3];
 
             else if (TileImage.name == "Tile_E")
-                TileMaterial = materialList[4];
+                TileMaterial = TilematerialList[4];
 
             else if (TileImage.name == "Tile_F")
-                TileMaterial = materialList[5];
+                TileMaterial = TilematerialList[5];
 
             else if (TileImage.name == "Tile_G")
-                TileMaterial = materialList[6];
+                TileMaterial = TilematerialList[6];
 
             else if (TileImage.name == "Tile_H")
-                TileMaterial = materialList[7];
+                TileMaterial = TilematerialList[7];
 
             else if (TileImage.name == "Tile_I")
-                TileMaterial = materialList[8];
+                TileMaterial = TilematerialList[8];
 
             else if (TileImage.name == "Tile_J")
-                TileMaterial = materialList[9];
+                TileMaterial = TilematerialList[9];
         }
         else
-        TileMaterial = materialList[0];
+        TileMaterial = TilematerialList[0];
     }
 
 	void GroutImageSelected()
     {
         if (GroutImage != null)
         {
-            if (GroutImage.name == "Tile_A")
-                GroutMaterial = materialList[0];
+            if (GroutImage.name == "Grout1")
+                GroutMaterial = GroutMaterialList[0];
                 
-            else if (GroutImage.name == "Tile_B")
-                GroutMaterial = materialList[1];
+            else if (GroutImage.name == "Grout2")
+                GroutMaterial = GroutMaterialList[1];
 
-            else if (GroutImage.name == "Tile_C")
-                GroutMaterial = materialList[2];
+            else if (GroutImage.name == "Grout3")
+                GroutMaterial = GroutMaterialList[2];
 
-            else if (GroutImage.name == "Tile_D")
-                GroutMaterial = materialList[3];
+            else if (GroutImage.name == "Grout4")
+                GroutMaterial = GroutMaterialList[3];
 
-            else if (GroutImage.name == "Tile_E")
-                GroutMaterial = materialList[4];
+            else if (GroutImage.name == "Grout5")
+                GroutMaterial = GroutMaterialList[4];
 
-            else if (GroutImage.name == "Tile_F")
-                GroutMaterial = materialList[5];
+            else if (GroutImage.name == "Grout6")
+                GroutMaterial = GroutMaterialList[5];
 
-            else if (GroutImage.name == "Tile_G")
-                GroutMaterial = materialList[6];
+            else if (GroutImage.name == "Grout7")
+                GroutMaterial = GroutMaterialList[6];
 
-            else if (GroutImage.name == "Tile_H")
-                GroutMaterial = materialList[7];
-
-            else if (GroutImage.name == "Tile_I")
-                GroutMaterial = materialList[8];
-
-            else if (GroutImage.name == "Tile_J")
-                GroutMaterial = materialList[9];
+            else if (GroutImage.name == "Grout8")
+                GroutMaterial = GroutMaterialList[7];
         }
         else
-        GroutMaterial = materialList[0];
+        GroutMaterial = GroutMaterialList[0];
     }
 
 }

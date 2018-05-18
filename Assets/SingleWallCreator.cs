@@ -36,19 +36,19 @@ public class SingleWallCreator : MonoBehaviour {
 
         
 
-        float xa = GameManager.GetComponent<UserInfo>().TileWidthSlider.value;
-            float ya = GameManager.GetComponent<UserInfo>().TileWidthSlider.value;
+        float xa =  GameManager.GetComponent<UserInfo>().Tile_H_Num;
+            float ya = GameManager.GetComponent<UserInfo>().Tile_W_Num;
 
             scale.x=xa;
             scale.y =ya; 
-        RowWidth = GameManager.GetComponent<UserInfo>().GroutSlider.value;
-        ColoumnWidth = GameManager.GetComponent<UserInfo>().GroutSlider.value;
+        RowWidth = GameManager.GetComponent<UserInfo>().Grout_H_Num;
+        ColoumnWidth = GameManager.GetComponent<UserInfo>().Grout_W_Num;
 
 
         if(Wall!=null)
         {
-            float x =  GameManager.GetComponent<UserInfo>().WallWidthSlider.value;
-            float y = GameManager.GetComponent<UserInfo>().WallHeightSlider.value;
+            float x =  GameManager.GetComponent<UserInfo>().Wall_A_W_Num;
+            float y = GameManager.GetComponent<UserInfo>().Wall_A_W_Num;
 
             Wall.transform.localScale= new Vector3(x,y,1); 
         }
@@ -146,10 +146,10 @@ public void DestoryOneDWall()
        
         Wall = Instantiate(WallPrefab) as GameObject;
 		Tile = Instantiate(TilePrefab) as GameObject;
-         Wall.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().WallWidthSlider.value,
-                                                    GameManager.GetComponent<UserInfo>().WallHeightSlider.value,1f);
-        Tile.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().TileWidthSlider.value,
-                                                    GameManager.GetComponent<UserInfo>().TileWidthSlider.value,0.1f);
+         Wall.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().Wall_A_H_Num,
+                                                    GameManager.GetComponent<UserInfo>().Wall_A_W_Num,1f);
+        Tile.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().Tile_W_Num,
+                                                    GameManager.GetComponent<UserInfo>().Tile_H_Num,0.01f);
 
         Wall.transform.parent = this.transform;
         boxCollider = Wall.GetComponent<BoxCollider>();
@@ -167,8 +167,8 @@ public void DestoryOneDWall()
       //  TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.1f);
 
         Tiles.Add(Tile);
-       TilePrefab.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().TileWidthSlider.value,
-                                                    GameManager.GetComponent<UserInfo>().TileWidthSlider.value,0.1f);
+       TilePrefab.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().Tile_H_Num,
+                                                    GameManager.GetComponent<UserInfo>().Tile_W_Num,0.01f);
        
        
         for (int i = 1; i < QuadArea+1; ++i)

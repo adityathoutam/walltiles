@@ -32,7 +32,12 @@ public class UserInfo : MonoBehaviour {
          public Button Wall_C_H_Minus,Wall_C_W_Minus;
            public Button Wall_D_H_Plus,Wall_D_W_Plus;
            public Button Wall_D_H_Minus,Wall_D_W_Minus;
-             public float Wall_A_H_Num,Wall_A_W_Num;
+           public Button Tile_H_Plus,Tile_W_Plus;
+           public Button Tile_H_Minus,Tile_W_Minus;
+           public Button Grout_H_Plus,Grout_W_Plus;
+           public Button Grout_H_Minus,Grout_W_Minus;
+           
+    public float Wall_A_H_Num,Wall_A_W_Num;
     public float Wall_B_H_Num,Wall_B_W_Num;
     public float Wall_C_H_Num,Wall_C_W_Num;
     public float Wall_D_H_Num,Wall_D_W_Num;
@@ -40,25 +45,44 @@ public class UserInfo : MonoBehaviour {
     public float Grout_H_Num,Grout_W_Num;
 private void Start()
 {
-    Wall_A_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_H_Num,5,20,1,1);});
+    Wall_A_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_H_Num,5,20,1);});
+    Wall_A_H_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_H_Num,5,20,-1 );});
+    Wall_A_W_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_W_Num,5,20,1);});
+    Wall_A_W_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_W_Num,5,20,-1);});    
+
+     Wall_B_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_B_H_Num,5,20,1);});
+    Wall_B_H_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_B_H_Num,5,20,-1 );});
+    Wall_B_W_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_B_W_Num,5,20,1);});
+    Wall_B_W_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_B_W_Num,5,20,-1);});
+
+     Wall_C_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_C_H_Num,5,20,1);});
+    Wall_C_H_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_C_H_Num,5,20,-1 );});
+    Wall_C_W_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_C_W_Num,5,20,1);});
+    Wall_C_W_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_C_W_Num,5,20,-1);});
+
+     Wall_D_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_D_H_Num,5,20,1);});
+    Wall_D_H_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_D_H_Num,5,20,-1 );});
+    Wall_D_W_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_D_W_Num,5,20,1);});
+    Wall_D_W_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_D_W_Num,5,20,-1);});
+
+
+    Tile_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Tile_H_Num,1,5,1);});
+    Tile_H_Minus.onClick.AddListener(delegate{ButtonHandler(ref Tile_H_Num,1,5,-1 );});
+    Tile_W_Plus.onClick.AddListener(delegate{ButtonHandler(ref Tile_W_Num,1,5,1);});
+    Tile_W_Minus.onClick.AddListener(delegate{ButtonHandler(ref Tile_W_Num,1,5,-1);});
+
+    Grout_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Grout_H_Num,0.01f,0.1f,0.01f);});
+    Grout_H_Minus.onClick.AddListener(delegate{ButtonHandler(ref Grout_H_Num,0.01f,0.1f,0.01f );});
+    Grout_W_Plus.onClick.AddListener(delegate{ButtonHandler(ref Grout_W_Num,0.01f,0.1f,0.01f);});
+    Grout_W_Minus.onClick.AddListener(delegate{ButtonHandler(ref Grout_W_Num,0.01f,0.1f,0.01f);});
+
  
 }
 
 
- public void  ButtonHandler(ref float a, float min,float max,float increment,int upOrDown )
+ public void  ButtonHandler(ref float a, float min,float max,float increment )
     {
-         
-        if(upOrDown==0)
-        {
-           return;
-        }
-        if(upOrDown==1)
-        {
-        a++;
-        
-        }
-       
-
+            a = Mathf.Clamp(a+increment,min,max);
     }
   
   

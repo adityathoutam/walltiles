@@ -10,12 +10,12 @@ public class ChangeCameraView : MonoBehaviour
    // public Camera mainCamera;
     public Camera ZoomCamera;
 
-    private bool CamSwitch;
+   // private bool CamSwitch;
     float originalFOV;
     
     void Awake()
     {
-         CamSwitch = false;
+        // CamSwitch = false;
 
          originalFOV =ZoomCamera.fieldOfView;
         

@@ -39,7 +39,7 @@ public class RoomMaker : MonoBehaviour {
     void Instantiate()
     {
         TilePrefab.transform.localScale = scale;
-        TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.1f);
+        TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.01f);
 
         for (int i = 0; i < QuadArea+1; ++i)
         {

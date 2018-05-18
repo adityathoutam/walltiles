@@ -32,38 +32,35 @@ public class UserInfo : MonoBehaviour {
          public Button Wall_C_H_Minus,Wall_C_W_Minus;
            public Button Wall_D_H_Plus,Wall_D_W_Plus;
            public Button Wall_D_H_Minus,Wall_D_W_Minus;
+             public float Wall_A_H_Num,Wall_A_W_Num;
+    public float Wall_B_H_Num,Wall_B_W_Num;
+    public float Wall_C_H_Num,Wall_C_W_Num;
+    public float Wall_D_H_Num,Wall_D_W_Num;
+    public float Tile_H_Num,Tile_W_Num;
+    public float Grout_H_Num,Grout_W_Num;
 private void Start()
 {
-    Wall_A_H_Plus.onClick.AddListener(delegate{ButtonHandler(Wall_A_H_Num,5,20,1,1);});
+    Wall_A_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_H_Num,5,20,1,1);});
+ 
 }
-  void  ButtonHandler(float value, float min,float max,float increment,int upOrDown )
+
+
+ public void  ButtonHandler(ref float a, float min,float max,float increment,int upOrDown )
     {
+         
         if(upOrDown==0)
         {
            return;
         }
         if(upOrDown==1)
         {
-           value+= Mathf.Clamp(increment,min,max);
+        a++;
+        
         }
-        Debug.Log(value);
+       
 
     }
-    // public float Wall_A_H_Num=5,Wall_A_W_Num=5;
-    // public float Wall_B_H_Num=5,Wall_B_W_Num=5;
-    // public float Wall_C_H_Num=5,Wall_C_W_Num=5;
-    // public float Wall_D_H_Num=5,Wall_D_W_Num=5;
-    // public float Tile_H_Num=1,Tile_W_Num=1;
-    // public float Grout_H_Num=0.01f,Grout_W_Num=0.01f;
-      public float Wall_A_H_Num,Wall_A_W_Num;
-    public float Wall_B_H_Num,Wall_B_W_Num;
-    public float Wall_C_H_Num,Wall_C_W_Num;
-    public float Wall_D_H_Num,Wall_D_W_Num;
-    public float Tile_H_Num,Tile_W_Num;
-    public float Grout_H_Num,Grout_W_Num;
-
-
-    
+  
   
     public Image tileImage;
     public Text WallArea_A;

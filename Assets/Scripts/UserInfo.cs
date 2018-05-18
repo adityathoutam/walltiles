@@ -66,10 +66,10 @@ private void Start()
     Wall_D_W_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_D_W_Num,5,20,-1);});
 
 
-    Tile_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Tile_H_Num,1,5,1);});
-    Tile_H_Minus.onClick.AddListener(delegate{ButtonHandler(ref Tile_H_Num,1,5,-1 );});
-    Tile_W_Plus.onClick.AddListener(delegate{ButtonHandler(ref Tile_W_Num,1,5,1);});
-    Tile_W_Minus.onClick.AddListener(delegate{ButtonHandler(ref Tile_W_Num,1,5,-1);});
+    Tile_H_Plus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_H_Num,ref Tile_W_Num,1,3,1);});
+    Tile_H_Minus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_H_Num,ref Tile_W_Num,1,3,-1 );});
+    Tile_W_Plus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_W_Num,ref Tile_H_Num,1,3,1);});
+    Tile_W_Minus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_W_Num,ref Tile_H_Num,1,3,-1);});
 
     Grout_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Grout_H_Num,0.01f,0.1f,0.01f);});
     Grout_H_Minus.onClick.AddListener(delegate{ButtonHandler(ref Grout_H_Num,0.01f,0.1f,0.01f );});
@@ -78,7 +78,11 @@ private void Start()
 
  
 }
-
+public void  ButtonHandler2(ref float a,ref float b, float min,float max,float increment )
+    {
+            a = Mathf.Clamp(a+increment,min,max);
+            b=a;
+    }
 
  public void  ButtonHandler(ref float a, float min,float max,float increment )
     {

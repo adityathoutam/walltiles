@@ -47,8 +47,8 @@ public class SingleWallCreator : MonoBehaviour {
 
         if(Wall!=null)
         {
-            float x =  GameManager.GetComponent<UserInfo>().Wall_A_W_Num;
-            float y = GameManager.GetComponent<UserInfo>().Wall_A_W_Num;
+            float x = 10; //GameManager.GetComponent<UserInfo>().Wall_A_W_Num;
+            float y =10; //GameManager.GetComponent<UserInfo>().Wall_A_W_Num;
 
             Wall.transform.localScale= new Vector3(x,y,1); 
         }
@@ -146,8 +146,7 @@ public void DestoryOneDWall()
        
         Wall = Instantiate(WallPrefab) as GameObject;
 		Tile = Instantiate(TilePrefab) as GameObject;
-         Wall.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().Wall_A_H_Num,
-                                                    GameManager.GetComponent<UserInfo>().Wall_A_W_Num,1f);
+         Wall.transform.localScale = new Vector3(10,10,1f);
         Tile.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().Tile_W_Num,
                                                     GameManager.GetComponent<UserInfo>().Tile_H_Num,0.01f);
 

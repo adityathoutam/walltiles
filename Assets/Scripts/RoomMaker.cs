@@ -4,68 +4,115 @@ using UnityEngine;
 
 public class RoomMaker : MonoBehaviour {
 
-    public GameObject Wall;
+	public GameObject Wall;
+	public GameObject Tile;
 
 	public GameObject WallPrefab;
 	
 	public  GameObject TilePrefab;
     
-	public float RowWidth,ColoumnWidth;
+	 float RowWidth,ColoumnWidth;
 
     float QuadWidth, QuadHeight, QuadArea;
 
     BoxCollider boxCollider;
 
-    public Vector2 scale;
+     Vector2 scale;
+
+    public GameObject GameManager;
+
+   
    
 	Vector2 TopLeft;
-    //Vector2 TopRight;
-   
- public List<GameObject> Tiles = new List<GameObject>();
+	 //Vector2 TopRight;
+  
+	 public List<GameObject> Tiles = new List<GameObject>();
 
-	void Awake()
+
+
+    private void Update()
     {
-        Wall = Instantiate(WallPrefab);
-        Wall.transform.parent = this.transform;
-        boxCollider = Wall.GetComponent<BoxCollider>();
-        QuadWidth = Wall.transform.localScale.x;
-        QuadHeight = Wall.transform.localScale.y;
-        QuadArea = QuadHeight / scale.y * QuadWidth / scale.x;
-        
-        Instantiate();
-        
-    }
 
-    void Instantiate()
-    {
-        TilePrefab.transform.localScale = scale;
-        TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.01f);
+        
 
-        for (int i = 0; i < QuadArea+1; ++i)
+        float xa =  GameManager.GetComponent<UserInfo>().Tile_H_Num;
+            float ya = GameManager.GetComponent<UserInfo>().Tile_W_Num;
+
+            scale.x=xa;
+            scale.y =ya; 
+        RowWidth = GameManager.GetComponent<UserInfo>().Grout_H_Num;
+        ColoumnWidth = GameManager.GetComponent<UserInfo>().Grout_W_Num;
+
+
+        if(Wall!=null)
         {
-            GameObject go = Instantiate(TilePrefab, Vector3.zero, Quaternion.identity);
-            go.transform.parent = Wall.transform.parent;
+            float x = 10; //GameManager.GetComponent<UserInfo>().Wall_A_W_Num;
+            float y =10; //GameManager.GetComponent<UserInfo>().Wall_A_W_Num;
 
-            Tiles.Add(go);
+            Wall.transform.localScale= new Vector3(x,y,1); 
         }
 
 
-        TopLeft = new Vector2(boxCollider.bounds.min.x + scale.x / 2,
-                 -boxCollider.bounds.min.y - scale.y / 2);
-        // TopRight = new Vector2(boxCollider.bounds.max.x - scale.x / 2,
-        //           boxCollider.bounds.max.y - scale.y / 2);
+        if(Wall!=null)
+        {
+             Material GroutMaterial = GameManager.GetComponent<UserInfo>().GroutMaterial;
+           
+            Wall.GetComponent<Renderer>().material = GroutMaterial;
+        }
+        for (int i=0;i<Tiles.Count;i++)
+        {
+            Material TileMaterial = GameManager.GetComponent<UserInfo>().TileMaterial;
+            //Tile.GetComponent<Renderer>().material= GroutMaterial;
+            if(Tiles[i]!=null)
+            {
+            Tiles[i].GetComponent<Renderer>().material = TileMaterial;
 
-        Tiles[0].transform.position = TopLeft;
+            
+            }
+
+
+        }
+
+
 
     }
 
-    void Start()
-    {  
-        StartFunction();       
-		Destroy(Tiles[Tiles.Count-1]);
+public void DestoryOneDWall()
+{
+    if(Wall!=null)
+    {
+    Destroy(Wall);
+    }
+
+}
+
+
+
+
+    public void Create()
+    {
+        
+            if(Wall==null)
+            {
+		     StartCoroutine(StartCounting());
+            }
+        
+  
     }
 
 
+     IEnumerator StartCounting()
+    {
+          Awake2();
+       
+        yield return new WaitForSeconds(0.1f);
+
+            StartFunction();  
+            Destroy(Tiles[Tiles.Count-1]);
+
+        yield return new WaitForSeconds(0.1f);
+    }
+    
     void StartFunction()
     {
 	    for (int i = 0; i < QuadArea; i++)
@@ -75,9 +122,55 @@ public class RoomMaker : MonoBehaviour {
 			
         }
     }
+	void Awake2()
+    {
+       
+        Wall = Instantiate(WallPrefab) as GameObject;
+		Tile = Instantiate(TilePrefab) as GameObject;
+         Wall.transform.localScale = new Vector3(10,10,1f);
+        Tile.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().Tile_W_Num,
+                                                    GameManager.GetComponent<UserInfo>().Tile_H_Num,0.01f);
 
-	
-    void SetPosition(int i)
+        Wall.transform.parent = this.transform;
+        boxCollider = Wall.GetComponent<BoxCollider>();
+        QuadWidth = Wall.transform.localScale.x;
+        QuadHeight = Wall.transform.localScale.y;
+        QuadArea = QuadHeight / scale.y * QuadWidth / scale.x;
+        Instantiate();
+        
+    }
+
+	void Instantiate()
+    {
+        
+      //  TilePrefab.transform.localScale = scale;
+      //  TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.1f);
+
+        Tiles.Add(Tile);
+       TilePrefab.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().Tile_H_Num,
+                                                    GameManager.GetComponent<UserInfo>().Tile_W_Num,0.01f);
+       
+       
+        for (int i = 1; i < QuadArea+1; ++i)
+        {
+            GameObject go = Instantiate(TilePrefab, Vector3.zero, Quaternion.identity);
+            go.transform.parent = Wall.transform.parent;
+            
+            Tiles.Add(go);
+        }
+
+
+        TopLeft = new Vector2(boxCollider.bounds.min.x + scale.x / 2,
+                 -boxCollider.bounds.min.y - scale.y / 2);
+        // TopRight = new Vector2(boxCollider.bounds.max.x - scale.x / 2,
+        //           boxCollider.bounds.max.y - scale.y / 2);
+
+        
+        Tiles[0].transform.position = TopLeft;
+        
+
+    }
+void SetPosition(int i)
     {
         Tiles[0].transform.position = TopLeft;
 
@@ -104,6 +197,6 @@ public class RoomMaker : MonoBehaviour {
 
 
     }
-    
-   
+  
+
 }

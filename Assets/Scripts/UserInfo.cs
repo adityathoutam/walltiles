@@ -14,6 +14,7 @@ public class UserInfo : MonoBehaviour {
     public GameObject BottomWall;
 
     public GameObject RoomMaker;
+   
 
    
     public GameObject Wall_A_H,Wall_A_W;
@@ -245,7 +246,10 @@ public void  ButtonHandler2(ref float a,ref float b, float min,float max,float i
 
         if(ThreeDBtnClick==1)
         {
-                Destroy(CompletedRoom);
+              
+                  roomMakerComponents[0].DestoryOneDWall();
+         roomMakerComponents[1].DestoryOneDWall();
+         roomMakerComponents[2].DestoryOneDWall();
                
                   CanvasCamera.SetActive(true);
                   ThreeDBtnClick=0;
@@ -255,20 +259,35 @@ public void  ButtonHandler2(ref float a,ref float b, float min,float max,float i
    
 public void DestoryYhreeDWall()
 {
-    if(CompletedRoom!=null)
+    for(int i=0;i<3;i++)
     {
-    Destroy(CompletedRoom);
-    }
+        if(roomMakerComponents[i].Wall!=null)
+          roomMakerComponents[i].DestoryOneDWall();
+        }
+
 
 }
   
     IEnumerator StartCounting()
     {
-        if(CompletedRoom==null)
-        {
-        CompletedRoom =Instantiate(RoomMaker) as GameObject;
-         roomMakerComponents = CompletedRoom.GetComponents<RoomMaker>();
         
+       roomMakerComponents = RoomMaker.GetComponents<RoomMaker>();
+         
+        if(roomMakerComponents[0].Wall==null&&
+        roomMakerComponents[1].Wall==null&&
+        roomMakerComponents[2].Wall==null)
+         
+        {
+            roomMakerComponents[0].Create();
+            roomMakerComponents[1].Create();
+            roomMakerComponents[2].Create();
+            
+        yield return new WaitForSeconds(1);
+        
+         if(roomMakerComponents[0].Wall!=null&&
+        roomMakerComponents[1].Wall!=null&&
+        roomMakerComponents[2].Wall!=null)
+        {
         for(int i=0;i<roomMakerComponents[0].Tiles.Count;i++)
         {
             roomMakerComponents[0].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
@@ -291,6 +310,9 @@ public void DestoryYhreeDWall()
 
         yield return new WaitForSeconds(1);
         }
+        }
+        
+        
     }
 
     void CellSelected()

@@ -82,6 +82,7 @@ public void DestoryOneDWall()
     if(Wall!=null)
     {
     Destroy(Wall);
+     Tiles.Clear();
     }
 
 }
@@ -147,6 +148,7 @@ public void DestoryOneDWall()
       //  TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.1f);
 
         Tiles.Add(Tile);
+        
        TilePrefab.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().Tile_H_Num,
                                                     GameManager.GetComponent<UserInfo>().Tile_W_Num,0.01f);
        
@@ -158,6 +160,7 @@ public void DestoryOneDWall()
             
             Tiles.Add(go);
         }
+
 
 
         TopLeft = new Vector2(boxCollider.bounds.min.x + scale.x / 2,

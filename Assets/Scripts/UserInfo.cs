@@ -214,7 +214,7 @@ public void  ButtonHandler2(ref float a,ref float b, float min,float max,float i
     {
        m_Raycaster = canvas.GetComponent<GraphicRaycaster>();
        m_EventSystem = GetComponent<EventSystem>();
-
+ roomMakerComponents = RoomMaker.GetComponents<RoomMaker>();
       // Wall_A_H = WallHeightDisplay.GetComponent<TMP_InputField>().text;
     }
 
@@ -238,7 +238,10 @@ public void  ButtonHandler2(ref float a,ref float b, float min,float max,float i
             Camera.main.fieldOfView=60f;
             if(SingleWallCreator.GetComponent<SingleWallCreator>().Wall!=null)
             Destroy(SingleWallCreator.GetComponent<SingleWallCreator>().Wall);
+             
                  CanvasCamera.SetActive(false);
+                  RoomMaker.GetComponent<TopMaker>().TopWall.SetActive(false);
+
                StartCoroutine(StartCounting());
                ThreeDBtnClick++;
                return;
@@ -271,13 +274,15 @@ public void DestoryYhreeDWall()
     IEnumerator StartCounting()
     {
         
-       roomMakerComponents = RoomMaker.GetComponents<RoomMaker>();
+      
          
         if(roomMakerComponents[0].Wall==null&&
         roomMakerComponents[1].Wall==null&&
         roomMakerComponents[2].Wall==null)
          
         {
+             SingleWallCreator.GetComponent<SingleWallCreator>().BlackBarsFunc(true);
+            RoomMaker.GetComponent<TopMaker>().TopWall.SetActive(true);
             roomMakerComponents[0].Create();
             roomMakerComponents[1].Create();
             roomMakerComponents[2].Create();
@@ -287,19 +292,11 @@ public void DestoryYhreeDWall()
          if(roomMakerComponents[0].Wall!=null&&
         roomMakerComponents[1].Wall!=null&&
         roomMakerComponents[2].Wall!=null)
+        
         {
-        for(int i=0;i<roomMakerComponents[0].Tiles.Count;i++)
-        {
-            roomMakerComponents[0].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
-            roomMakerComponents[1].Tiles[i].GetComponent<Renderer>().material=TileMaterial;
-            roomMakerComponents[2].Tiles[i].GetComponent<Renderer>().material =TileMaterial;
-
-            roomMakerComponents[0].Wall.GetComponent<Renderer>().material = GroutMaterial;
-            roomMakerComponents[1].Wall.GetComponent<Renderer>().material = GroutMaterial;
-            roomMakerComponents[2].Wall.GetComponent<Renderer>().material = GroutMaterial;
-
-        }
+           
         yield return new WaitForSeconds(1);
+         SingleWallCreator.GetComponent<SingleWallCreator>().BlackBarsFunc(false);
 
             roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
             roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);

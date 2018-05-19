@@ -29,8 +29,16 @@ public class SingleWallCreator : MonoBehaviour {
 
 	 public List<GameObject> Tiles = new List<GameObject>();
 
+    public GameObject[] BlackBars;
 
 
+public void BlackBarsFunc(bool value)
+{
+    for(int i=0;i<BlackBars.Length;i++)
+    {
+        BlackBars[i].SetActive(value);
+    }
+}
     private void Update()
     {
 
@@ -83,6 +91,7 @@ public void DestoryOneDWall()
     if(Wall!=null)
     {
     Destroy(Wall);
+    BlackBarsFunc(false);
     }
 
 }
@@ -96,9 +105,10 @@ public void DestoryOneDWall()
         {
             if(Wall==null)
             {
+                BlackBarsFunc(true);
             Camera.main.fieldOfView=60f;
-            if(GameManager.GetComponent<UserInfo>().CompletedRoom!=null)
-                Destroy(GameManager.GetComponent<UserInfo>().CompletedRoom);
+           GameManager.GetComponent<UserInfo>().DestoryYhreeDWall();
+                GameManager.GetComponent<UserInfo>().RoomMaker.GetComponent<TopMaker>().TopWall.SetActive(false);
              CanvasCamera.SetActive(false);
 		     StartCoroutine(StartCounting());
                 

@@ -175,12 +175,13 @@ public void DestoryOneDWall()
       //  TilePrefab.transform.localScale = scale;
       //  TilePrefab.transform.localScale = new Vector3(TilePrefab.transform.localScale.x,TilePrefab.transform.localScale.y,0.1f);
 
-        Tiles.Add(Tile);
+       // Tiles.Add(Tile);
+       Tile.SetActive(false);
        TilePrefab.transform.localScale = new Vector3(GameManager.GetComponent<UserInfo>().Tile_H_Num,
                                                     GameManager.GetComponent<UserInfo>().Tile_W_Num,0.01f);
        
        
-        for (int i = 1; i < QuadArea+1; ++i)
+        for (int i = 0; i < QuadArea+1; ++i)
         {
             GameObject go = Instantiate(TilePrefab, Vector3.zero, Quaternion.identity);
             go.transform.parent = Wall.transform.parent;

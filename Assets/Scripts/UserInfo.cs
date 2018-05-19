@@ -67,10 +67,10 @@ private void Start()
     Wall_D_W_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_D_W_Num,5,20,-1);});
 
 
-    Tile_H_Plus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_H_Num,ref Tile_W_Num,1,3,1);});
-    Tile_H_Minus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_H_Num,ref Tile_W_Num,1,3,-1 );});
-    Tile_W_Plus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_W_Num,ref Tile_H_Num,1,3,1);});
-    Tile_W_Minus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_W_Num,ref Tile_H_Num,1,3,-1);});
+    Tile_H_Plus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_H_Num,ref Tile_W_Num,1,2,1);});
+    Tile_H_Minus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_H_Num,ref Tile_W_Num,1,2,-1 );});
+    Tile_W_Plus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_W_Num,ref Tile_H_Num,1,2,1);});
+    Tile_W_Minus.onClick.AddListener(delegate{ButtonHandler2(ref Tile_W_Num,ref Tile_H_Num,1,2,-1);});
 
     Grout_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Grout_H_Num,0.01f,0.1f,0.01f);});
     Grout_H_Minus.onClick.AddListener(delegate{ButtonHandler(ref Grout_H_Num,0.01f,0.1f,0.01f );});
@@ -168,44 +168,33 @@ public void  ButtonHandler2(ref float a,ref float b, float min,float max,float i
         Grout_W.GetComponent<TMP_InputField>().text = string.Format("{0:N2}", Grout_W_Num);
         
         
-        // PriceDetails();
+         PriceDetails();
         
-
-
-        // WallHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",WallHeightSlider.value);
-		// WallWidthDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N0}",WallWidthSlider.value);
-
-		// TileHeightDisplay.GetComponent<TMP_InputField>().text=string.Format("{0:N0}",TileHeightSlider.value);
-		// TileWidthDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N0}",TileWidthSlider.value);
-
-		// GroutDisplay.GetComponent<TMP_InputField>().text =string.Format("{0:N2}",GroutSlider.value);
 	}
 
     void PriceDetails()
     {
-        count = System.Math.Round(WallHeightSlider.value/TileHeightSlider.value * WallWidthSlider.value/TileWidthSlider.value, 0, System.MidpointRounding.AwayFromZero); 
-        NoOfTiles.text = " " + count;
-        TileSize.text = " " + string.Format("{0:N0}", TileHeightSlider.value);
+        double a = System.Math.Round(Wall_A_H_Num/Tile_H_Num * Wall_A_W_Num/Tile_W_Num, 0, System.MidpointRounding.AwayFromZero); 
+        double b = System.Math.Round(Wall_B_H_Num/Tile_H_Num * Wall_B_W_Num/Tile_W_Num, 0, System.MidpointRounding.AwayFromZero); 
+        double c = System.Math.Round(Wall_C_H_Num/Tile_H_Num * Wall_C_W_Num/Tile_W_Num, 0, System.MidpointRounding.AwayFromZero); 
+         count =a+b+c;
+         NoOfTiles.text = " " + count;
+         TileSize.text = " " + string.Format("{0:N0}", Tile_H_Num);
+       
+        WallArea_A.text = " " + Wall_A_H_Num * Wall_A_W_Num +"Sq.ft";
+        WallArea_B.text = " " + Wall_B_H_Num * Wall_B_W_Num+"Sq.ft";
+        WallArea_C.text = " " + Wall_C_H_Num * Wall_C_W_Num+"Sq.ft";
+        WallArea_D.text = " " + Wall_D_H_Num * Wall_D_W_Num+"Sq.ft";
 
-        WallArea_A.text = " " + Wall_A_H_Num * Wall_A_W_Num;
-        WallArea_B.text = " " + Wall_B_H_Num * Wall_B_W_Num;
-        WallArea_C.text = " " + Wall_C_H_Num * Wall_C_W_Num;
-        WallArea_D.text = " " + Wall_D_H_Num * Wall_D_W_Num;
-
-        if ((TileHeightSlider.value >= 1 && TileWidthSlider.value >= 1) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 1 && TileWidthSlider.value >= 3))
+        if (Tile_H_Num >= 1) 
         {
             tileprice.text = " " + Tileprice1x1;
             Totalprice.text = " " + count * Tileprice1x1;
         }
-        if ((TileHeightSlider.value>=2 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 2 && TileWidthSlider.value >= 1))
+        if(Tile_H_Num >= 2)
         {
             tileprice.text = " " + Tileprice2x2;
             Totalprice.text = " " + count * Tileprice2x2;
-        }
-        if ((TileHeightSlider.value >= 3 && TileWidthSlider.value >= 3) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 2) || (TileHeightSlider.value >= 3 && TileWidthSlider.value >= 1))
-        {
-            tileprice.text = " " + Tileprice3x3;
-            Totalprice.text = " " + count * Tileprice3x3;
         }
         
     }

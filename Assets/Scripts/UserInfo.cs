@@ -181,10 +181,10 @@ public void  ButtonHandler2(ref float a,ref float b, float min,float max,float i
          NoOfTiles.text = " " + count;
          TileSize.text = " " + string.Format("{0:N0}", Tile_H_Num);
        
-        WallArea_A.text = " " + Wall_A_H_Num * Wall_A_W_Num +"Sq.ft";
-        WallArea_B.text = " " + Wall_B_H_Num * Wall_B_W_Num+"Sq.ft";
-        WallArea_C.text = " " + Wall_C_H_Num * Wall_C_W_Num+"Sq.ft";
-        WallArea_D.text = " " + Wall_D_H_Num * Wall_D_W_Num+"Sq.ft";
+        WallArea_A.text = " " + Wall_A_H_Num * Wall_A_W_Num +" Sq.ft";
+        WallArea_B.text = " " + Wall_B_H_Num * Wall_B_W_Num +" Sq.ft";
+        WallArea_C.text = " " + Wall_C_H_Num * Wall_C_W_Num +" Sq.ft";
+        WallArea_D.text = " " + Wall_D_H_Num * Wall_D_W_Num +" Sq.ft";
 
         if (Tile_H_Num >= 1) 
         {

@@ -230,7 +230,7 @@ public void  ButtonHandler2(ref float a,ref float b, float min,float max,float i
              
                  CanvasCamera.SetActive(false);
                   RoomMaker.GetComponent<TopMaker>().TopWall.SetActive(false);
-            RoomMaker.GetComponent<BottomMaker>().TopWall.SetActive(false);
+           // RoomMaker.GetComponent<BottomMaker>().TopWall.SetActive(false);
 
             StartCoroutine(StartCounting());
                ThreeDBtnClick++;
@@ -273,7 +273,7 @@ public void DestoryYhreeDWall()
         {
              SingleWallCreator.GetComponent<SingleWallCreator>().BlackBarsFunc(true);
             RoomMaker.GetComponent<TopMaker>().TopWall.SetActive(true);
-            RoomMaker.GetComponent<BottomMaker>().TopWall.SetActive(true);
+           // RoomMaker.GetComponent<BottomMaker>().TopWall.SetActive(true);
             roomMakerComponents[0].Create();
             roomMakerComponents[1].Create();
           //  roomMakerComponents[2].Create();

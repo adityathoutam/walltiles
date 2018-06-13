@@ -40,10 +40,16 @@ public class ButtonClick : MonoBehaviour {
 
     public void View3DCanvasBtn()
     {
+        //Screen.autorotateToLandscape = true;
+        
+
+        //Screen.orientation = ScreenOrientation.LandscapeLeft;
         DimensionsCanvas.SetActive(false);
         TileCanvas.SetActive(false);
         PriceCanvas.SetActive(false);
         View3DCanvas.SetActive(true);
+        Screen.autorotateToLandscapeLeft = true;
+        //Screen.SetResolution(640, 480, true);
     }
 
     public void PriceCanvasBtn()

@@ -9,6 +9,7 @@ TagManager:
   - ColorTile
   - ATM
   - GroutColor
+  - GroutingColor
   layers:
   - Default
   - TransparentFX

@@ -318,6 +318,10 @@ public void DestoryYhreeDWall()
                 GroutImage = result.gameObject.GetComponent<Image>().sprite;
 				
             }
+            if(result.gameObject.tag == "GroutingColor")
+            {
+                ;
+            }
         }
     }
 	void TileImageSelected()

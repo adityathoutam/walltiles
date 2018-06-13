@@ -256,7 +256,7 @@ public void DestoryYhreeDWall()
     {
         if(roomMakerComponents[i].Wall!=null)
           roomMakerComponents[i].DestoryOneDWall();
-        }
+    }
 
 
 }

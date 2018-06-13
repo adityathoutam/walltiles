@@ -311,6 +311,7 @@ public void DestoryYhreeDWall()
             {
                 TileImage = result.gameObject.GetComponent<Image>().sprite;
                 tileImage.sprite = TileImage;
+                Debug.Log(TileImage.name);
             }
 			if (result.gameObject.tag == "GroutColor")
             {

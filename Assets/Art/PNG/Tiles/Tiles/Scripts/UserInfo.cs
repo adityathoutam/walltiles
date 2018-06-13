@@ -46,7 +46,7 @@ public class UserInfo : MonoBehaviour {
     public float Grout_H_Num,Grout_W_Num;
 private void Start()
 {
-    Wall_A_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_H_Num,5,20,1);});
+    Wall_A_H_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_H_Num,5,15,1);});
     Wall_A_H_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_H_Num,5,20,-1 );});
     Wall_A_W_Plus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_W_Num,5,20,1);});
     Wall_A_W_Minus.onClick.AddListener(delegate{ButtonHandler(ref Wall_A_W_Num,5,20,-1);});    
@@ -230,8 +230,9 @@ public void  ButtonHandler2(ref float a,ref float b, float min,float max,float i
              
                  CanvasCamera.SetActive(false);
                   RoomMaker.GetComponent<TopMaker>().TopWall.SetActive(false);
+            RoomMaker.GetComponent<BottomMaker>().TopWall.SetActive(false);
 
-               StartCoroutine(StartCounting());
+            StartCoroutine(StartCounting());
                ThreeDBtnClick++;
                return;
         }
@@ -241,7 +242,7 @@ public void  ButtonHandler2(ref float a,ref float b, float min,float max,float i
               
                   roomMakerComponents[0].DestoryOneDWall();
          roomMakerComponents[1].DestoryOneDWall();
-         roomMakerComponents[2].DestoryOneDWall();
+         //roomMakerComponents[2].DestoryOneDWall();
                
                   CanvasCamera.SetActive(true);
                   ThreeDBtnClick=0;
@@ -266,33 +267,34 @@ public void DestoryYhreeDWall()
       
          
         if(roomMakerComponents[0].Wall==null&&
-        roomMakerComponents[1].Wall==null&&
-        roomMakerComponents[2].Wall==null)
+        roomMakerComponents[1].Wall==null)
+        //roomMakerComponents[2].Wall==null)
          
         {
              SingleWallCreator.GetComponent<SingleWallCreator>().BlackBarsFunc(true);
             RoomMaker.GetComponent<TopMaker>().TopWall.SetActive(true);
+            RoomMaker.GetComponent<BottomMaker>().TopWall.SetActive(true);
             roomMakerComponents[0].Create();
             roomMakerComponents[1].Create();
-            roomMakerComponents[2].Create();
+          //  roomMakerComponents[2].Create();
             
         yield return new WaitForSeconds(1);
         
          if(roomMakerComponents[0].Wall!=null&&
-        roomMakerComponents[1].Wall!=null&&
-        roomMakerComponents[2].Wall!=null)
+        roomMakerComponents[1].Wall!=null)
+       // roomMakerComponents[2].Wall!=null)
         
         {
            
         yield return new WaitForSeconds(1);
          SingleWallCreator.GetComponent<SingleWallCreator>().BlackBarsFunc(false);
 
-            roomMakerComponents[0].Wall.transform.position = new Vector3(-3.5f,0,0);
-            roomMakerComponents[1].Wall.transform.position = new Vector3(3.5f,0,0);
-            roomMakerComponents[2].Wall.transform.position = new Vector3(0,-4.8f,-4.2f);
+            roomMakerComponents[0].Wall.transform.position = new Vector3(-3.3f,0,0);
+            roomMakerComponents[1].Wall.transform.position = new Vector3(2.8f,0,-0.7f);
+          //  roomMakerComponents[2].Wall.transform.position = new Vector3(0,-4.8f,-4.2f);
             roomMakerComponents[0].Wall.transform.Rotate(0,-45,0);
             roomMakerComponents[1].Wall.transform.Rotate(0,45,0);
-            roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);
+           // roomMakerComponents[2].Wall.transform.Rotate(90,-45,0);
 
         yield return new WaitForSeconds(1);
         }

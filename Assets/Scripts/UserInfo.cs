@@ -289,8 +289,8 @@ public void DestoryYhreeDWall()
         yield return new WaitForSeconds(1);
          SingleWallCreator.GetComponent<SingleWallCreator>().BlackBarsFunc(false);
 
-            roomMakerComponents[0].Wall.transform.position = new Vector3(-3.3f,0,0);
-            roomMakerComponents[1].Wall.transform.position = new Vector3(2.8f,0,-0.7f);
+            roomMakerComponents[0].Wall.transform.position = new Vector3(7f,0,0);
+            roomMakerComponents[1].Wall.transform.position = new Vector3(0f,0,0f);
           //  roomMakerComponents[2].Wall.transform.position = new Vector3(0,-4.8f,-4.2f);
             roomMakerComponents[0].Wall.transform.Rotate(0,-45,0);
             roomMakerComponents[1].Wall.transform.Rotate(0,45,0);
